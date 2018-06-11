@@ -1,0 +1,213 @@
+﻿
+.goc1
+{
+    background: url('../images/frame/frame01_03.png') 0 0 repeat-x;
+    height:26px;
+    width:29px;
+}
+.goc2
+{
+    background: url('../images/frame/frame01_06.png') 0 0 repeat-x;
+    height:26px;
+    width:25px;
+}
+.goc3
+{
+    background: url('../images/frame/Untitled-1_06_03.png') 0 0 repeat-x;
+    height:32px;
+    width:25px;
+}
+.goc4
+{
+    background: url('../images/frame/Untitled-1_06_01.png') 0 0 repeat-x;
+    height:32px;
+    width:29px;
+}
+.ngangtren
+{
+    background: url('../images/frame/frame01_04.png') 0 0 repeat-x;
+    height:26px;
+}
+
+.ngangduoi
+{
+     background: url('../images/frame/Untitled-1_06_02.png') 0 0 repeat-x;
+    height:26px;
+}
+.doctrai
+{
+    background: url('../images/frame/frame01_11.png') 0 0 repeat-y;
+    width:29px;
+}
+.docphai
+{
+    background: url('../images/frame/frame01_10.png') 0 0 repeat-y;
+    width:25px;
+}
+/*-----------------------------------------------------------------*/
+
+.trai2
+{
+    background: url('../images/frame/lava_moi2_05_2.png') 0 0 repeat-x;
+    height:36px;
+    width:73px;
+}
+.trai
+{
+    background: url('../images/frame/lava_moi2_05.png') 0 0 repeat-x;
+    height:36px;
+    width:56px;
+}
+.phai
+{
+    background: url('../images/frame/lava_moi2_07.png') 0 0 repeat-x;
+    height:36px;
+    width:8px;
+}
+.giua
+{
+    background: url('../images/frame/lava_moi2_07.png') 0 0 repeat-x;
+    height:36px;
+    text-align:left;
+    font-weight:bold;
+    font-family: Arial;
+    font-size: 13px;
+    
+    color: #d0ff52;
+}
+.giuaL
+{
+    background: url('../images/frame/lava_moi2_07.png') 0 0 repeat-x;
+    height:31px;
+    text-align:left;
+    font-weight:bold;
+    font-family: Arial;
+    font-size: 13px;
+    
+    color: #d0ff52;
+}
+/*-----------------------------------------------------------------*/
+.bg_goc1
+{
+    background: url('../images/frame/nengo_01.png') 0 0 repeat-x;
+    height:20px;
+    width:20px;
+}
+.bg_goc2
+{
+    background: url('../images/frame/nengo_03.png') 0 0 repeat-x;
+    height:20px;
+    width:20px;
+}
+.bg_goc3
+{
+    background: url('../images/frame/lava_DS_39.png') 0 0 repeat-x;
+    height:11px;
+    width:10px;
+}
+.bg_goc4
+{
+    background: url('../images/frame/lava_DS_37.png') 0 0 repeat-x;
+    height:11px;
+    width:10px;
+}
+.bg_ngangtren
+{
+    background: url('../images/frame/nengo_02.png') 0 0 repeat-x;
+    height:20px;
+}
+
+.bg_ngangduoi
+{
+     background: url('../images/frame/lava_DS_38.png') 0 0 repeat-x;
+    height:11px;
+}
+.bg_doctrai
+{
+    background: url('../images/frame/lava_DS_28.png') 0 0 repeat-y;
+    width:10px;
+}
+.bg_docphai
+{
+    background: url('../images/frame/lava_DS_30.png') 0 0 repeat-y;
+    width:10px;
+}
+/*-----------------------------------------------------------------*/
+.bg_thongbao_giua
+{
+    background: url('../images/lava/lava_DS_21.png') 0 0 repeat-x;
+    height:36px;
+    font-weight:bold;
+    font-family: Arial;
+    font-size: 13px;
+    
+    color: #094000;
+}
+.bg_thongbao_trai
+{
+    background: url('../images/lava/lava_DS_19.png') 0 0 no-repeat;
+    height:36px;
+    width:10px;
+}
+.bg_thongbao_phai
+{
+    background: url('../images/lava/lava_DS_20.png') 0 0 no-repeat;
+    height:36px;
+    width:10px;
+}
+/*-----------------------------------------------------------------*/
+.content_goc1
+{
+    background: url('../images/frame/content_01.png') 0 0 repeat-x;
+    height:20px;
+    width:20px;
+}
+.content_goc2
+{
+    background: url('../images/frame/content_03.png') 0 0 repeat-x;
+    height:20px;
+    width:20px;
+}
+.content_goc3
+{
+    background: url('../images/frame/content_05.png') 0 0 repeat-x;
+    height:20px;
+    width:20px;
+}
+.content_goc4
+{
+    background: url('../images/frame/content_07.png') 0 0 repeat-x;
+    height:20px;
+    width:20px;
+}
+.content_ngangtren
+{
+    background: url('../images/frame/content_02.png') 0 0 repeat-x;
+    height:20px;
+}
+
+.content_ngangduoi
+{
+     background: url('../images/frame/content_06.png') 0 0 repeat-x;
+    height:20px;
+}
+.content_doctrai
+{
+    background: url('../images/frame/content_08.png') 0 0 repeat-y;
+    width:20px;
+}
+.content_docphai
+{
+    background: url('../images/frame/content_04.png') 0 0 repeat-y;
+    width:20px;
+}
+.content_nengiua
+{
+    background: url('../images/frame/content_13.png');
+    padding:0px;
+}
+.bg_content
+{
+	background-color:#ffffff;
+}
+/*-----------------------------------------------------------------*/
