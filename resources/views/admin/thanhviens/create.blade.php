@@ -33,6 +33,14 @@
                   <input type="text" name="username" class="form-control">
                 </div>
                 <div class="form-group">
+                  <label>Tên đơn vị</label>
+                  <input type="text" name="donviname" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>Địa chỉ</label>
+                  <input type="text" name="address" class="form-control">
+                </div>
+                <div class="form-group">
                   <label>Email</label>
                   <input type="email" name="email" class="form-control">
                 </div>

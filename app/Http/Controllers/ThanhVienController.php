@@ -31,7 +31,6 @@ class ThanhVienController extends Controller
 	        'username' => 'required',
             'password' => 'required',
             'donviname' => 'required',
-	        'address' => 'required',
 	        'email' => 'required|email|unique:users'
 	    );
 

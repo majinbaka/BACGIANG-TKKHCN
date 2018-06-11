@@ -34,6 +34,14 @@
                   <input type="text" name="username" class="form-control" value="{{$thanhvien->username}}">
                 </div>
                 <div class="form-group">
+                  <label>Tên đơn vị</label>
+                  <input type="text" name="donviname" class="form-control" value="{{$thanhvien->donviname}}">
+                </div>
+                <div class="form-group">
+                  <label>Địa chỉ</label>
+                  <input type="text" name="address" class="form-control" value="{{$thanhvien->address}}">
+                </div>
+                <div class="form-group">
                   <label>Email</label>
                   <input type="email" name="email" class="form-control" value="{{$thanhvien->email}}">
                 </div>
