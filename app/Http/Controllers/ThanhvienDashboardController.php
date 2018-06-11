@@ -85,7 +85,15 @@ class ThanhvienDashboardController extends Controller
         else if ($type == 6)
         $bieumau = Bieumau6::where('user_id', $user->id)->where('reporter_year', $user->bieumauYearFinish())->first();
 
-    	return view('thanhvien.suabieumau'.$type)->with('bieumau', $bieumau);
+        if ($bieumau){
+    	   return view('thanhvien.suabieumau'.$type)->with('bieumau', $bieumau);
+        }
+        else
+        {
+            Session::flash('message', 'Không có biểu mẫu để sửa');
+
+            return view('thanhvien.index');
+        }
     }
 
     public function bieumau1Update($year)

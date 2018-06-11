@@ -28,7 +28,7 @@ class ThanhvienLoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/user';
+    protected $redirectTo = '/thanhvien';
     protected $redirectAfterLogout = '/thanhvien/login';
     protected $guard = 'web';
 
