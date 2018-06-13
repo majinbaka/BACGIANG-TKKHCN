@@ -36,4 +36,50 @@ class Bieutonghop2 extends Model
             'field_22',
             'field_23',
     ];
+
+    public static function ftmp($p){
+        $s = parse_str($p, $out);
+
+        return "<td rowspan='1' align='center' style=' font-family: Times New Roman; font-size: 12pt; color: #333333; padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>".$out[1]."</td>
+        <td rowspan='1' align='center' style=' font-family: Times New Roman; font-size: 12pt; color: #333333; padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>".$out[2]."</td>
+        <td rowspan='1' align='center' style=' font-family: Times New Roman; font-size: 12pt; color: #333333; padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>".$out[3]."</td>
+        <td rowspan='1' align='center' style=' font-family: Times New Roman; font-size: 12pt; color: #333333; padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>".$out[4]."</td>
+        <td rowspan='1' align='center' style=' font-family: Times New Roman; font-size: 12pt; color: #333333; padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>".$out[5]."</td>
+        <td rowspan='1' align='center' style=' font-family: Times New Roman; font-size: 12pt; color: #333333; padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>".$out[6]."</td>
+        <td rowspan='1' align='center' style=' font-family: Times New Roman; font-size: 12pt; color: #333333; padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>".$out[7]."</td>
+        <td rowspan='1' align='center' style=' font-family: Times New Roman; font-size: 12pt; color: #333333; padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>".$out[8]."</td>
+        <td rowspan='1' align='center' style=' font-family: Times New Roman; font-size: 12pt; color: #333333; padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>".$out[9]."</td>";
+
+    }
+
+    public function generateBieu($reporter, $receiver){
+        $file = file_get_contents('tmp/tonghop2/temp.tmp', true);
+        $file = str_replace('@reporter@', $reporter, $file);
+        $file = str_replace('@receiver@', $receiver, $file);
+        $file = str_replace('@f1@', Bieutonghop2::ftmp($this->field_1), $file);
+        $file = str_replace('@f2@', Bieutonghop2::ftmp($this->field_2), $file);
+        $file = str_replace('@f3@', Bieutonghop2::ftmp($this->field_3), $file);
+        $file = str_replace('@f4@', Bieutonghop2::ftmp($this->field_4), $file);
+        $file = str_replace('@f5@', Bieutonghop2::ftmp($this->field_5), $file);
+        $file = str_replace('@f6@', Bieutonghop2::ftmp($this->field_6), $file);
+        $file = str_replace('@f7@', Bieutonghop2::ftmp($this->field_7), $file);
+        $file = str_replace('@f8@', Bieutonghop2::ftmp($this->field_8), $file);
+        $file = str_replace('@f9@', Bieutonghop2::ftmp($this->field_9), $file);
+        $file = str_replace('@f10@', Bieutonghop2::ftmp($this->field_10), $file);
+        $file = str_replace('@f11@', Bieutonghop2::ftmp($this->field_11), $file);
+        $file = str_replace('@f12@', Bieutonghop2::ftmp($this->field_12), $file);
+        $file = str_replace('@f13@', Bieutonghop2::ftmp($this->field_13), $file);
+        $file = str_replace('@f14@', Bieutonghop2::ftmp($this->field_14), $file);
+        $file = str_replace('@f15@', Bieutonghop2::ftmp($this->field_15), $file);
+        $file = str_replace('@f16@', Bieutonghop2::ftmp($this->field_16), $file);
+        $file = str_replace('@f17@', Bieutonghop2::ftmp($this->field_17), $file);
+        $file = str_replace('@f18@', Bieutonghop2::ftmp($this->field_18), $file);
+        $file = str_replace('@f19@', Bieutonghop2::ftmp($this->field_19), $file);
+        $file = str_replace('@f20@', Bieutonghop2::ftmp($this->field_20), $file);
+        $file = str_replace('@f21@', Bieutonghop2::ftmp($this->field_21), $file);
+        $file = str_replace('@f22@', Bieutonghop2::ftmp($this->field_22), $file);
+        $file = str_replace('@f23@', Bieutonghop2::ftmp($this->field_23), $file);
+
+        return $file;
+    }
 }

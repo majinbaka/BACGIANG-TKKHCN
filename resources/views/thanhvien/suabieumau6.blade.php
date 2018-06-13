@@ -35,7 +35,7 @@
                         <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input name="publish_day" id="datemask" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" value="{{date('d/m/Y')}}" data-mask="">
+                        <input name="publish_day" id="datemask" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" value="{{date('d/m/Y', strtotime($bieumau->publish_day))}}" data-mask="">
                         {!! $errors->first('publish_day', '<p class="help-block">:message</p>') !!}
                       </div>
                     </div>
@@ -75,13 +75,16 @@
                         <tr>
                           <td><b>Tổng số</b></td>
                           <td>01</td>
-                          <td><input class="form-control" type="text" name="total[1]"></td>
-                          <td><input class="form-control" type="text" name="total[2]"></td>
-                          <td><input class="form-control" type="text" name="total[3]"></td>
-                          <td><input class="form-control" type="text" name="total[4]"></td>
-                          <td><input class="form-control" type="text" name="total[5]"></td>
-                          <td><input class="form-control" type="text" name="total[6]"></td>
-                          <td><input class="form-control" type="text" name="total[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total, $out);
+                          @endphp
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total[7]"></td>
                       </tr>
                       <tr>
                           <td><b>1. Chia theo loại giải thưởng</b></td>
@@ -97,79 +100,107 @@
                       <tr>
                           <td><b><i>1.1. Giải thưởng trong nước</i></b></td>
                           <td>02</td>
-                          <td><input class="form-control" type="text" name="total_award_vn[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_vn, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_vn[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_vn[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_vn[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_vn[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_vn[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_vn[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_vn[7]"></td>
                       </tr>
                       <tr>
                           <td>- Giải thưởng Hồ Chí Minh</td>
                           <td>03</td>
-                          <td><input class="form-control" type="text" name="total_award_vn1[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn1[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn1[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn1[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn1[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn1[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn1[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_vn1, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_vn1[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_vn1[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_vn1[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_vn1[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_vn1[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_vn1[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_vn1[7]"></td>
                       </tr>
                       <tr>
                           <td>- Giải thưởng Nhà nước</td>
                           <td>04</td>
-                          <td><input class="form-control" type="text" name="total_award_vn2[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn2[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn2[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn2[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn2[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn2[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn2[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_vn2, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_vn2[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_vn2[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_vn2[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_vn2[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_vn2[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_vn2[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_vn2[7]"></td>
                       </tr>
                       <tr>
                           <td>- Giải thướng cấp bộ</td>
                           <td>05</td>
-                          <td><input class="form-control" type="text" name="total_award_vn3[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn3[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn3[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn3[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn3[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn3[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn3[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_vn3, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_vn3[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_vn3[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_vn3[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_vn3[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_vn3[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_vn3[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_vn3[7]"></td>
                       </tr>
                       <tr>
                           <td>- Giải thưởng cấp tỉnh</td>
                           <td>06</td>
-                          <td><input class="form-control" type="text" name="total_award_vn4[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn4[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn4[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn4[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn4[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn4[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn4[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_vn4, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_vn4[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_vn4[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_vn4[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_vn4[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_vn4[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_vn4[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_vn4[7]"></td>
                       </tr>
                       <tr>
                           <td>- Giải thưởng khác</td>
                           <td>07</td>
-                          <td><input class="form-control" type="text" name="total_award_vn5[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn5[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn5[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn5[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn5[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn5[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_vn5[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_vn5, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_vn5[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_vn5[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_vn5[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_vn5[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_vn5[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_vn5[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_vn5[7]"></td>
                       </tr>
                       <tr>
                           <td><b><i>1.2. Giải thưởng quốc tế</i></b></td>
                           <td>08</td>
-                          <td><input class="form-control" type="text" name="total_award_other[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_other[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_other[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_other[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_other[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_other[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_other[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_other, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_other[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_other[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_other[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_other[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_other[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_other[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_other[7]"></td>
                       </tr>
                       <tr>
                           <td><b>2. Chia theo cá nhân/tập thể</b></td>
@@ -185,46 +216,61 @@
                       <tr>
                           <td><b><i>2.1. Tập thể</i></b></td>
                           <td>09</td>
-                          <td><input class="form-control" type="text" name="total_award_team[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_team[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_team[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_team[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_team[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_team[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_team[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_team, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_team[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_team[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_team[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_team[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_team[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_team[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_team[7]"></td>
                       </tr>
                       <tr>
                           <td><b><i>2.2. Cá nhân</i></b></td>
                           <td>10</td>
-                          <td><input class="form-control" type="text" name="total_award_fm[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_fm[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_fm[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_fm[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_fm[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_fm[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_fm[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_fm, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_fm[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_fm[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_fm[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_fm[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_fm[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_fm[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_fm[7]"></td>
                       </tr>
                       <tr>
                           <td>- Nam</td>
                           <td>11</td>
-                          <td><input class="form-control" type="text" name="total_award_male[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_male[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_male[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_male[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_male[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_male[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_male[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_male, $out);
+                          @endphp
+                          
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_male[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_male[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_male[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_male[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_male[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_male[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_male[7]"></td>
                       </tr>
                       <tr>
                           <td>- Nữ</td>
                           <td>12</td>
-                          <td><input class="form-control" type="text" name="total_award_female[1]"></td>
-                          <td><input class="form-control" type="text" name="total_award_female[2]"></td>
-                          <td><input class="form-control" type="text" name="total_award_female[3]"></td>
-                          <td><input class="form-control" type="text" name="total_award_female[4]"></td>
-                          <td><input class="form-control" type="text" name="total_award_female[5]"></td>
-                          <td><input class="form-control" type="text" name="total_award_female[6]"></td>
-                          <td><input class="form-control" type="text" name="total_award_female[7]"></td>
+                          @php
+                            $s = parse_str($bieumau->total_award_female, $out);
+                          @endphp
+                          <td><input value="{{$out[1]}}" class="form-control" type="text" name="total_award_female[1]"></td>
+                          <td><input value="{{$out[2]}}" class="form-control" type="text" name="total_award_female[2]"></td>
+                          <td><input value="{{$out[3]}}" class="form-control" type="text" name="total_award_female[3]"></td>
+                          <td><input value="{{$out[4]}}" class="form-control" type="text" name="total_award_female[4]"></td>
+                          <td><input value="{{$out[5]}}" class="form-control" type="text" name="total_award_female[5]"></td>
+                          <td><input value="{{$out[6]}}" class="form-control" type="text" name="total_award_female[6]"></td>
+                          <td><input value="{{$out[7]}}" class="form-control" type="text" name="total_award_female[7]"></td>
                       </tr>
 
                       </tbody></table>

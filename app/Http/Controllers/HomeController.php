@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Information;
-use App\Post;
+use Illuminate\Support\Facades\Input;
+use App\Post;   
 use App\LinkedWebsite;
 use App\Document;
 use App\User;
@@ -15,8 +16,17 @@ use App\Bieumau3;
 use App\Bieumau4;
 use App\Bieumau5;
 use App\Bieumau6;
-use PhpOffice\PhpWord\PhpWord;
-use Exception;
+use App\Bieutonghop1;
+use App\Bieutonghop2;
+use App\Bieutonghop3;
+use App\Bieutonghop4;
+use App\Bieutonghop5;
+use App\Bieutonghop6;
+use App\Bieutonghop7;
+use App\Bieutonghop8;
+use App\Bieutonghop9;
+use App\Bieutonghop10;
+use App\Bieutonghop11;
 
 class HomeController extends Controller
 {
@@ -98,58 +108,193 @@ class HomeController extends Controller
     }
 
     public function tkcsreport(){
-        $users = User::all();
         $years = User::listYear();
-        $total = User::count();
-        
-        return view('thongkecoso', array('users' => $users,  'years' => $years, 'total' => $total));
+        $users = User::getAllUserHasReported(User::lastYear())->get();
+        $total = User::getAllUserHasReported(User::lastYear())->count();
+        $cyear = User::lastYear();
+        return view('thongkecoso', array('users' => $users,  'years' => $years, 'total' => $total, 'y' => $cyear));
     }
 
-    public function donvireport($year, $id, $type){
+    public function donvireport($year, $id){
         $user = User::find($id);
-        if ($type == 1)
             $bieu = Bieumau1::whereYear('publish_day', '=', $year)->where('user_id', $id)->first();
-        if ($type == 2)
-            $bieu = Bieumau2::whereYear('publish_day', '=', $year)->where('user_id', $id)->first();
-        if ($type == 3)
-            $bieu = Bieumau3::whereYear('publish_day', '=', $year)->where('user_id', $id)->first();
-        if ($type == 4)
-            $bieu = Bieumau4::whereYear('publish_day', '=', $year)->where('user_id', $id)->first();
-        if ($type == 5)
-            $bieu = Bieumau5::whereYear('publish_day', '=', $year)->where('user_id', $id)->first();
-        if ($type == 6)
-            $bieu = Bieumau6::whereYear('publish_day', '=', $year)->where('user_id', $id)->first();
 
-        return view('bieumau.bieumau'.$type, array('bieu' => $bieu));
+        return view('bieumau.bieumau1', array('bieu' => $bieu));
     }
 
-    public function generateDocx()
+    public function donvireportX($year,$id,$type)
     {
-        $phpWord = new PhpWord();
-        $section = $phpWord->addSection();
-
-
-            $description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-
-         
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
-
-        $section->addImage("http://itsolutionstuff.com/frontTheme/images/logo.png");
-        $section->addText($description);
-
-
-        $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-        try {
-            $objWriter->save(storage_path('helloWorld.doc'));
-        } catch (Exception $e) {
+        $bieuType = 1;
+        $user = User::find($id);
+        if (Input::has('1')){
+            $bieu = Bieumau1::where('reporter_year', '=', $year)->where('user_id', $id)->first();
+        }
+        if (Input::has('2')){
+            $bieu = Bieumau2::where('reporter_year', '=', $year)->where('user_id', $id)->first();
+            $bieuType = 2;
+        }
+        if (Input::has('3')){
+            $bieu = Bieumau3::where('reporter_year', '=', $year)->where('user_id', $id)->first();
+            $bieuType = 3;
+        }
+        if (Input::has('4')){
+            $bieu = Bieumau4::where('reporter_year', '=', $year)->where('user_id', $id)->first();
+            $bieuType = 4;
+        }
+        if (Input::has('5')){
+            $bieu = Bieumau5::where('reporter_year', '=', $year)->where('user_id', $id)->first();
+            $bieuType = 5;
+        }
+        if (Input::has('6')){
+            $bieu = Bieumau6::where('reporter_year', '=', $year)->where('user_id', $id)->first();
+            $bieuType = 6;
         }
 
+        return view('bieumau.bieumau'.$bieuType, array('bieu' => $bieu));
+    }
 
-        return response()->download(storage_path('helloWorld.doc'));
+    public function thongketonghop($year = 0)
+    {
+        if ($year = 0)
+            $year = User::lastYear();
+        $bieuType = 1;
+        $bieu = Bieutonghop1::where('year', '=', $year)->first();
+        if (Input::has('2')){$bieu = Bieutonghop2::where('year', '=', $year)->first();$bieuType=2;}
+        if (Input::has('3')){$bieu = Bieutonghop3::where('year', '=', $year)->first();$bieuType=3;}
+        if (Input::has('4')){$bieu = Bieutonghop4::where('year', '=', $year)->first();$bieuType=4;}
+        if (Input::has('5')){$bieu = Bieutonghop5::where('year', '=', $year)->first();$bieuType=5;}
+        if (Input::has('6')){$bieu = Bieutonghop6::where('year', '=', $year)->first();$bieuType=6;}
+        if (Input::has('7')){$bieu = Bieutonghop7::where('year', '=', $year)->first();$bieuType=7;}
+        if (Input::has('8')){$bieu = Bieutonghop8::where('year', '=', $year)->first();$bieuType=8;}
+        if (Input::has('9')){$bieu = Bieutonghop9::where('year', '=', $year)->first();$bieuType=9;}
+        if (Input::has('10')){$bieu = Bieutonghop10::where('year', '=', $year)->first();$bieuType=10;}
+        if (Input::has('11')){$bieu = Bieutonghop11::where('year', '=', $year)->first();$bieuType=11;}
+        
+        return view('bieutonghop.'.$bieuType, array('bieu' => $bieu));
+    }
+
+    public function generateBieu1($id)
+    {
+        $bieu = Bieumau1::find($id);
+        $filename = 'Bieu01CS_'.$id.'_'.date('d_m_Y').'.doc';
+        file_put_contents($filename, $bieu->generateBieu1());
+
+        return response()->download($filename);
+    }
+
+    public function generateBieu2($id)
+    {
+        $bieu = Bieumau2::find($id);
+        $filename = 'Bieu02CS_'.$id.'_'.date('d_m_Y').'.xls';
+        file_put_contents($filename, $bieu->generateBieu2());
+
+        return response()->download($filename);
+    }
+
+    public function generateBieu3($id)
+    {
+        $bieu = Bieumau3::find($id);
+        $filename = 'Bieu03CS_'.$id.'_'.date('d_m_Y').'.xls';
+        file_put_contents($filename, $bieu->generateBieu3());
+
+        return response()->download($filename);
+    }
+
+    public function generateBieu4($id)
+    {
+        $bieu = Bieumau4::find($id);
+        $filename = 'Bieu04CS_'.$id.'_'.date('d_m_Y').'.xls';
+        file_put_contents($filename, $bieu->generateBieu4());
+
+        return response()->download($filename);
+    }
+
+    public function generateBieu5($id)
+    {
+        $bieu = Bieumau5::find($id);
+        $filename = 'Bieu05CS_'.$id.'_'.date('d_m_Y').'.xls';
+        file_put_contents($filename, $bieu->generateBieu5());
+
+        return response()->download($filename);
+    }
+
+    public function generateBieu6($id)
+    {
+        $bieu = Bieumau6::find($id);
+        $filename = 'Bieu06CS_'.$id.'_'.date('d_m_Y').'.xls';
+        file_put_contents($filename, $bieu->generateBieu6());
+
+        return response()->download($filename);
+    }
+
+    public function generateBieuTH($type, $id){
+        if ($type==1)
+        {
+            $bieu = Bieutonghop1::find($id);
+            $filename='Bieu01_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==2)
+        {
+            $bieu = Bieutonghop2::find($id);
+            $filename='Bieu02_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==3)
+        {
+            $bieu = Bieutonghop3::find($id);
+            $filename='Bieu03_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==4)
+        {
+            $bieu = Bieutonghop4::find($id);
+            $filename='Bieu04_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==5)
+        {
+            $bieu = Bieutonghop5::find($id);
+            $filename='Bieu05_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==6)
+        {
+            $bieu = Bieutonghop6::find($id);
+            $filename='Bieu06_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==7)
+        {
+            $bieu = Bieutonghop7::find($id);
+            $filename='Bieu07_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==8)
+        {
+            $bieu = Bieutonghop8::find($id);
+            $filename='Bieu08_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==9)
+        {
+            $bieu = Bieutonghop9::find($id);
+            $filename='Bieu09_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==10)
+        {
+            $bieu = Bieutonghop10::find($id);
+            $filename='Bieu010_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+        if ($type==11)
+        {
+            $bieu = Bieutonghop11::find($id);
+            $filename='Bieu011_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu());
+        }
+
+        return response()->download($filename);   
     }
 }

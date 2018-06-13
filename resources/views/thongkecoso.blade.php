@@ -90,7 +90,7 @@
 	@endphp
 	@foreach($users as $user)
 	<tr class="cssKhongChon">
-		<td class="TableCell_Center" colspan="1">{{$i++}}</td><td class="TableCell" colspan="1"><a href="/thongkecoso/donvi/2018/{{$user->id}}/1">{{$user->donviname}}</a></td><td class="TableCell" colspan="1">{{$user->address}}</td><td class="TableCell" colspan="1">{{$user->userLastReportedYear(2018)}}</td>
+		<td class="TableCell_Center" colspan="1">{{$i++}}</td><td class="TableCell" colspan="1"><a href="/thongkecoso/donvi/{{$y}}/{{$user->id}}/1">{{$user->donviname}}</a></td><td class="TableCell" colspan="1">{{$user->address}}</td><td class="TableCell" colspan="1">{{$user->userLastReportedYear($y)}}</td>
 	</tr>
 	@endforeach
 </table></span><div style="height: 15px;

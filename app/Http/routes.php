@@ -9,9 +9,6 @@ Route::get('/login', function () {
 Route::get('/reg', function () {
     return view('transfer');
 });
-Route::get('/tkth', function () {
-    return view('thongketonghop');
-});
 
 //Admin login
 Route::get('/admin/login', 'AdminLoginController@showLoginForm')->name('admin.login.show');
@@ -31,9 +28,16 @@ Route::get('/tintuc/{id}', 'HomeController@tintuc');
 Route::get('/talieu/danhsach/{cate}', 'HomeController@tailieudanhsach');
 Route::get('/thongkecoso', 'HomeController@tkcsreport');
 Route::get('/thongkecoso/donvi/{year}/{id}/{type}', 'HomeController@donvireport');
-Route::get('/generate-docx', 'HomeController@generateDocx');
-
-
+Route::get('/generate/donvi/bieu1/{id}', 'HomeController@generateBieu1');
+Route::get('/generate/donvi/bieu2/{id}', 'HomeController@generateBieu2');
+Route::get('/generate/donvi/bieu3/{id}', 'HomeController@generateBieu3');
+Route::get('/generate/donvi/bieu4/{id}', 'HomeController@generateBieu4');
+Route::get('/generate/donvi/bieu5/{id}', 'HomeController@generateBieu5');
+Route::get('/generate/donvi/bieu6/{id}', 'HomeController@generateBieu6');
+Route::post('/thongkecoso/donvi/{year}/{id}/{type}', 'HomeController@donvireportX');
+Route::post('/thongketonghop/{year}', 'HomeController@thongketonghop');
+Route::get('/thongketonghop/', 'HomeController@thongketonghop');
+Route::get('/generate/tonghop/bieu/{type}/{id}', 'HomeController@generateBieuTH');
 
 
 Route::group(['middleware' => 'auth:web'], function () {

@@ -22,6 +22,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public static function getAllUserHasReported($y){
+        $b = Bieumau1::where('reporter_year', $y)->pluck('user_id');
+        $u = User::whereIn('id', $b);
+        return $u;
+    }
+
+    public static function lastYear()
+    {
+        $b1 = Bieumau1::max('reporter_year');
+        
+        return $b1 ? $b1 : 0;
+    }
+
     public function hasReported($year)
     {
         $b1 = Bieumau1::where('user_id', $this->id)->where('reporter_year','=',$year)->first();
@@ -39,7 +52,6 @@ class User extends Authenticatable
         $b6 = new Bieumau6;$b6->user_id = $this->id;$b6->reporter_year = $y;$b6->save();
         return ;
     }
-
 
     public function bieumauYearFinish()
     {

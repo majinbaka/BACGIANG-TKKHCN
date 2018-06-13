@@ -794,7 +794,7 @@ margin-right: 2px;
 .topheader
 {
 	color: White;
-	background-image: url('/image/grad_07.gif');
+	/*background-image: url('/image/grad_07.gif');*/
 	background-position:bottom;
 	padding: 4px 4px 0px 4px;
 	margin: 0px;

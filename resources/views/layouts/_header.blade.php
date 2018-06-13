@@ -116,7 +116,35 @@
                                         <img src='/image/home.gif' />&nbsp;&nbsp;
                                         <span class="TrangChu_text">Trang chủ</span></a>
                                 </li>
-                                <span id="ctl00_Banner1_MenuHori1_lblMenuLeft"><li><a href="#">Công bố số liệu thống kê</a><ul><li><a href=/thongkecoso>Thống kê KHCN cơ sở</a></li><li><a   href=/thongkekhcn/page/csdl/csdl.aspx?case=tkth>Thống kê KHCN tổng hợp</a></li></ul></li><li><a href="#">Thống kê KHCN</a><ul><li><a   href=/thongkekhcn/1>Hệ thống chỉ tiêu thống kê</a></li><li><a   href=/thongkekhcn/2>Bảng phân loại và danh mục chuẩn</a></li><li><a   href=/thongkekhcn/3>Chế độ báo cáo thống kê</a></li><li><a   href=/thongkekhcn/4>Các cuộc điều tra thống kê KH&CN</a></li><li><a   href=/thongkekhcn/5>Số liệu thống kê</a></li><li><a   href=/thongkekhcn/6>Nghiệp vụ thống kê</a></li><li><a   href=/thongkekhcn/7>Biểu mẫu thống kê</a></li></ul></li><li><a href="/thongke/khoahoccongnghe/doc">Hệ thống văn bản</a></li><li><a href="#">Trợ giúp</a><ul><li><a   href=/thongkekhcn/8>Hướng dẫn</a></li><li><a   href=/thongkekhcn/Page/CSDL/csdl.aspx?case=cpw>Đổi mật khẩu</a></li></ul></li></span>
+                                <span id="ctl00_Banner1_MenuHori1_lblMenuLeft">
+                                    <li>
+                                        <a href="#">Công bố số liệu thống kê</a>
+                                        <ul>
+                                            <li><a href='/thongkecoso'>Thống kê KHCN cơ sở</a></li>
+                                            <li><a href='/thongketonghop'>Thống kê KHCN tổng hợp</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Thống kê KHCN</a>
+                                        <ul>
+                                            <li><a href='/thongkekhcn/1'>Hệ thống chỉ tiêu thống kê</a></li>
+                                            <li><a href='/thongkekhcn/2'>Bảng phân loại và danh mục chuẩn</a></li>
+                                            <li><a href='/thongkekhcn/3'>Chế độ báo cáo thống kê</a></li>
+                                            <li><a href='/thongkekhcn/4'>Các cuộc điều tra thống kê KH&CN</a></li>
+                                            <li><a href='/thongkekhcn/5'>Số liệu thống kê</a></li>
+                                            <li><a href='/thongkekhcn/6'>Nghiệp vụ thống kê</a></li>
+                                            <li><a href='/thongkekhcn/7'>Biểu mẫu thống kê</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/thongke/khoahoccongnghe/doc">Hệ thống văn bản</a></li>
+                                    <li>
+                                        <a href="#">Trợ giúp</a>
+                                        <ul>
+                                            <li><a href='/thongkekhcn/8'>Hướng dẫn</a></li>
+                                            <li><a href="/thanhvien/doimatkhau">Đổi mật khẩu</a></li>
+                                        </ul>
+                                    </li>
+                                </span>
                             </ul>
                         </div>
                     </td>

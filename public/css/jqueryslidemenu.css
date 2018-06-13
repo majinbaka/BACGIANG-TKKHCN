@@ -80,7 +80,7 @@
 /* Sub level menu links style */
 .jqueryslidemenu ul li ul li a
 {
-	background-image: url(../images/bg_menutop.jpg);
+	background-image: url(/image/bg_menutop.jpg);
 	background-color: #006699;
 	background-repeat: repeat;
 	border: solid 1px #FFFFFF;

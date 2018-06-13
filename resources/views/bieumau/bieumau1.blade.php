@@ -39,14 +39,14 @@
             padding: 8px 20px 8px 8px;
             margin-bottom: 3px;
             float: left;
-            background: url("/thongkekhcn/Images/init_bg2.png") no-repeat right top;
+            background: url("/image/init_bg2.png") no-repeat right top;
             color: #ffffff;
             font-weight: bold;
         }
         
         .Initial:hover {
             color: White;
-            background: url("../Images/HoverButton.png") repeat-x right top;
+            background: url("/image/HoverButton.png") repeat-x right top;
             margin: 0px 0px 0px 0px;
             padding: 8px 20px 8px 8px;
             color: Black;
@@ -55,7 +55,7 @@
         .Clicked {
             float: left;
             display: block;
-            background: url("../Images/SelectedButton.png") repeat-x right top;
+            background: url("/image/SelectedButton.png") repeat-x right top;
             padding: 8px 20px 8px 8px;
             color: Black;
             font-weight: bold;
@@ -73,13 +73,17 @@
         <tr>
             <td align="left" valign="top">
                 <div align="left">
-                    <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab1" value="Biểu 01" id="ctl00_ContentPlaceHolder1_ctl00_Tab1" title="Biểu 01: Thông tin chung về đơn vị báo cáo" class="Clicked" style="border-style:None;" />
-                    <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab2" value="Biểu 02" id="ctl00_ContentPlaceHolder1_ctl00_Tab2" title="Biểu 02: Nhân lực hoạt động khoa học và công nghệ" class="Initial" style="border-style:None;" />
-                    <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab3" value="Biểu 03" id="ctl00_ContentPlaceHolder1_ctl00_Tab3" title="Biểu 03: Chi cho khoa học và công nghệ" class="Initial" style="border-style:None;" />
-                    <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab4" value="Biểu 04" id="ctl00_ContentPlaceHolder1_ctl00_Tab4" title="Biểu 04: Nhiệm vụ khoa học và công nghệ" class="Initial" style="border-style:None;" />
-                    <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab5" value="Biểu 05" id="ctl00_ContentPlaceHolder1_ctl00_Tab5" title="Biểu 05: Hợp tác quốc tế trong hoạt động khoa học và công nghệ" class="Initial" style="border-style:None;" />
-                    <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab6" value="Biểu 06" id="ctl00_ContentPlaceHolder1_ctl00_Tab6" title="Biểu 06: Giải thưởng khoa học và công nghệ" class="Initial" style="border-style:None;" />
-
+                    <form method="POST" action="">
+                        {{csrf_field()}}
+                        <input type="hidden" name="year" value="{{$bieu->reporter_year}}">
+                        <input type="hidden" name="id" value="{{$bieu->user_id}}">
+                    <input type="submit" name="1" value="Biểu 01" id="ctl00_ContentPlaceHolder1_ctl00_Tab1" title="Biểu 01: Thông tin chung về đơn vị báo cáo" class="Clicked" style="border-style:None;" />
+                    <input type="submit" name="2" value="Biểu 02" id="ctl00_ContentPlaceHolder1_ctl00_Tab2" title="Biểu 02: Nhân lực hoạt động khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                    <input type="submit" name="3" value="Biểu 03" id="ctl00_ContentPlaceHolder1_ctl00_Tab3" title="Biểu 03: Chi cho khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                    <input type="submit" name="4" value="Biểu 04" id="ctl00_ContentPlaceHolder1_ctl00_Tab4" title="Biểu 04: Nhiệm vụ khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                    <input type="submit" name="5" value="Biểu 05" id="ctl00_ContentPlaceHolder1_ctl00_Tab5" title="Biểu 05: Hợp tác quốc tế trong hoạt động khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                    <input type="submit" name="6" value="Biểu 06" id="ctl00_ContentPlaceHolder1_ctl00_Tab6" title="Biểu 06: Giải thưởng khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                    </form>
                 </div>
             </td>
         </tr>
@@ -129,7 +133,7 @@
     <div class="input-group-addon">
       <i class="fa fa-calendar"></i>
     </div>
-    <input name="publish_day" value="12/12/2012"  type="text" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
+    <input name="publish_day" value="{{date('d/m/Y', strtotime($bieu->publish_day))}}"  type="text" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
     {!! $errors->first('publish_day', '<p class="help-block">:message</p>') !!}
   </div></td>
   </tr>
@@ -233,7 +237,7 @@
             <td style="vertical-align: top; text-align: left" class="style5">
                 7.Ngày thành lập :
 
-                <span id="ctl00_ContentPlaceHolder1_ctl00_ctl00_lblNgayTL">{{$bieu->establish_day}}</span>
+                <span id="ctl00_ContentPlaceHolder1_ctl00_ctl00_lblNgayTL">{{date('d/m/Y', strtotime($bieu->establish_day))}}</span>
             </td>
         </tr>
         <tr>
@@ -313,7 +317,7 @@
         <tr>
             <td style="vertical-align: top; text-align: left" class="style5">
                 10. Giấy chứng nhận đăng ký hoạt động KHCN : &nbsp;&nbsp;Số {{$bieu->certificate_number}}
-                <span id="ctl00_ContentPlaceHolder1_ctl00_ctl00_lblSoGCN"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ngày cấp : {{$bieu->certificate_date}}
+                <span id="ctl00_ContentPlaceHolder1_ctl00_ctl00_lblSoGCN"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ngày cấp : {{date('d/m/Y', strtotime($bieu->certificate_date))}}
                 <span id="ctl00_ContentPlaceHolder1_ctl00_ctl00_lblNgayCap"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nơi cấp : {{$bieu->certificate_grant}}
                 <span id="ctl00_ContentPlaceHolder1_ctl00_ctl00_lblNoiCap"></span>
             </td>
@@ -531,14 +535,16 @@
                         <td>Năm đưa vào sử dụng</td>
                         <td>Nguyên giá(Tỷ đồng)</td>
                     </tr>
+                    @foreach ($bieu->technologies as $t )
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td>{{$t->name}}</td>
+                        <td>{{$t->code}}</td>
+                        <td>{{$t->country}}</td>
+                        <td>{{$t->year}}</td>
+                        <td>{{$t->use_year}}</td>
+                        <td>{{$t->money}}</td>
                     </tr>
+                    @endforeach
                 </table>
                 <br />
             </td>
@@ -654,20 +660,24 @@
                         <td>Họ và tên thủ trưởng</td>
                         <td>Địa chỉ, Điện thoại, Fax, Email</td>
                     </tr>
+                    @php 
+                    $i =0;
+                    @endphp
+                    @foreach ($bieu->elements as $e )
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
+                        <td>{{++$i}}</td>
+                        <td>{{$e->name}}</td>
+                        <td>{{$e->leader}}</td>
+                        <td>{{$e->address}}</td>
                     </tr>
+                    @endforeach
                 </table>
                 <br />
             </td>
         </tr>
         <tr>
             <td align="center" style="vertical-align: top; text-align: left">
-
-                <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$ctl00$btnIn" value="Xuất in" id="ctl00_ContentPlaceHolder1_ctl00_ctl00_btnIn" class="button" />
+                <a href="/generate/donvi/bieu1/{{$bieu->id}}" name="ctl00$ContentPlaceHolder1$ctl00$ctl00$btnIn" value="Xuất in" id="ctl00_ContentPlaceHolder1_ctl00_ctl00_btnIn" class="button">Xuất in</a>
             </td>
             <td style="vertical-align: top; text-align: left">
 
