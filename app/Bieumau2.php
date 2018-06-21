@@ -33,6 +33,23 @@ class Bieumau2 extends Model
         return $this->belongsTo('App\User');
     }
 
+    public static function countF1($y){
+        $b = Bieumau2::where('reporter_year', $y)->get();
+        $c = 0;
+        foreach ($b as $v) {
+            if ($v->hasT())
+                $c++;
+        }
+        return $c;
+    }
+
+    public function hasT(){
+        $s = parse_str($this->total, $out);
+        if ($out[1] == 0 || $out[1] == "")
+            return false;
+        return true;
+    }
+
     public static function ftmp($p){
         $s = parse_str($p, $out);
 

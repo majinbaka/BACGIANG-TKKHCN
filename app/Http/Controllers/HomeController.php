@@ -39,6 +39,12 @@ class HomeController extends Controller
         return view('index', array('info' => $info, 'links' => $links, 'documents' => $documents));
     }
 
+    public function transfer(){
+        $info = Post::orderBy('id', 'DESC')->limit(10)->get();
+
+        return view('transfer', array('info' => $info));
+    }
+
     public function tkkhcn($id)
     {
         $info = Information::find($id);
@@ -115,9 +121,17 @@ class HomeController extends Controller
         return view('thongkecoso', array('users' => $users,  'years' => $years, 'total' => $total, 'y' => $cyear));
     }
 
+    public function search(){
+        $params = Input::all();
+        $years = User::listYear();
+        $users = User::getAllUserHasReported($params['year'])->where('donviname', 'like', '%'.$params['s'].'%')->get();
+        $total = User::getAllUserHasReported($params['year'])->where('donviname', 'like', '%'.$params['s'].'%')->count();
+        return view('thongkecoso', array('users' => $users,  'years' => $years, 'total' => $total, 'y' => $params['year']));
+    }
+
     public function donvireport($year, $id){
         $user = User::find($id);
-            $bieu = Bieumau1::whereYear('publish_day', '=', $year)->where('user_id', $id)->first();
+            $bieu = Bieumau1::where('reporter_year', '=', $year)->where('user_id', $id)->first();
 
         return view('bieumau.bieumau1', array('bieu' => $bieu));
     }
@@ -155,22 +169,23 @@ class HomeController extends Controller
 
     public function thongketonghop($year = 0)
     {
-        if ($year = 0)
+        if ($year == 0)
             $year = User::lastYear();
+        $years = User::listYear();
         $bieuType = 1;
-        $bieu = Bieutonghop1::where('year', '=', $year)->first();
-        if (Input::has('2')){$bieu = Bieutonghop2::where('year', '=', $year)->first();$bieuType=2;}
-        if (Input::has('3')){$bieu = Bieutonghop3::where('year', '=', $year)->first();$bieuType=3;}
-        if (Input::has('4')){$bieu = Bieutonghop4::where('year', '=', $year)->first();$bieuType=4;}
-        if (Input::has('5')){$bieu = Bieutonghop5::where('year', '=', $year)->first();$bieuType=5;}
-        if (Input::has('6')){$bieu = Bieutonghop6::where('year', '=', $year)->first();$bieuType=6;}
-        if (Input::has('7')){$bieu = Bieutonghop7::where('year', '=', $year)->first();$bieuType=7;}
-        if (Input::has('8')){$bieu = Bieutonghop8::where('year', '=', $year)->first();$bieuType=8;}
-        if (Input::has('9')){$bieu = Bieutonghop9::where('year', '=', $year)->first();$bieuType=9;}
-        if (Input::has('10')){$bieu = Bieutonghop10::where('year', '=', $year)->first();$bieuType=10;}
-        if (Input::has('11')){$bieu = Bieutonghop11::where('year', '=', $year)->first();$bieuType=11;}
+        $bieu = Bieutonghop1::reBuildBieu($year);
+        if (Input::has('2')){$bieu = Bieutonghop2::reBuildBieu($year);$bieuType=2;}
+        if (Input::has('3')){$bieu = Bieutonghop3::reBuildBieu($year);$bieuType=3;}
+        if (Input::has('4')){$bieu = Bieutonghop4::reBuildBieu($year);$bieuType=4;}
+        if (Input::has('5')){$bieu = Bieutonghop5::reBuildBieu($year);$bieuType=5;}
+        if (Input::has('6')){$bieu = Bieutonghop6::reBuildBieu($year);$bieuType=6;}
+        if (Input::has('7')){$bieu = Bieutonghop7::where('year', $year)->first();$bieuType=7;}
+        if (Input::has('8')){$bieu = Bieutonghop8::where('year', $year)->first();$bieuType=8;}
+        if (Input::has('9')){$bieu = Bieutonghop9::where('year', $year)->first();$bieuType=9;}
+        if (Input::has('10')){$bieu = Bieutonghop10::where('year', $year)->first();$bieuType=10;}
+        if (Input::has('11')){$bieu = Bieutonghop11::where('year', $year)->first();$bieuType=11;}
         
-        return view('bieutonghop.'.$bieuType, array('bieu' => $bieu));
+        return view('bieutonghop.'.$bieuType, array('bieu' => $bieu, 'years' => $years));
     }
 
     public function generateBieu1($id)
@@ -228,71 +243,82 @@ class HomeController extends Controller
     }
 
     public function generateBieuTH($type, $id){
+        $params = Input::all();
+        $reporter = $params['reporter'];
+        $receiver = $params['receiver'];
+        if($reporter == 1)
+        {
+            $reporter = 'Sở KH&amp;CN Bắc Giang';
+        }
+        if($receiver == 1){$receiver = 'Cục Th&#244;ng tin KH&amp;CN Quốc gia';}
+        if($receiver == 2){$receiver = 'Sở KH&amp;CN tỉnh,tp.trực thuộc TƯ';}
+        if($receiver == 3){$receiver = 'Bộ/ng&#224;nh chủ quản';}
+
         if ($type==1)
         {
             $bieu = Bieutonghop1::find($id);
             $filename='Bieu01_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==2)
         {
             $bieu = Bieutonghop2::find($id);
             $filename='Bieu02_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==3)
         {
             $bieu = Bieutonghop3::find($id);
             $filename='Bieu03_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==4)
         {
             $bieu = Bieutonghop4::find($id);
             $filename='Bieu04_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==5)
         {
             $bieu = Bieutonghop5::find($id);
             $filename='Bieu05_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==6)
         {
             $bieu = Bieutonghop6::find($id);
             $filename='Bieu06_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==7)
         {
             $bieu = Bieutonghop7::find($id);
             $filename='Bieu07_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==8)
         {
             $bieu = Bieutonghop8::find($id);
             $filename='Bieu08_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==9)
         {
             $bieu = Bieutonghop9::find($id);
             $filename='Bieu09_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==10)
         {
             $bieu = Bieutonghop10::find($id);
             $filename='Bieu010_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
         if ($type==11)
         {
             $bieu = Bieutonghop11::find($id);
             $filename='Bieu011_TKTH_'.date('d_m_Y').'.xls';
-            file_put_contents($filename, $bieu->generateBieu());
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }
 
         return response()->download($filename);   

@@ -139,6 +139,7 @@ class ThanhvienDashboardController extends Controller
         $bieumau->type_econom = $params['type_econom'];
         $bieumau->money = $params['money'];
         $bieumau->lab_number = is_array($params['lab_number']) ? implode(',', $params['lab_number']) : $params['lab_number'];
+        $bieumau->lab_number_sub = $params['lab_number_sub'];
         $bieumau->lab_range = $params['lab_range'];
         $bieumau->lab_description = $params['lab_description'];
         $bieumau->report_info = $params['report_info'];
@@ -185,7 +186,6 @@ class ThanhvienDashboardController extends Controller
 
         $user = Auth::user();
         $bieumau = Bieumau2::where("user_id", $user->id)->where('reporter_year', $year)->first();
-    	$bieumau->name = $params['name'];
         $bieumau->publish_day = $publish_day;
         $bieumau->total = http_build_query($params['total']);
         $bieumau->female_total = http_build_query($params['female_total']);
@@ -212,7 +212,6 @@ class ThanhvienDashboardController extends Controller
 
         $user = Auth::user();
         $bieumau = Bieumau3::where("user_id", $user->id)->where('reporter_year', $year)->first();
-	    $bieumau->name = $params['name'];
         $bieumau->publish_day = $publish_day;
         $bieumau->total = http_build_query($params['total']);
         $bieumau->pay_improve_khcn = http_build_query($params['pay_improve_khcn']);
@@ -244,7 +243,6 @@ class ThanhvienDashboardController extends Controller
 
         $user = Auth::user();
         $bieumau = Bieumau4::where("user_id", $user->id)->where('reporter_year', $year)->first();
-    	$bieumau->name = $params['name'];
         $bieumau->publish_day = $publish_day;
         $bieumau->total = http_build_query($params['total']);
         $bieumau->subject_lv1 = http_build_query($params['subject_lv1']);
@@ -295,7 +293,6 @@ class ThanhvienDashboardController extends Controller
 
         $user = Auth::user();
         $bieumau = Bieumau5::where("user_id", $user->id)->where('reporter_year', $year)->first();
-	    $bieumau->name = $params['name'];
         $bieumau->publish_day = $publish_day;
         $bieumau->total = http_build_query($params['total']);
         $bieumau->mission_lab_1 = http_build_query($params['mission_lab_1']);
@@ -331,7 +328,6 @@ class ThanhvienDashboardController extends Controller
 
         $user = Auth::user();
         $bieumau = Bieumau6::where("user_id", $user->id)->where('reporter_year', $year)->first();
-	    $bieumau->name = $params['name'];
         $bieumau->publish_day = $publish_day;
         $bieumau->total = http_build_query($params['total']);
         $bieumau->total_award_vn = http_build_query($params['total_award_vn']);

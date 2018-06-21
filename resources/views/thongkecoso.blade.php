@@ -41,13 +41,15 @@
         <fieldset title="Tìm phương tiện đo" style="margin-bottom: 10px;">
             <legend><strong class="ThemMoi_CapNhat">Tìm kiếm</strong></legend>
             <div id="ctl00_ContentPlaceHolder1_ctl00_panSearch"  style="width:100%;">
+                <form role="form" method="POST" action="{{ url('/search') }}">
+                {{ csrf_field() }}
                 <table style="width: 100%">
                     <tr>
                         <td class="style1">
                             Năm:
                         </td>
                         <td>
-                            <select name="" onchange="" id="ctl00_ContentPlaceHolder1_ctl00_ddlNam">
+                            <select name="year" onchange="this.form.submit()" id="ctl00_ContentPlaceHolder1_ctl00_ddlNam">
                             @foreach($years as $year)
 								<option value="{{$year}}">{{$year}}</option>
 							@endforeach
@@ -57,7 +59,7 @@
                             Từ khóa:
                         </td>
                         <td style="width: 255px;">
-                            <input name="ctl00$ContentPlaceHolder1$ctl00$txtKey" type="text" id="ctl00_ContentPlaceHolder1_ctl00_txtKey" class="NomalTextBox" style="width:220px;" />                            
+                            <input name="s" type="text" id="ctl00_ContentPlaceHolder1_ctl00_txtKey" class="NomalTextBox" style="width:220px;" />                            
                         </td>
                         <td>
                             <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$btnSearch" value="Tìm kiếm" id="ctl00_ContentPlaceHolder1_ctl00_btnSearch" />
@@ -65,7 +67,7 @@
                         </td>
                     </tr>
                 </table>
-            
+            </form>
 </div>
         </fieldset>
         
@@ -90,7 +92,7 @@
 	@endphp
 	@foreach($users as $user)
 	<tr class="cssKhongChon">
-		<td class="TableCell_Center" colspan="1">{{$i++}}</td><td class="TableCell" colspan="1"><a href="/thongkecoso/donvi/{{$y}}/{{$user->id}}/1">{{$user->donviname}}</a></td><td class="TableCell" colspan="1">{{$user->address}}</td><td class="TableCell" colspan="1">{{$user->userLastReportedYear($y)}}</td>
+		<td class="TableCell_Center" colspan="1">{{$i++}}</td><td class="TableCell" colspan="1"><a href="/thongkecoso/donvi/{{$y}}/{{$user->id}}/1">{{$user->getEName()}}</a></td><td class="TableCell" colspan="1">{{$user->getAddressU()}}</td><td class="TableCell" colspan="1">{{$user->userLastReportedYear($y)}}</td>
 	</tr>
 	@endforeach
 </table></span><div style="height: 15px;

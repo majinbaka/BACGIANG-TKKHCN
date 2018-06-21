@@ -192,7 +192,7 @@
     <td class="KH_ThuTuCot_Mau01" colspan="1">9</td>
 </tr>
 @php
-$s = parse_str($bieu->total, $out);
+    $s = parse_str($bieu->total, $out);
 @endphp
 <tr>
     <td class="TableCell" colspan="1"><b>TỔNG SỐ</b></td>

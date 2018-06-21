@@ -47,7 +47,6 @@ class ThanhVienController extends Controller
             $user->username = Input::get('username');
             $user->email = Input::get('email');
             $user->donviname = Input::get('donviname');
-	        $user->address = Input::get('address');
 	        $user->password = Hash::make(Input::get('password'));
 	        $user->save();
 
@@ -89,7 +88,6 @@ class ThanhVienController extends Controller
                 $user->username = Input::get('username');
                 $user->email = Input::get('email');
                 $user->donviname = Input::get('donviname');
-                $user->address = Input::get('address');
                 $user->password = Hash::make(Input::get('password'));
                 $user->save();
             }
@@ -98,7 +96,6 @@ class ThanhVienController extends Controller
                 $user->name = Input::get('name');
                 $user->username = Input::get('username');
                 $user->donviname = Input::get('donviname');
-                $user->address = Input::get('address');
                 $user->email = Input::get('email');
                 $user->save();
             }

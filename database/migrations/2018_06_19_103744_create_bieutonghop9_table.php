@@ -18,17 +18,17 @@ class CreateBieutonghop9Table extends Migration
             $table->string('reporter')->nullable();
             $table->string('receiver')->nullable();
             $table->string('year')->nullable();
-            $table->string('field_1')->nullable();
-            $table->string('field_2')->nullable();
-            $table->string('field_3')->nullable();
-            $table->string('field_4')->nullable();
-            $table->string('field_5')->nullable();
-            $table->string('field_6')->nullable();
-            $table->string('field_7')->nullable();
-            $table->string('field_8')->nullable();
-            $table->string('field_9')->nullable();
-            $table->string('field_10')->nullable();
-            $table->string('field_11')->nullable();
+            $table->string('field_1')->default('1=&2=&3=&4=');
+            $table->string('field_2')->default('1=&2=&3=&4=');
+            $table->string('field_3')->default('1=&2=&3=&4=');
+            $table->string('field_4')->default('1=&2=&3=&4=');
+            $table->string('field_5')->default('1=&2=&3=&4=');
+            $table->string('field_6')->default('1=&2=&3=&4=');
+            $table->string('field_7')->default('1=&2=&3=&4=');
+            $table->string('field_8')->default('1=&2=&3=&4=');
+            $table->string('field_9')->default('1=&2=&3=&4=');
+            $table->string('field_10')->default('1=&2=&3=&4=');
+            $table->string('field_11')->default('1=&2=&3=&4=');
             $table->timestamps();
         });
     }

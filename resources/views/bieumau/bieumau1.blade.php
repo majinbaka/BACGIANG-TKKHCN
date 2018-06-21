@@ -553,7 +553,59 @@
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
             <td style="vertical-align: top; width: 250px; text-align: left" class="style1">
-                18. Lĩnh vực nghiên cứu chính
+                18. Lĩnh vực nghiên cứu chính theo chức năng nhiệm vụ
+            </td>
+            <td style="vertical-align: top; text-align: left">
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">
+                    <tr>
+                        <td align="left" style="padding-right: 5px; width: 100px">
+
+                            <table id="ctl00_ContentPlaceHolder1_ctl00_ctl00_rdolist_LinhVuc" border="0">
+                                <tr>
+                                    <td>
+                                        <input type="radio" @if($bieu->lab_number_sub == 1) checked="checked" @endif />
+                                        <label>1. Khoa học tự nhiên</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" @if($bieu->lab_number_sub == 2) checked="checked" @endif />
+                                        <label>2. Khoa học kỹ thuật và công nghệ</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" @if($bieu->lab_number_sub == 3) checked="checked" @endif/>
+                                        <label >3. Khoa học y dược</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" @if($bieu->lab_number_sub == 4) checked="checked" @endif/>
+                                        <label >4. Khoa học nông nghiệp</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" @if($bieu->lab_number_sub == 5) checked="checked" @endif/>
+                                        <label>5. Khoa học xã hội</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" @if($bieu->lab_number_sub == 6) checked="checked" @endif/>
+                                        <label >6. Khoa học nhân văn</label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="vertical-align: top; width: 250px; text-align: left" class="style1">
+                18. Lĩnh vực nghiên cứu khác
             </td>
             <td style="vertical-align: top; text-align: left">
                 <table border="0" cellpadding="0" cellspacing="0" style="width: 100%">

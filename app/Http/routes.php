@@ -1,15 +1,8 @@
 <?php
 Route::get('/','HomeController@tintucs');
-Route::get('/gopy', function () {
-    return view('transfer');
-});
-Route::get('/login', function () {
-    return view('transfer');
-});
-Route::get('/reg', function () {
-    return view('transfer');
-});
-
+Route::get('/reg', 'HomeController@transfer');
+Route::get('/gopy', 'HomeController@transfer');
+Route::get('/login', 'HomeController@transfer');
 //Admin login
 Route::get('/admin/login', 'AdminLoginController@showLoginForm')->name('admin.login.show');
 Route::post('/admin/login', 'AdminLoginController@login')->name('admin.login');
@@ -37,7 +30,9 @@ Route::get('/generate/donvi/bieu6/{id}', 'HomeController@generateBieu6');
 Route::post('/thongkecoso/donvi/{year}/{id}/{type}', 'HomeController@donvireportX');
 Route::post('/thongketonghop/{year}', 'HomeController@thongketonghop');
 Route::get('/thongketonghop/', 'HomeController@thongketonghop');
-Route::get('/generate/tonghop/bieu/{type}/{id}', 'HomeController@generateBieuTH');
+Route::post('/generate/tonghop/bieu/{type}/{id}', 'HomeController@generateBieuTH');
+Route::post('/search', 'HomeController@search');
+// Route::get('/fx', 'HomeController@fx');
 
 
 Route::group(['middleware' => 'auth:web'], function () {
@@ -81,6 +76,10 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/thanhvien/{id}/edit', 'ThanhVienController@edit')->name('thanhviens.edit');
         Route::patch('/thanhvien/{id}', 'ThanhVienController@update')->name('thanhviens.update');
         Route::delete('/thanhvien/{id}', 'ThanhVienController@destroy')->name('thanhviens.destroy');
+
+        Route::get('/tkkhth', 'TkkhthController@index')->name('tkkhth.index');
+        Route::get('/tkkhth/{year}/bieu/{id}', 'TkkhthController@edit')->name('tkkhth.edit');
+        Route::patch('/tkkhth/{year}/bieu/{id}', 'TkkhthController@update')->name('tkkhth.update');
 
         Route::get('/thongke/{id}/edit', 'ThongTinController@edit')->name('thongtins.edit');
         Route::patch('/thongke/{id}', 'ThongTinController@update')->name('thongtins.update');

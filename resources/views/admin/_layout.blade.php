@@ -43,7 +43,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -91,11 +91,24 @@
             <i class="fa fa-files-o"></i>
             <span>Thành viên</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="/admin/thanhvien"><i class="fa fa-circle-o"></i>Danh sách</a></li>
             <li><a href="/admin/thanhvien/create"><i class="fa fa-circle-o"></i>Tạo mới</a></li>
+          </ul>
+        </li><li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Thống kê khoa học tổng hợp</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/tkkhth"><i class="fa fa-circle-o"></i>Danh sách</a></li>
+            <li><a href="/admin/tkkhth/create"><i class="fa fa-circle-o"></i>Tạo mới</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -146,10 +159,10 @@
     <!-- /.sidebar -->
   </aside>
 <div class="content-wrapper">
-@if(Session::has('flash_message'))
+@if(Session::has('message'))
                 <div class="alert alert-success">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true" >&times;</button>
-                    {{ Session::get('flash_message') }}
+                    {{ Session::get('message') }}
                 </div>
             @endif
 @yield('content')

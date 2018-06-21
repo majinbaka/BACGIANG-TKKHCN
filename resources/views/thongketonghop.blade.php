@@ -135,7 +135,7 @@ text-decoration: none;
                     </td>
                     <td style="vertical-align: top; text-align: left">
                         <select name="ctl00$ContentPlaceHolder1$ctl00$ctl00$drpDonVi" id="ctl00_ContentPlaceHolder1_ctl00_ctl00_drpDonVi" style="width:279px;">
-	<option selected="selected" value="1">Sở KH&amp;CN Quảng Trị</option>
+	<option selected="selected" value="1">Sở KH&amp;CN Bắc Giang</option>
 
 </select>
                     </td>

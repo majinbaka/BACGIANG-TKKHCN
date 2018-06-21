@@ -393,7 +393,46 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Lĩnh vực nghiên cứu chính:</label>
+                  <label for="exampleInputEmail1">Lĩnh vực nghiên cứu chính theo chức năng nhiệm vụ :</label>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="lab_number_sub" id="optionsRadios1" value="1">
+                      1. Khoa học tự nhiên
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="lab_number_sub" id="optionsRadios2" value="2">
+                        2. Khoa học kỹ thuật và công nghệ
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="lab_number_sub" id="optionsRadios3" value="3">
+                        3. Khoa học y dược
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="lab_number_sub" id="optionsRadios3" value="4">
+                          4. Khoa học nông nghiệp
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="lab_number_sub" id="optionsRadios3" value="5">
+                        5. Khoa học xã hội
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="lab_number_sub" id="optionsRadios3" value="6">
+                        6. Khoa học nhân văn
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Lĩnh vực nghiên cứu khác:</label>
                   <div class="form-group">
                     <div class="checkbox">
                       <label>

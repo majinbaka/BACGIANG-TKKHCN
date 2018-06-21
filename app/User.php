@@ -15,7 +15,7 @@ use DB;
 class User extends Authenticatable
 {
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'donviname', 'address'
+        'name', 'username', 'email', 'password', 'donviname',
     ];
 
     protected $hidden = [
@@ -61,40 +61,38 @@ class User extends Authenticatable
     }
 
     public static function listYear(){
-        $years1 = Bieumau1::select(DB::raw('YEAR(publish_day) year'))->groupby('year')->get()->toArray();
-        $years2 = Bieumau2::select(DB::raw('YEAR(publish_day) year'))->groupby('year')->get()->toArray();
-        $years3 = Bieumau3::select(DB::raw('YEAR(publish_day) year'))->groupby('year')->get()->toArray();
-        $years4 = Bieumau4::select(DB::raw('YEAR(publish_day) year'))->groupby('year')->get()->toArray();
-        $years5 = Bieumau5::select(DB::raw('YEAR(publish_day) year'))->groupby('year')->get()->toArray();
-        $years6 = Bieumau6::select(DB::raw('YEAR(publish_day) year'))->groupby('year')->get()->toArray();
-
-        $years = array_unique(array_merge($years1,$years2,$years3,$years4,$years5,$years6), SORT_DESC);
+        $years1 = Bieumau1::select('reporter_year')->groupby('reporter_year')->get()->toArray();
+        $years = array_unique($years1, SORT_DESC);
         $res = [];
 
         foreach($years as $year)
         {
-            $res[] = $year['year'];
+            $res[] = $year['reporter_year'];
         }
         rsort($res);
         
         return $res;
     }
 
+    public function getAddressU(){
+        $b = Bieumau1::where('user_id', $this->id)->where('reporter_year','=', User::lastYear())->first();
+        if ($b)
+        return $b->address;
+    return "";
+    }
+
+    public function getEName(){
+        $b = Bieumau1::where('user_id', $this->id)->where('reporter_year','=', User::lastYear())->first();
+        if ($b)
+        return $b->reporter_element_name;
+    return "";
+    }
+
     public function userLastReportedYear($year)
     {
         $last = '';
-        $b1 = Bieumau1::where('user_id', $this->id)->whereYear('publish_day','=', $year)->first();
+        $b1 = Bieumau1::where('user_id', $this->id)->where('reporter_year','=', $year)->first();
         if ($b1) $last = $b1->publish_day;
-        $b2 = Bieumau2::where('user_id', $this->id)->whereYear('publish_day','=',$year)->whereDate('publish_day', '>', $last)->first();
-        if ($b2) $last = $b2->publish_day;
-        $b3 = Bieumau3::where('user_id', $this->id)->whereYear('publish_day','=',$year)->whereDate('publish_day', '>', $last)->first();
-        if ($b3) $last = $b3->publish_day;
-        $b4 = Bieumau4::where('user_id', $this->id)->whereYear('publish_day','=',$year)->whereDate('publish_day', '>', $last)->first();
-        if ($b4) $last = $b4->publish_day;
-        $b5 = Bieumau5::where('user_id', $this->id)->whereYear('publish_day','=',$year)->whereDate('publish_day', '>', $last)->first();
-        if ($b5) $last = $b5->publish_day;
-        $b6 = Bieumau6::where('user_id', $this->id)->whereYear('publish_day','=',$year)->whereDate('publish_day', '>', $last)->first();
-        if ($b6) $last = $b6->publish_day;
 
         return $last;
     }

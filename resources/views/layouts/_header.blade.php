@@ -46,12 +46,16 @@
 
     <style type="text/css">
         .masthead {
-            background-image: url(/image/bg_thongke_banner2.jpg);
-            height: 104px;
+            background-image: url(/image/banner.png);
+            height: 124px;
             border-bottom: solid 0px #aaaaaa;
             margin: 0 auto;
             background-position: center -1px;
             background-repeat: no-repeat;
+            -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
         }
         
         .note {

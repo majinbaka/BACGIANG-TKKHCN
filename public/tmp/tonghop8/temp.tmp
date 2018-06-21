@@ -131,9 +131,7 @@
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>1. SỐ QUY CHUẨN KỸ THUẬT ĐỊA PHƯƠNG ĐƯỢC BAN HÀNH</b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>01</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Quy chuẩn</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f1@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>Chia theo loại quy chuẩn</b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
@@ -145,51 +143,37 @@
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Quy chuẩn kỹ thuật chung</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>02</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Quy chuẩn</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f2@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Quy chuẩn kỹ thuật an toàn</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>03</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Quy chuẩn</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f3@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Quy chuẩn kỹ thuật môi trường</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>04</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Quy chuẩn</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f4@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Quy chuẩn kỹ thuật quá trình</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>05</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Quy chuẩn</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f5@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Quy chuẩn kỹ thuật dịch vụ</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>06</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Quy chuẩn</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f6@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>2. SỐ TỔ CHỨC KIỂM ĐỊNH PHƯƠNG TIỆN ĐO </b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>07</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Tổ chức</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>3</td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>3</td>
-            </tr>
+@f7@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>3. SỐ PHƯƠNG TIỆN ĐO ĐƯỢC KIỂM ĐỊNH</b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>08</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phương tiện</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>25366</td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>25366</td>
-            </tr>
+@f8@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>Chia theo loại phương tiện đo</b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
@@ -201,93 +185,67 @@
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Độ dài</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>09</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phương tiện</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>129</td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>129</td>
-            </tr>
+@f9@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Khối lượng</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>10</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phương tiện</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>1451</td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>1451</td>
-            </tr>
+@f10@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Dung tích - Lưu lượng</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>11</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phương tiện</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>7469</td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>7469</td>
-            </tr>
+@f11@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Áp suất</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>12</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phương tiện</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>227</td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>227</td>
-            </tr>
+@f12@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Nhiệt độ</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>13</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phương tiện</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f13@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Hoá lý</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>14</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phương tiện</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f14@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Điện - Điện tử</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>15</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phương tiện</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>15961</td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>15961</td>
-            </tr>
+@f15@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Thời gian - Tần số - Âm thanh</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>16</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phương tiện</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>129</td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>129</td>
-            </tr>
+@f16@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>4. SỐ GIẤY CHỨNG NHẬN VỀ HỆ THỐNG QUẢN LÝ CẤP CHO TỔ CHỨC, DOANH NGHIỆP</b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>17</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Giấy chứng nhận</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f17@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Cơ quan quản lý nhà nước</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>18</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Giấy chứng nhận</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f18@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>- Các cơ quan, doanh nghiệp và tổ chức khác</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>19</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Giấy chứng nhận</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f19@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>5. SỐ PHÒNG THỬ NGHIỆM, HIỆU CHUẨN ĐƯỢC CÔNG NHẬN</b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>20</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Phòng</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>4</td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>4</td>
-            </tr>
+@f20@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>6. SỐ TỔ CHỨC ĐÁNH GIÁ SỰ PHÙ HỢP ĐĂNG KÝ HOẠT ĐỘNG</b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>21</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Tổ chức</i></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
-            </tr>
+@f21@            </tr>
         </table><br/>
         <table align="right" width="100%" border="0" cellspacing="0" cellpadding="0" "mso-border-alt: none windowtext .0pt; mso-border-insideh: .0pt none windowtext; mso-border-insidev: .0pt none windowtext">
             <tr>

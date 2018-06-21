@@ -294,10 +294,25 @@
 
                     <body lang=EN-US style='tab-interval:.5in'>
                         <div class=Section1>
-                            <left>18. Mô tả lĩnh vực nghiên cứu chính của đơn vị:<i>(Ghi đến mã cấp 2 trong Bảng phân loại lĩnh<br/> vực nghiên cứu KH&CN ban hành kèm theo Quyết định số 12/2008/QĐ-BKHCN ngày 04/9/2008 của Bộ trưởng Bộ KH&CN)</i>
+                            <left>18.1 Mô tả lĩnh vực nghiên cứu chính theo chức năng nhiệm vụ của đơn vị:<i>(Ghi đến mã cấp 2 trong Bảng phân loại lĩnh<br/> vực nghiên cứu KH&CN ban hành kèm theo Quyết định số 12/2008/QĐ-BKHCN ngày 04/9/2008 của Bộ trưởng Bộ KH&CN)</i>
                                 <left>
                                     <br/>
+                                    @lab_number_sub@
                                     
+                                    <br/>
+
+                </td>
+            </tr>
+        </table>
+        <table align="right" width="100%" border="0" cellspacing="0" cellpadding="5" style='mso-border-alt: solid windowtext .1pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
+            <tr>
+                <td rowspan="1" align="left" colspan="17">
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <left>18.2 Mô tả lĩnh vực nghiên cứu của đơn vị:
+                                <left>
+                                    <br/>
                                     @lab_number@
                                     <br/>
 

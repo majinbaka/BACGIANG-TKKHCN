@@ -39,6 +39,7 @@ class Bieumau1 extends Model
         'type_econom',
         'money',
         'lab_number',
+        'lab_number_sub',
         'lab_range',
         'lab_description',
         'report_info',
@@ -170,6 +171,26 @@ class Bieumau1 extends Model
         return $res;
     }
 
+    public function labNumberSubTmp(){
+    	$res = "<br/>
+<input type='checkbox' unchecked/><a>1. Khoa học tự nhiên</a>
+<br/>
+<input type='checkbox' unchecked/><a>2. Khoa học kỹ thuật và công nghệ</a>
+<br/>
+<input type='checkbox' unchecked/><a>3. Khoa học y dược</a>
+<br/>
+<input type='checkbox' unchecked/><a>4. Khoa học nông nghiệp</a>
+<br/>
+<input type='checkbox' unchecked/><a>5. Khoa học xã hội</a>
+<br/>
+<input type='checkbox' unchecked/><a>6. Khoa học nhân văn</a>
+</td>";
+        $res = str_replace("unchecked/><a>".$this->lab_number_sub, "checked/><a>".$this->lab_number_sub, $res);
+
+        return $res;
+    }
+
+
     public function technologiesTmp(){
         $technologies = $this->technologies;
         $res = "";
@@ -275,6 +296,7 @@ class Bieumau1 extends Model
         $file = str_replace('@money@', $this->money, $file);
         $file = str_replace('@lab_range@', $this->lab_range, $file);
         $file = str_replace('@technologies@', $this->technologiesTmp(), $file);
+        $file = str_replace('@lab_number_sub@', $this->labNumberSubTmp(), $file);
         $file = str_replace('@lab_number@', $this->labNumberTmp(), $file);
         $file = str_replace('@lab_description@', $this->lab_description, $file);
         $file = str_replace('@report_info@', $this->reportInfoTmp(), $file);
