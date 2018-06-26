@@ -15,7 +15,7 @@ use DB;
 class User extends Authenticatable
 {
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'donviname',
+        'name', 'username', 'email', 'password', 'donviname', 'check'
     ];
 
     protected $hidden = [
@@ -23,21 +23,21 @@ class User extends Authenticatable
     ];
 
     public static function getAllUserHasReported($y){
-        $b = Bieumau1::where('reporter_year', $y)->pluck('user_id');
+        $b = Bieumau1::where('reporter_year', $y)->where('check', 1)->pluck('user_id');
         $u = User::whereIn('id', $b);
         return $u;
     }
 
     public static function lastYear()
     {
-        $b1 = Bieumau1::max('reporter_year');
+        $b1 = Bieumau1::where('check', 1)->max('reporter_year');
         
         return $b1 ? $b1 : 0;
     }
 
     public function hasReported($year)
     {
-        $b1 = Bieumau1::where('user_id', $this->id)->where('reporter_year','=',$year)->first();
+        $b1 = Bieumau1::where('user_id', $this->id)->where('check', 1)->where('reporter_year','=',$year)->first();
         if ($b1) return true;
         return false;
     }
@@ -55,13 +55,13 @@ class User extends Authenticatable
 
     public function bieumauYearFinish()
     {
-        $b1 = Bieumau1::where('user_id', $this->id)->max('reporter_year');
+        $b1 = Bieumau1::where('user_id', $this->id)->where('check', 1)->max('reporter_year');
         
         return $b1 ? $b1 : 0;
     }
 
     public static function listYear(){
-        $years1 = Bieumau1::select('reporter_year')->groupby('reporter_year')->get()->toArray();
+        $years1 = Bieumau1::where('check', 1)->select('reporter_year')->groupby('reporter_year')->get()->toArray();
         $years = array_unique($years1, SORT_DESC);
         $res = [];
 
@@ -74,15 +74,15 @@ class User extends Authenticatable
         return $res;
     }
 
-    public function getAddressU(){
-        $b = Bieumau1::where('user_id', $this->id)->where('reporter_year','=', User::lastYear())->first();
+    public function getAddressU($year){
+        $b = Bieumau1::where('user_id', $this->id)->where('check', 1)->where('reporter_year','=', $year)->first();
         if ($b)
         return $b->address;
     return "";
     }
 
-    public function getEName(){
-        $b = Bieumau1::where('user_id', $this->id)->where('reporter_year','=', User::lastYear())->first();
+    public function getEName($year){
+        $b = Bieumau1::where('user_id', $this->id)->where('check', 1)->where('reporter_year','=', $year)->first();
         if ($b)
         return $b->reporter_element_name;
     return "";
@@ -91,7 +91,7 @@ class User extends Authenticatable
     public function userLastReportedYear($year)
     {
         $last = '';
-        $b1 = Bieumau1::where('user_id', $this->id)->where('reporter_year','=', $year)->first();
+        $b1 = Bieumau1::where('user_id', $this->id)->where('check', 1)->where('reporter_year','=', $year)->first();
         if ($b1) $last = $b1->publish_day;
 
         return $last;
@@ -101,27 +101,27 @@ class User extends Authenticatable
     {
         switch ($bieumautype) {
             case 1:
-                return Bieumau1::where('user_id', $this->id)->whereYear('publish_day','=',$year)->first();
+                return Bieumau1::where('user_id', $this->id)->where('check', 1)->whereYear('publish_day','=',$year)->first();
                 break;
             
             case 2:
-                return Bieumau2::where('user_id', $this->id)->whereYear('publish_day','=',$year)->first();
+                return Bieumau2::where('user_id', $this->id)->where('check', 1)->whereYear('publish_day','=',$year)->first();
                 break;
             
             case 3:
-                return Bieumau3::where('user_id', $this->id)->whereYear('publish_day','=',$year)->first();
+                return Bieumau3::where('user_id', $this->id)->where('check', 1)->whereYear('publish_day','=',$year)->first();
                 break;
             
             case 4:
-                return Bieumau4::where('user_id', $this->id)->whereYear('publish_day','=',$year)->first();
+                return Bieumau4::where('user_id', $this->id)->where('check', 1)->whereYear('publish_day','=',$year)->first();
                 break;
             
             case 5:
-                return Bieumau5::where('user_id', $this->id)->whereYear('publish_day','=',$year)->first();
+                return Bieumau5::where('user_id', $this->id)->where('check', 1)->whereYear('publish_day','=',$year)->first();
                 break;
             
             case 6:
-                return Bieumau6::where('user_id', $this->id)->whereYear('publish_day','=',$year)->first();
+                return Bieumau6::where('user_id', $this->id)->where('check', 1)->whereYear('publish_day','=',$year)->first();
                 break;
             
             default:

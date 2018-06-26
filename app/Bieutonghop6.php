@@ -59,7 +59,7 @@ class Bieutonghop6 extends Model
     }
 
     public static function F6Collection($year){
-        $b2 = Bieumau6::where('reporter_year', $year)->get();
+        $b2 = Bieumau6::where('reporter_year', $year)->where('check', 1)->get();
         $ids = [];
         foreach ($b2 as $b) {
             if ($b->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b->total != "1=&2=&3=&4=&5=&6=&7="){
@@ -72,7 +72,7 @@ class Bieutonghop6 extends Model
     public static function F6Sum($year, $value, $column)
     {
         $col = Bieutonghop6::F6Collection($year);
-        $b2 = Bieumau6::whereIn('id', $col)->get();
+        $b2 = Bieumau6::whereIn('id', $col)->where('check', 1)->get();
         $sum = 0;
 
         foreach ($b2 as $b) {

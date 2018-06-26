@@ -83,7 +83,7 @@ return "<td rowspan='1' align='center' style='    font-family: Times New Roman; 
 
 
     public static function F5Collection($year){
-        $b2 = Bieumau5::where('reporter_year', $year)->get();
+        $b2 = Bieumau5::where('reporter_year', $year)->where('check', 1)->get();
         $ids = [];
         foreach ($b2 as $b) {
             if ($b->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b->total != "1=&2="){
@@ -96,7 +96,7 @@ return "<td rowspan='1' align='center' style='    font-family: Times New Roman; 
     public static function F5Sum($year, $value, $column)
     {
         $col = Bieutonghop5::F5Collection($year);
-        $b2 = Bieumau5::whereIn('id', $col)->get();
+        $b2 = Bieumau5::whereIn('id', $col)->where('check', 1)->get();
         $sum = 0;
 
         foreach ($b2 as $b) {

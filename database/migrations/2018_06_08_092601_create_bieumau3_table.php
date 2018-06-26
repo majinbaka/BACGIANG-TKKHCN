@@ -17,6 +17,7 @@ class CreateBieumau3Table extends Migration
             $table->string('name')->nullable();
             $table->integer('user_id');
             $table->string('reporter_year');
+            $table->integer('check')->default(1);
             $table->date('publish_day')->nullable();
             $table->string('total')->nullable();
             $table->string('pay_improve_khcn')->nullable();

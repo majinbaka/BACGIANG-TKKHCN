@@ -15,6 +15,7 @@ class CreateBieumau5Table extends Migration
         Schema::create('bieumau5', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('check')->default(1);
             $table->string('name')->nullable();
             $table->date('publish_day')->nullable();
             $table->string('reporter_year');

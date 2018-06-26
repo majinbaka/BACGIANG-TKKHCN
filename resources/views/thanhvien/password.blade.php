@@ -3,7 +3,6 @@
     @parent
 @endsection
 @section('content')
-
     <section class="content-header">
       <h1>
         Đổi mật khẩu

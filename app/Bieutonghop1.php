@@ -46,11 +46,12 @@ class Bieutonghop1 extends Model
     }
 
     public static function F1Collection($year){
-        $b1 = Bieumau1::where('reporter_year', $year)->get();
+        $b1 = Bieumau1::where('reporter_year', $year)->where('check', 1)->get();
         $ids = [];
         foreach ($b1 as $b) {
             $b2 = Bieumau2::where('reporter_year', $year)
                 ->where('user_id', $b->user_id)
+                ->where('check', 1)
                 ->first();
             if ($b2->total != "1=&2=&3=&4=&5=&6=&7=&8=&9="){
                 $ids[] = $b->id;
@@ -58,6 +59,7 @@ class Bieutonghop1 extends Model
             }
             $b3 = Bieumau3::where('reporter_year', $year)
                 ->where('user_id', $b->user_id)
+                ->where('check', 1)
                 ->first();
             if ($b3->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b3->total != "1=&2=&3=&4=&5="){
                 $ids[] = $b->id;
@@ -65,6 +67,7 @@ class Bieutonghop1 extends Model
             }
             $b4 = Bieumau4::where('reporter_year', $year)
                 ->where('user_id', $b->user_id)
+                ->where('check', 1)
                 ->first();
             if ($b4->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b4->total != "1=&2=&3=&4=&5=&6="){
                 $ids[] = $b->id;
@@ -72,6 +75,7 @@ class Bieutonghop1 extends Model
             }
             $b5 = Bieumau5::where('reporter_year', $year)
                 ->where('user_id', $b->user_id)
+                ->where('check', 1)
                 ->first();
             if ($b5->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b5->total != "1=&2="){
                 $ids[] = $b->id;
@@ -79,6 +83,7 @@ class Bieutonghop1 extends Model
             }
             $b6 = Bieumau6::where('reporter_year', $year)
                 ->where('user_id', $b->user_id)
+                ->where('check', 1)
                 ->first();
             if ($b6->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b6->total != "1=&2=&3=&4=&5=&6=&7="){
                 $ids[] = $b->id;
@@ -91,15 +96,15 @@ class Bieutonghop1 extends Model
     public static function buildF1($year){
         $col = Bieutonghop1::F1Collection($year);
         $f1 = Bieutonghop1::F1Total($year);
-        $f2 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->count();
-        $f3 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 2)->count();
-        $f4 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 3)->count();
-        $f5 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 4)->count();
-        $f6 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 5)->count();
-        $f7 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 6)->count();
-        $f8 = Bieumau1::whereIn('id', $col)->where('type_econom', 1)->count();
-        $f9 = Bieumau1::whereIn('id', $col)->where('type_econom', 2)->count();
-        $f10 = Bieumau1::whereIn('id', $col)->where('type_econom', 3)->count();
+        $f2 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->where('check', 1)->count();
+        $f3 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 2)->where('check', 1)->count();
+        $f4 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 3)->where('check', 1)->count();
+        $f5 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 4)->where('check', 1)->count();
+        $f6 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 5)->where('check', 1)->count();
+        $f7 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 6)->where('check', 1)->count();
+        $f8 = Bieumau1::whereIn('id', $col)->where('type_econom', 1)->where('check', 1)->count();
+        $f9 = Bieumau1::whereIn('id', $col)->where('type_econom', 2)->where('check', 1)->count();
+        $f10 = Bieumau1::whereIn('id', $col)->where('type_econom', 3)->where('check', 1)->count();
 
         return http_build_query(array(1=>$f1,2=>$f2,3=>$f3,4=>$f4,5=>$f5,6=>$f6,7=>$f7,8=>$f8,9=>$f9,10=>$f10));
     }
@@ -107,64 +112,64 @@ class Bieutonghop1 extends Model
 
     public static function buildF2($year, $e){
         $col = Bieutonghop1::F1Collection($year);
-        $f1 = Bieumau1::whereIn('id', $col)->where('establish_lever', $e)->count();
-        $f2 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->where('establish_lever', $e)->count();
-        $f3 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 2)->where('establish_lever', $e)->count();
-        $f4 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 3)->where('establish_lever', $e)->count();
-        $f5 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 4)->where('establish_lever', $e)->count();
-        $f6 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 5)->where('establish_lever', $e)->count();
-        $f7 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 6)->where('establish_lever', $e)->count();
-        $f8 = Bieumau1::whereIn('id', $col)->where('type_econom', 1)->where('establish_lever', $e)->count();
-        $f9 = Bieumau1::whereIn('id', $col)->where('type_econom', 2)->where('establish_lever', $e)->count();
-        $f10 = Bieumau1::whereIn('id', $col)->where('type_econom', 3)->where('establish_lever', $e)->count();
+        $f1 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('establish_lever', $e)->count();
+        $f2 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 1)->where('establish_lever', $e)->count();
+        $f3 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 2)->where('establish_lever', $e)->count();
+        $f4 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 3)->where('establish_lever', $e)->count();
+        $f5 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 4)->where('establish_lever', $e)->count();
+        $f6 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 5)->where('establish_lever', $e)->count();
+        $f7 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 6)->where('establish_lever', $e)->count();
+        $f8 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 1)->where('establish_lever', $e)->count();
+        $f9 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 2)->where('establish_lever', $e)->count();
+        $f10 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 3)->where('establish_lever', $e)->count();
 
         return http_build_query(array(1=>$f1,2=>$f2,3=>$f3,4=>$f4,5=>$f5,6=>$f6,7=>$f7,8=>$f8,9=>$f9,10=>$f10));
     }
 
     public static function buildF3($year, $c){
         $col = Bieutonghop1::F1Collection($year);
-        $f1 = Bieumau1::whereIn('id', $col)->where('type_company', $c)->count();
-        $f2 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->where('type_company', $c)->count();
-        $f3 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 2)->where('type_company', $c)->count();
-        $f4 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 3)->where('type_company', $c)->count();
-        $f5 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 4)->where('type_company', $c)->count();
-        $f6 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 5)->where('type_company', $c)->count();
-        $f7 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 6)->where('type_company', $c)->count();
-        $f8 = Bieumau1::whereIn('id', $col)->where('type_econom', 1)->where('type_company', $c)->count();
-        $f9 = Bieumau1::whereIn('id', $col)->where('type_econom', 2)->where('type_company', $c)->count();
-        $f10 = Bieumau1::whereIn('id', $col)->where('type_econom', 3)->where('type_company', $c)->count();
+        $f1 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_company', $c)->count();
+        $f2 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 1)->where('type_company', $c)->count();
+        $f3 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 2)->where('type_company', $c)->count();
+        $f4 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 3)->where('type_company', $c)->count();
+        $f5 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 4)->where('type_company', $c)->count();
+        $f6 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 5)->where('type_company', $c)->count();
+        $f7 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 6)->where('type_company', $c)->count();
+        $f8 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 1)->where('type_company', $c)->count();
+        $f9 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 2)->where('type_company', $c)->count();
+        $f10 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 3)->where('type_company', $c)->count();
 
         return http_build_query(array(1=>$f1,2=>$f2,3=>$f3,4=>$f4,5=>$f5,6=>$f6,7=>$f7,8=>$f8,9=>$f9,10=>$f10));
     }
 
     public static function buildF4($year){
         $col = Bieutonghop1::F1Collection($year);
-        $f1 = Bieumau1::whereIn('id', $col)->where('certificate_number',"!=", "")->count();
-        $f2 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->where('certificate_number',"!=", "")->count();
-        $f3 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 2)->where('certificate_number',"!=", "")->count();
-        $f4 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 3)->where('certificate_number',"!=", "")->count();
-        $f5 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 4)->where('certificate_number',"!=", "")->count();
-        $f6 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 5)->where('certificate_number',"!=", "")->count();
-        $f7 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 6)->where('certificate_number',"!=", "")->count();
-        $f8 = Bieumau1::whereIn('id', $col)->where('type_econom', 1)->where('certificate_number',"!=", "")->count();
-        $f9 = Bieumau1::whereIn('id', $col)->where('type_econom', 2)->where('certificate_number',"!=", "")->count();
-        $f10 = Bieumau1::whereIn('id', $col)->where('type_econom', 3)->where('certificate_number',"!=", "")->count();
+        $f1 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('certificate_number',"!=", "")->count();
+        $f2 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 1)->where('certificate_number',"!=", "")->count();
+        $f3 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 2)->where('certificate_number',"!=", "")->count();
+        $f4 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 3)->where('certificate_number',"!=", "")->count();
+        $f5 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 4)->where('certificate_number',"!=", "")->count();
+        $f6 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 5)->where('certificate_number',"!=", "")->count();
+        $f7 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 6)->where('certificate_number',"!=", "")->count();
+        $f8 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 1)->where('certificate_number',"!=", "")->count();
+        $f9 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 2)->where('certificate_number',"!=", "")->count();
+        $f10 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 3)->where('certificate_number',"!=", "")->count();
 
         return http_build_query(array(1=>$f1,2=>$f2,3=>$f3,4=>$f4,5=>$f5,6=>$f6,7=>$f7,8=>$f8,9=>$f9,10=>$f10));
     }
 
     public static function buildF5($year, $c){
         $col = Bieutonghop1::F1Collection($year);
-        $f1 = Bieumau1::whereIn('id', $col)->whereIn('type_company', $c)->count();
-        $f2 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
-        $f3 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
-        $f4 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
-        $f5 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
-        $f6 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
-        $f7 = Bieumau1::whereIn('id', $col)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
-        $f8 = Bieumau1::whereIn('id', $col)->where('type_econom', 1)->whereIn('type_company', $c)->count();
-        $f9 = Bieumau1::whereIn('id', $col)->where('type_econom', 2)->whereIn('type_company', $c)->count();
-        $f10 = Bieumau1::whereIn('id', $col)->where('type_econom', 3)->whereIn('type_company', $c)->count();
+        $f1 = Bieumau1::whereIn('id', $col)->where('check', 1)->whereIn('type_company', $c)->count();
+        $f2 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
+        $f3 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
+        $f4 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
+        $f5 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
+        $f6 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
+        $f7 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('lab_number_sub', 1)->whereIn('type_company', $c)->count();
+        $f8 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 1)->whereIn('type_company', $c)->count();
+        $f9 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 2)->whereIn('type_company', $c)->count();
+        $f10 = Bieumau1::whereIn('id', $col)->where('check', 1)->where('type_econom', 3)->whereIn('type_company', $c)->count();
 
         return http_build_query(array(1=>$f1,2=>$f2,3=>$f3,4=>$f4,5=>$f5,6=>$f6,7=>$f7,8=>$f8,9=>$f9,10=>$f10));
     }

@@ -118,7 +118,7 @@ return "<td rowspan='1' align='center' style='    font-family: Times New Roman; 
     }
 
     public static function F4Collection($year){
-        $b2 = Bieumau4::where('reporter_year', $year)->get();
+        $b2 = Bieumau4::where('reporter_year', $year)->where('check', 1)->get();
         $ids = [];
         foreach ($b2 as $b) {
             if ($b->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b->total != "1=&2=&3=&4=&5=&6="){
@@ -131,7 +131,7 @@ return "<td rowspan='1' align='center' style='    font-family: Times New Roman; 
     public static function F4Sum($year, $value, $column)
     {
         $col = Bieutonghop4::F4Collection($year);
-        $b2 = Bieumau4::whereIn('id', $col)->get();
+        $b2 = Bieumau4::whereIn('id', $col)->where('check', 1)->get();
         $sum = 0;
 
         foreach ($b2 as $b) {

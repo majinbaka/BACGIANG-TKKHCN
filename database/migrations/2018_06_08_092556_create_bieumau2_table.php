@@ -16,6 +16,7 @@ class CreateBieumau2Table extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('name')->nullable();
+            $table->integer('check')->default(1);
             $table->string('reporter_year');
             $table->date('publish_day')->nullable();
             $table->string('total')->nullable();

@@ -53,7 +53,7 @@ class Bieutonghop2 extends Model
     }
 
     public static function F2Collection($year){
-        $b2 = Bieumau2::where('reporter_year', $year)->get();
+        $b2 = Bieumau2::where('reporter_year', $year)->where('check', 1)->get();
         $ids = [];
         foreach ($b2 as $b) {
             if ($b->total != "1=&2=&3=&4=&5=&6=&7=&8=&9="){
@@ -66,7 +66,7 @@ class Bieutonghop2 extends Model
     public static function F2Sum($year, $value, $column)
     {
         $col = Bieutonghop2::F2Collection($year);
-        $b2 = Bieumau2::whereIn('id', $col)->get();
+        $b2 = Bieumau2::whereIn('id', $col)->where('check', 1)->get();
         $sum = 0;
 
         foreach ($b2 as $b) {
@@ -82,11 +82,11 @@ class Bieutonghop2 extends Model
     public static function F2SumEco($year, $value, $column,  $type)
     {
         $col = Bieutonghop2::F2Collection($year);
-        $b2 = Bieumau2::whereIn('id', $col)->get();
+        $b2 = Bieumau2::whereIn('id', $col)->where('check', 1)->get();
         $sum = 0;
 
         foreach ($b2 as $b) {
-            $b1 = Bieumau1::where('user_id', $b->user_id)->where('reporter_year', $year)->where('type_econom', $type)->first();
+            $b1 = Bieumau1::where('user_id', $b->user_id)->where('check', 1)->where('reporter_year', $year)->where('type_econom', $type)->first();
             if ($b->{$value} != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b1)
             {
                 $s = parse_str($b->{$value}, $out);
@@ -99,11 +99,11 @@ class Bieutonghop2 extends Model
     public static function F3SumEco($year, $value, $column, $type)
     {
         $col = Bieutonghop2::F2Collection($year);
-        $b2 = Bieumau2::whereIn('id', $col)->get();
+        $b2 = Bieumau2::whereIn('id', $col)->where('check', 1)->get();
         $sum = 0;
 
         foreach ($b2 as $b) {
-            $b1 = Bieumau1::where('user_id', $b->user_id)->where('reporter_year', $year)->whereIn('type_company', $type)->first();
+            $b1 = Bieumau1::where('user_id', $b->user_id)->where('check', 1)->where('reporter_year', $year)->whereIn('type_company', $type)->first();
             if ($b->{$value} != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b1)
             {
                 $s = parse_str($b->{$value}, $out);

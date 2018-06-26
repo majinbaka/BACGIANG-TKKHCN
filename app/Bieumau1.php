@@ -13,6 +13,7 @@ class Bieumau1 extends Model
     protected $fillable = [
         'user_id',
     	'name',
+        'check',
         'publish_day',
         'reporter',
         'receiver',

@@ -21,26 +21,24 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Tên</th>
                   <th>Tên đăng nhập</th>
                   <th>Tên đơn vị</th>
                   <th>Email</th>
                   <th>Chi tiết</th>
-                  <th>Sửa</th>
+                  <th>Phê duyệt</th>
                   <th>Xóa</th>
                 </tr>
                 </thead>
                 <tbody>
                   @foreach($users as $user)
                 <tr>
-                  <td>{{$user->name}}</td>
                   <td>{{$user->username}}</td>
                   <td>{{$user->donviname}}</td>
                   <td>{{$user->email}}</td>
-                  <td><a href="/admin/thanhvien/{{$user->id}}/show">Chi tiết</a></td>
-                  <td><a href="/admin/thanhvien/{{$user->id}}/edit">Sửa</a></td>
+                  <td><a href="/admin/pheduyet/{{$user->id}}/show">Chi tiết</a></td>
+                  <td><a href="/admin/pheduyet/{{$user->id}}/accept">Phê duyệt</a></td>
                   <td>
-                    <form role="form" method="POST" action="{{ url('/admin/thanhvien/'.$user->id) }}">
+                    <form role="form" method="POST" action="{{ url('/admin/pheduyet/'.$user->id.'/delete') }}">
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}
                       <input onclick="return confirm('Bạn chắc chắn muốn xóa chứ ?');" type="submit" name="Delete" value="Xóa">

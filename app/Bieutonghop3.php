@@ -70,7 +70,7 @@ class Bieutonghop3 extends Model
     }
 
     public static function F3Collection($year){
-        $b2 = Bieumau3::where('reporter_year', $year)->get();
+        $b2 = Bieumau3::where('reporter_year', $year)->where('check', 1)->get();
         $ids = [];
         foreach ($b2 as $b) {
             if ($b->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b->total != "1=&2=&3=&4=&5="){
@@ -83,7 +83,7 @@ class Bieutonghop3 extends Model
     public static function F3Sum($year, $value, $column)
     {
         $col = Bieutonghop3::F3Collection($year);
-        $b2 = Bieumau3::whereIn('id', $col)->get();
+        $b2 = Bieumau3::whereIn('id', $col)->where('check', 1)->get();
         $sum = 0;
 
         foreach ($b2 as $b) {

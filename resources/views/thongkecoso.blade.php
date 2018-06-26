@@ -51,7 +51,7 @@
                         <td>
                             <select name="year" onchange="this.form.submit()" id="ctl00_ContentPlaceHolder1_ctl00_ddlNam">
                             @foreach($years as $year)
-								<option value="{{$year}}">{{$year}}</option>
+								<option value="{{$year}}" @if($y == $year) selected @endif>{{$year}}</option>
 							@endforeach
 							</select>
                         </td>
@@ -78,8 +78,6 @@
                     
                 </td>
                 <td align="right" style="width: 200px">
-                    
-                    <span id="ctl00_ContentPlaceHolder1_ctl00_lblTySo" style="font-weight: 700; color: #FF0000">39/{{$total}}</span>
                 </td>
             </tr>
         </table>
@@ -92,7 +90,7 @@
 	@endphp
 	@foreach($users as $user)
 	<tr class="cssKhongChon">
-		<td class="TableCell_Center" colspan="1">{{$i++}}</td><td class="TableCell" colspan="1"><a href="/thongkecoso/donvi/{{$y}}/{{$user->id}}/1">{{$user->getEName()}}</a></td><td class="TableCell" colspan="1">{{$user->getAddressU()}}</td><td class="TableCell" colspan="1">{{$user->userLastReportedYear($y)}}</td>
+		<td class="TableCell_Center" colspan="1">{{$i++}}</td><td class="TableCell" colspan="1"><a href="/thongkecoso/donvi/{{$y}}/{{$user->id}}/1">{{$user->getEName($y)}}</a></td><td class="TableCell" colspan="1">{{$user->getAddressU($y)}}</td><td class="TableCell" colspan="1">{{$user->userLastReportedYear($y)}}</td>
 	</tr>
 	@endforeach
 </table></span><div style="height: 15px;

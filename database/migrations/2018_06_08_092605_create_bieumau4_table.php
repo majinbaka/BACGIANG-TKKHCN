@@ -20,6 +20,7 @@ class CreateBieumau4Table extends Migration
             $table->string('reporter_year');
             $table->string('total')->nullable();
             $table->string('subject_lv1')->nullable();
+            $table->integer('check')->default(1);
             $table->string('subject_lv2')->nullable();
             $table->string('subject_lv3')->nullable();
             $table->string('subject_lv4')->nullable();

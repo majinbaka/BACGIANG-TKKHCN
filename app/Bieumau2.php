@@ -11,6 +11,7 @@ class Bieumau2 extends Model
     
     protected $fillable = [
         'user_id',
+        'check',
     	'name',
         'reporter_year',
         'publish_day',

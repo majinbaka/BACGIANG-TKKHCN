@@ -81,22 +81,10 @@
             <i class="fa fa-dashboard"></i> <span>Báo cáo KHCN</span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Sửa báo cáo KHCN</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li>
+          <a href="/thanhvien/dangky">
+            <i class="fa fa-dashboard"></i> <span>Đăng ký đơn vị</span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="/thanhvien/bieumau/1/edit"><i class="fa fa-circle-o"></i>Biểu 1</a></li>
-            <li><a href="/thanhvien/bieumau/2/edit"><i class="fa fa-circle-o"></i>Biểu 2</a></li>
-            <li><a href="/thanhvien/bieumau/3/edit"><i class="fa fa-circle-o"></i>Biểu 3</a></li>
-            <li><a href="/thanhvien/bieumau/4/edit"><i class="fa fa-circle-o"></i>Biểu 4</a></li>
-            <li><a href="/thanhvien/bieumau/5/edit"><i class="fa fa-circle-o"></i>Biểu 5</a></li>
-            <li><a href="/thanhvien/bieumau/6/edit"><i class="fa fa-circle-o"></i>Biểu 6</a></li>
-          </ul>
         </li>
         <li>
           <a href="/thanhvien/doimatkhau">

@@ -41,11 +41,13 @@ Route::group(['middleware' => 'auth:web'], function () {
             return view('thanhvien.index');
         });
 
-        Route::get('/bieumau/{type}/edit', 'ThanhvienDashboardController@bieumau');
+        Route::get('/{year}/bieumau/{type}/edit', 'ThanhvienDashboardController@bieumau');
 
         Route::get('/bieumau/baocao', 'ThanhvienDashboardController@createBieu');
         Route::patch('/bieumau/baocao', 'ThanhvienDashboardController@bieumauYear');
         Route::get('/doimatkhau', 'ThanhvienDashboardController@editPassword');
+        Route::get('/dangky', 'ThanhvienDashboardController@register');
+        Route::post('/dangky', 'ThanhvienDashboardController@registerUpdate');
         Route::patch('/password', 'ThanhvienDashboardController@updatePassword');
         Route::patch('/bieumau1/{year}', 'ThanhvienDashboardController@bieumau1Update');
         Route::patch('/bieumau2/{year}', 'ThanhvienDashboardController@bieumau2Update');
@@ -63,6 +65,12 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/', function () {
             return view('admin.index');
         });
+
+        Route::get('/pheduyet', 'ThanhvienController@pheduyet');
+        Route::get('/pheduyet/{id}/show', 'ThanhvienDashboardController@showPheDuyet');
+        Route::get('/pheduyet/{id}/accept', 'ThanhvienDashboardController@acceptPheDuyet');
+        Route::delete('/pheduyet/{id}/delete', 'ThanhvienDashboardController@deletePheDuyet');
+
         Route::get('/tintuc', 'TinTucController@index')->name('tintucs.index');
         Route::get('/tintuc/create', 'TinTucController@create')->name('tintucs.create');
         Route::post('/tintuc', 'TinTucController@store')->name('tintucs.store');
@@ -74,8 +82,16 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/thanhvien/create', 'ThanhVienController@create')->name('thanhviens.create');
         Route::post('/thanhvien', 'ThanhVienController@store')->name('thanhviens.store');
         Route::get('/thanhvien/{id}/edit', 'ThanhVienController@edit')->name('thanhviens.edit');
+        Route::get('/thanhvien/{id}/show', 'ThanhVienController@show')->name('thanhviens.show');
         Route::patch('/thanhvien/{id}', 'ThanhVienController@update')->name('thanhviens.update');
         Route::delete('/thanhvien/{id}', 'ThanhVienController@destroy')->name('thanhviens.destroy');
+        Route::get('/thanhvien/{year}/{id}/bieu/{type}', 'ThanhVienController@editBieu');
+        Route::patch('/thanhvien/{year}/{id}/bieu/1', 'ThanhVienController@bieumau1Update');
+        Route::patch('/thanhvien/{year}/{id}/bieu/2', 'ThanhVienController@bieumau2Update');
+        Route::patch('/thanhvien/{year}/{id}/bieu/3', 'ThanhVienController@bieumau3Update');
+        Route::patch('/thanhvien/{year}/{id}/bieu/4', 'ThanhVienController@bieumau4Update');
+        Route::patch('/thanhvien/{year}/{id}/bieu/5', 'ThanhVienController@bieumau5Update');
+        Route::patch('/thanhvien/{year}/{id}/bieu/6', 'ThanhVienController@bieumau6Update');
 
         Route::get('/tkkhth', 'TkkhthController@index')->name('tkkhth.index');
         Route::get('/tkkhth/{year}/bieu/{id}', 'TkkhthController@edit')->name('tkkhth.edit');
