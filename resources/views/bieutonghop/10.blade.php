@@ -113,7 +113,7 @@
         width: 215px;
     }
     </style>
-    <form role="form" method="POST" action="{{ url('/bieutonghop10/'.$bieu->id.'/year) }}">
+    <form role="form" method="POST" action="{{ url('/bieutonghop10/'.$bieu->id.'/year') }}">
                 {{ csrf_field() }}
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
@@ -155,7 +155,6 @@
               <i class="fa fa-calendar"></i>
             </div>
             <input name="publish_day" value="{{date('d/m/Y', strtotime($bieu->publish_day))}}"  type="text" class="form-control datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="">
-        {!! $errors->first('publish_day', '<p class="help-block">:message</p>') !!}
   </td></tr>
 </table>
                 </td>

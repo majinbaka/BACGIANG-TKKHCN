@@ -52,13 +52,23 @@ class ThanhVienController extends Controller
     public function store()
     {
 	    $rules = array(
-	        'username' => 'required',
+	        'username' => 'required|unique:users',
             'password' => 'required',
             'donviname' => 'required',
 	        'email' => 'required|email|unique:users'
 	    );
 
-	    $validator = Validator::make(Input::all(), $rules);
+        $message = array(
+            'username.unique:users' => 'Tên đăng nhập phải là duy nhất',
+            'username.required' => 'Thiếu tên đăng nhập', 
+            'password.required' => 'Thiếu tên mật khẩu', 
+            'donviname.required' => 'Thiếu tên đơn vị', 
+            'email.required' => 'Thiếu Email', 
+            'email.email' => 'email chưa đúng định dạng', 
+            'email.unique:users' => 'email phải là duy nhất'
+        );
+
+	    $validator = Validator::make(Input::all(), $rules, $message);
 
 	    if ($validator->fails()) {
 	        return Redirect::to('admin/thanhvien/create')
@@ -114,10 +124,18 @@ class ThanhVienController extends Controller
     public function update($id)
     {
     	$rules = array(
-            'username' => 'required',
+            'username' => 'required|unique:users,username,'.$id.'|max:255',
             'donviname' => 'required',
-            'address' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id.'|max:255'
+            'email' => 'required|email|unique:users,email,'.$id.'|max:255',
+        );
+
+        $message = array(
+            'username.unique:users' => 'Tên đăng nhập phải là duy nhất',
+            'username.required' => 'Thiếu tên đăng nhập', 
+            'donviname.required' => 'Thiếu tên đơn vị', 
+            'email.required' => 'Thiếu Email', 
+            'email.email' => 'email chưa đúng định dạng', 
+            'email.unique:users' => 'email phải là duy nhất'
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -156,6 +174,30 @@ class ThanhVienController extends Controller
     public function destroy($id)
     {
     	$user = User::find($id);
+        $bieu = Bieumau1::where('user_id', $id)->get();
+        foreach ($bieu as $k) {
+            $k->delete();
+        }
+        $bieu = Bieumau2::where('user_id', $id)->get();
+        foreach ($bieu as $k) {
+            $k->delete();
+        }
+        $bieu = Bieumau3::where('user_id', $id)->get();
+        foreach ($bieu as $k) {
+            $k->delete();
+        }
+        $bieu = Bieumau4::where('user_id', $id)->get();
+        foreach ($bieu as $k) {
+            $k->delete();
+        }
+        $bieu = Bieumau5::where('user_id', $id)->get();
+        foreach ($bieu as $k) {
+            $k->delete();
+        }
+        $bieu = Bieumau6::where('user_id', $id)->get();
+        foreach ($bieu as $k) {
+            $k->delete();
+        }
         $user->delete();
 
         Session::flash('message', 'Xóa thành viên thành công !');

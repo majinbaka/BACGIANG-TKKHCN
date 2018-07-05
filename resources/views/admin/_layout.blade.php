@@ -163,6 +163,16 @@
                     {{ Session::get('message') }}
                 </div>
             @endif
+            @if(isset($errors))
+@php 
+$messages = $errors; 
+foreach ($messages->all() as $message)
+echo '
+<div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true" >&times;</button>
+    '.$message.'</div>';
+@endphp
+@endif
 @yield('content')
 </div>
   <!-- /.content-wrapper -->

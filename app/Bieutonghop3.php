@@ -90,6 +90,7 @@ class Bieutonghop3 extends Model
             if ($b->{$value} != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b->{$value} != "1=&2=&3=&4=&5=")
             {
                 $s = parse_str($b->{$value}, $out);
+                if (is_numeric($out[$column]))
                 $sum+= ($out[$column]);
             }
         }

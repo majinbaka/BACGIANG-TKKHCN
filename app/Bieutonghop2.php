@@ -73,7 +73,8 @@ class Bieutonghop2 extends Model
             if ($b->{$value} != "1=&2=&3=&4=&5=&6=&7=&8=&9=")
             {
                 $s = parse_str($b->{$value}, $out);
-                $sum+= $out[$column];
+                if (is_numeric($out[$column]))
+                    $sum+= $out[$column];
             }
         }
         return $sum;
@@ -90,6 +91,7 @@ class Bieutonghop2 extends Model
             if ($b->{$value} != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b1)
             {
                 $s = parse_str($b->{$value}, $out);
+                if (is_numeric($out[$column]))
                 $sum+= $out[$column];
             }
         }
@@ -107,6 +109,7 @@ class Bieutonghop2 extends Model
             if ($b->{$value} != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b1)
             {
                 $s = parse_str($b->{$value}, $out);
+                if (is_numeric($out[$column]))
                 $sum+= $out[$column];
             }
         }

@@ -139,6 +139,7 @@ return "<td rowspan='1' align='center' style='    font-family: Times New Roman; 
             {
                 $s = parse_str($b->{$value}, $out);
                 if (array_key_exists($column, $out))
+                if (is_numeric($out[$column]))
                     $sum+= ($out[$column]);
             }
         }

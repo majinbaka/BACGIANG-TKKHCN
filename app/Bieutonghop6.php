@@ -80,6 +80,7 @@ class Bieutonghop6 extends Model
             {
                 $s = parse_str($b->{$value}, $out);
                 if (array_key_exists($column, $out))
+                if (is_numeric($out[$column]))
                     $sum+= ($out[$column]);
             }
         }

@@ -29,7 +29,7 @@ class ThanhvienLoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/thanhvien';
-    protected $redirectAfterLogout = '/thanhvien/login';
+    protected $redirectAfterLogout = '/login';
     protected $guard = 'web';
 
     public function __construct()
