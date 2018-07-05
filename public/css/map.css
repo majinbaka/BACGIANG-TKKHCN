@@ -1,0 +1,227 @@
+﻿.bangchinhmap
+{
+    background-color: #ffffff;
+    width: 990px !important;
+    border-right: #ffffff 0px solid;
+    border-top: #ffffff 0px solid;
+    border-left: #ffffff 0px solid;
+    border-bottom: #ffffff 0px solid;
+    
+    
+}
+
+.bangchinhmap2
+{
+    background-color: #ffffff;
+    width: 990px !important;
+    border-right: #ffffff 0px solid;
+    border-top: #ffffff 0px solid;
+    border-left: #ffffff 0px solid;
+    border-bottom: #ffffff 0px solid;
+    
+    
+}
+
+.ToolBar_Corner_Left{background-image:url("Images/toolbartop1.png"); background-position:top left; background-repeat:no-repeat; height:34px;}
+.ToolBar_Corner_Right{background-image:url("Images/toolbartop4.png"); background-position:top right; background-repeat:no-repeat; height:34px;}
+.ToolBar_Title{background-image:url("Images/toolbartop2_02.png"); width:100%; height: 34px; width:34px; background-repeat:repeat-y; background-position:top;}
+.ToolBar_Center{background-image:url("Images/toolbartop3.png"); background-position:top center; background-repeat:no-repeat; height:34px;}
+.ToolBar_Corner_Top{background-image:url("Images/toolbartop2_01.png"); background-position:top left; background-repeat:no-repeat; width:34px; height:12px;}
+.ToolBar_Corner_Bottom{background-image:url("Images/toolbartop2_05.png"); background-position:bottom left; background-repeat:repeat-y; width:34px;}
+.toolbattopcell{ width:100%;  width:34px; background-repeat:repeat-y; background-position:top;}
+.buttonMap
+{
+    
+    background: none;
+    border: 1px solid buttonface;
+    margin: 0;
+    height: 18px;
+    background-color: #006699;
+}
+.buttonMap:hover
+{
+    border: 1px solid buttonface;
+    width:18px;
+	height:18px;
+    background: red;
+    margin: 0;
+}
+.buttonAdmin {
+	background: none; 
+	border: 1px solid buttonface;
+	margin: 0; 
+	
+}		
+.raised
+{
+    border: 1px solid buttonface;
+    width:18px;
+	height:18px;
+    background: red;
+    margin: 0;
+}
+			
+.pressed
+{
+    background-color: red;
+    width: 18px;
+    height: 18px;
+    border: 1px solid buttonface;
+    background: red;
+    margin: 0;
+}
+.frontbg
+{
+    
+    background-color: transparent;
+    filter: alpha(opacity=75);
+    -moz-opacity: 0.8;
+    opacity: .8;
+}
+.frontbg_row
+{
+    border-color: #ffffcc;
+    border-width: 1px;
+    
+    background-color: transparent;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    opacity: .8;
+}
+
+ a:focus {
+outline: none;
+}
+a.trigger{
+	position: absolute;
+	background:#88bbd4 url(<%=Globals.ApplicationPath %>/images/plus.png) 6% 55% no-repeat;
+	text-decoration: none;
+	font-size: 12px;
+	letter-spacing:-1px;
+	font-family: verdana, helvetica, arial, sans-serif;
+	color:#fff;
+	padding:4px 12px 6px 24px;
+	font-weight: bold;
+	
+	z-index:2;
+}
+a.trigger.left {
+	left: 0;
+	border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	
+}
+a.trigger.right {
+	right: 0;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+}
+a.trigger:hover {
+	background-color:#59B;
+}
+a.active.trigger {
+	background:#666 url(<%=Globals.ApplicationPath %>/images/minus.png) 6% 55% no-repeat;
+}
+.panel {
+	color:#fff;
+	position: absolute;
+	display: none;
+	background: #000;
+	width: 248px;
+	height: auto;
+	z-index:1;
+}
+.panel.left {
+	left: 0;
+	padding: 0px 10px 10px 0px;
+	border-top-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.panel.right {
+	right: 0;
+	padding: 10px 10px 10px 10px;
+	border-bottom-left-radius: 15px;
+	border-top-left-radius: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	-moz-border-radius-topleft: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-webkit-border-top-left-radius: 15px;
+}
+.panel p {
+	font-size:11px;
+}
+.tendiem a
+{
+	color: #003399;
+	text-decoration:none;
+}
+.divTenMoKS
+{
+	color: #003399;
+	font-weight:bold;
+	font-family:Verdana,Arial;
+	font-size:10pt;
+	display: inline;
+}
+.CssPanelSearch
+{
+	padding: 10px 10px 10px 10px;
+}
+/*-----------------------------------------------------------------------------------------------*/
+/*                                         TOOLTIP STYLES                                        */
+/*-----------------------------------------------------------------------------------------------*/
+
+.tip {
+	width: 212px;
+	padding-top: 37px;
+	overflow: hidden;
+	display: none;
+	position: absolute;
+	z-index: 500;
+	background: transparent url("images/tipTop.png") no-repeat top;}
+	
+.tipMid {background: transparent url("images/tipMid.png") repeat-y; padding: 0 25px 20px 25px;}
+.tipBtm {background: transparent url("images/tipBtm.png") no-repeat bottom; height: 32px;}
+
+.toolbarCenterBorder {background:#f9f9f9;border-bottom:1px solid #ccc; border-top:1px solid #ccc;}
+.toolbarCenter { display:block; height:30px; width:100%; }
+.toolbarCenter .items { list-style:none; display:inline-block; height:30px; float:left; padding: 2px 5px;}
+.toolbarCenter .items .item { display:inline-block;padding:0 4px;float:left;height:30px;}
+
+
+.toolbarCenter .items .item.first {}
+.item .subItems {min-width: 175px; display:none; list-style:none;  position:absolute; background:#f9f9f9; top:32px; border:1px solid #ccc; border-top:none; box-shadow:0px 4px 2px #999;z-index:999;}
+.item .subItems .subItem {padding:6px 0;margin:0 1px; border-bottom:1px solid #ccc;border-top:1px solid #FFF; }
+.item .subItems .subItem a {cursor:pointer; padding:3px 24px 3px 23px ;background:url(../images/squareIconSmall.png) no-repeat scroll 11px; display:block;}
+.item .subItems .subItem:hover{ background:#FFF; cursor:pointer;}
+.item .subItems .subItem.first { border-top:none;}
+.item .subItems .subItem.last { border-bottom:none;}
+label {display: inline-block;margin: 0px;padding: 0px;}
+.item:hover  .subItems { display:block;}
+/*li { list-style:none; display:inline-block; height:30px; float:left;}*/
+.toolbarCenter .items .item .itemClick2 {padding:3px 0px 3px 0px; border-radius:5px;float:left;}
+
+.chitietks
+{
+	color:#006699;
+	font-size:9pt;
+	font-family: Arial;
+}
+.chitiet
+{
+	font-size:9pt;
+	font-family: Arial;
+}

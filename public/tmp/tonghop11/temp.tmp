@@ -1,0 +1,735 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:excel' xmlns='http://www.w3.org/TR/REC-html40'>
+
+<head>
+    <title>Time</title>
+    <!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->
+    <style>
+        < !--
+        /* Style Definitions */
+
+        a.MsoNormal,
+        b.MsoNormal,
+        i.MsoNormal,
+        I.MsoNormal {
+            margin: 0in;
+            margin-bottom: .0001pt;
+            font-size: 12.0pt;
+            font-family: 'Times New Roman', 'sans-serif';
+        }
+
+        @page {
+            mso-page-orientation: landscape;
+            size: 29.7cm 21cm;
+            margin: 1cm 1cm 1cm 1cm;
+        }
+
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in 0.75in 1.0in 1.25in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        -->
+    </style>
+</head>
+
+<body>
+    <div>
+        <table align="right" width="100%" border="0" cellspacing="0" cellpadding="5" "mso-border-alt: none windowtext .0pt; mso-border-insideh: .0pt none windowtext; mso-border-insidev: .0pt none windowtext">
+            <tr>
+                <td rowspan="1" align="right" colspan="4">
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <right><b class=MsoNormal>Biểu 11/TKTH-KHCN-ĐP</b><br/><a class=MsoNormal>26/2015/TT-BKHCN</a>
+                                <right>
+                </td>
+            </tr>
+        </table>
+        <table align="right" width="100%" border="0" cellspacing="0" cellpadding="5" "mso-border-alt: none windowtext .0pt; mso-border-insideh: .0pt none windowtext; mso-border-insidev: .0pt none windowtext">
+            <tr>
+                <td rowspan="1" align="right" colspan="7">
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <center><b class=MsoNormal>DOANH NGHIỆP VÀ THỊ TRƯỜNG KHOA HỌC VÀ CÔNG NGHỆ</b><br/><a class=MsoNormal>(Có đến ngày 31/12 năm  2017)</a>
+                                <p style='color:red'>
+                                    <I> </I>
+                                </p>
+                                <center>
+                </td>
+            </tr>
+        </table>
+        <table align="right" width="100%" border="0" cellspacing="0" cellpadding="5" "mso-border-alt: none windowtext .0pt; mso-border-insideh: .0pt none windowtext; mso-border-insidev: .0pt none windowtext">
+            <tr>
+                <td>
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <left><a class=MsoNormal>Ngày gửi báo cáo: ...............</a><br/> <i class=MsoNormal>(trước ngày 15 tháng 02 theo dấu bưu điện)</i>
+                                <left>
+                </td>
+                <td>
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <left>
+                                <left>
+                </td>
+                <td>
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <left>
+                                <left>
+                </td>
+                <td>
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <left>
+                                <left>
+                </td>
+                <td>
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <left>
+                                <left>
+                </td>
+                <td rowspan="1" align="left" colspan="17">
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <right><b class=MsoNormal>Đơn vị báo cáo:</b><a class=MsoNormal>@reporter@</a><br/><b class=MsoNormal>Đơn vị nhận báo cáo:</b><a class=MsoNormal>@receiver@</a>
+                                <right> <br/></td>
+            </tr>
+        </table>
+        <table align="right" width="100%" border="0" cellspacing="0" cellpadding="5" "mso-border-alt: none windowtext .0pt; mso-border-insideh: .0pt none windowtext; mso-border-insidev: .0pt none windowtext">
+            <tr>
+                <td rowspan="1" align="right" colspan="3">
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <right>
+                                <I class=MsoNormal>Đơn vị tính: Doanh nghiệp/Tổ chức</I>
+                                <p style='color:red'>
+                                    <I> </I>
+                                </p>
+                                <right>
+                </td>
+            </tr>
+        </table>
+        <table align="center" width="100%" border="0" cellspacing="0" cellpadding="5" style='mso-border-alt: solid windowtext .1pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext'>
+            <tr>
+                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'></td>
+                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>Mã số</td>
+                <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'>Số lượng</td>
+            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    text-align: center;    border: solid 1px #000000;    padding-bottom: 3px;    padding-top: 3px;' colspan='1'>A</td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    text-align: center;    border: solid 1px #000000;    padding-bottom: 3px;    padding-top: 3px;' colspan='1'>B</td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    text-align: center;    border: solid 1px #000000;    padding-bottom: 3px;    padding-top: 3px;' colspan='1'>1</td>
+            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>A. TỔNG SỐ DOANH NGHIỆP KHOA HỌC VÀ CÔNG NGHỆ</b></td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>01</td>
+@f1@            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>1. Chia theo loại hình kinh tế</b></td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
+            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>1.1. Nhà nước</td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>02</td>
+@f2@            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>1.2. Ngoài nhà nước</td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>03</td>
+@f3@            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>1.3. Có vốn đầu tư nước ngoài</td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>04</td>
+@f4@            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>2. Chia theo ngành kinh tế</b></td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
+            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>3. Chia theo hình thức thành lập</b></td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
+            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>3.1. Thành lập mới</td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>05</td>
+@f5@            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>3.2. Chuyển đổi từ các tổ chức KH&CN công lập</td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>06</td>
+@f6@            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>3.3. Hình thành từ trường đại học</td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>07</td>
+@f7@            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>3.4. Hình thành từ viện nghiên cứu</td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>08</td>
+@f8@            </tr>
+            <tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>B. SỐ TỔ CHỨC TRUNG GIAN PHÁT TRIỂN THỊ TRƯỜNG KHOA HỌC VÀ CÔNG NGHỆ</b></td>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>09</td>
+@f9@            </tr>
+        </table><br/>
+        <table align="right" width="100%" border="0" cellspacing="0" cellpadding="0" "mso-border-alt: none windowtext .0pt; mso-border-insideh: .0pt none windowtext; mso-border-insidev: .0pt none windowtext">
+            <tr>
+                <td>
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <left><b class=MsoNormal>Người lập biểu</b>
+                                <left>
+                </td>
+                <td>
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <left>
+                                <left>
+                </td>
+                <td>
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <left>
+                                <left>
+                </td>
+                <td rowspan="1" align="right" colspan="3">
+
+                    <body lang=EN-US style='tab-interval:.5in'>
+                        <div class=Section1>
+                            <center><a class=MsoNormal> ......, ngày ...... tháng ..... năm ..... </a><br/><b class=MsoNormal>GIÁM ĐỐC</b><br/><i class=MsoNormal>(Ký, ghi rõ họ tên và đóng dấu)</i>
+                                <center> <br/></td>
+            </tr>
+        </table>
+        </div>
+        </body>
+
+</html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>
+        Thống kê Khoa học công nghệ
+    </title>
+    <link href="../../CSS/Default.css" rel="stylesheet" type="text/css" />
+    <link href="../../CSS/map.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/tableframeimg.css" rel="stylesheet" type="text/css" />
+    <link href="../../box/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script src="/thongkekhcn/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <link href="../../CSS/jqueryslidemenu.css" rel="stylesheet" type="text/css" />
+    <script src="/thongkekhcn/js/jqueryslidemenu.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/thongkekhcn/Js/date.js"></script>
+
+    <!--Hightslide-->
+    <script type="text/javascript" src="/thongkekhcn/highslide/highslide-with-html.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../highslide/highslide.css" />
+    <!--End Hightslide-->
+
+</head>
+
+<body>
+    <form name="aspnetForm" method="post" action="csdl.aspx?case=tkth&amp;tab=10" id="aspnetForm">
+        <div>
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+            <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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AwRnZ2dnFgFmZAIDD2QWBmYPFgIfAgVXPGxpbmsgaHJlZj0nL3Rob25na2VraGNuL1Rvb2xzL2NhbC9wb3BjYWxlbmRhci5jc3MnIHR5cGU9InRleHQvY3NzIiByZWw9InN0eWxlc2hlZXQiIC8+ZAICDxYCHwIFajxzY3JpcHQgbGFuZ3VhZ2U9ImphdmFzY3JpcHQiIHNyYz0nL3Rob25na2VraGNuL1Rvb2xzL2NhbC9wb3BjYWxlbmRhci5qcycgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij48L3NjcmlwdD5kAgYPD2QWAh4Hb25jbGljawWnAWphdmFzY3JpcHQ6cmV0dXJuIHBvcFVwQ2FsZW5kYXIodGhpcywgJy90aG9uZ2tla2hjbi9Ub29scy9jYWwvJywgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2N0bDAwX0NvbnRlbnRQbGFjZUhvbGRlcjFfY3RsMDBfY3RsMDBfRGF0ZU5nYXlHdWlCQ190eHRfRGF0ZScpLCAnZGQvTU0veXl5eScpZAIFDxAPFgYeDURhdGFUZXh0RmllbGQFCFRlbkRvblZpHg5EYXRhVmFsdWVGaWVsZAUCSUQeC18hRGF0YUJvdW5kZ2QQFQEYU+G7nyBLSCZDTiBRdeG6o25nIFRy4buLFQEBMRQrAwFnFgFmZAIHDxAPFgYfBwUIVGVuRG9uVmkfCAUHRG9uVmlJRB8JZ2QQFQMhQ+G7pWMgVGjDtG5nIHRpbiBLSCZDTiBRdeG7kWMgZ2lhJ1Phu58gS0gmQ04gdOG7iW5oLHRwLnRy4buxYyB0aHXhu5ljIFTGrxhC4buZL25nw6BuaCBjaOG7pyBxdeG6o24VAwExATIBMxQrAwNnZ2dkZGSY/IaYY2gWgn0/KgIFQyYKEq6TAXN93boZdZ9BGwgupw==" />
+        </div>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            var theForm = document.forms['aspnetForm'];
+            if (!theForm) {
+                theForm = document.aspnetForm;
+            }
+
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+            //]]>
+        </script>
+
+
+        <div>
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9AD6AF9A" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABc245AS7cc3KEkYc4Hn07Kwg/69aulffWP/F1kDEthBd5+Ql1ucrQ//91GpKTg8pGmGtXs5sd95n4E6xy3w42crHDfvrhF6gxQQuBOvg+XDVM/Zv78BxZwo3bo425i4M2ER98pBt2ooMG+cMtA/lb4fsKJvM67XosEKFUEQfzGWMB0fUCMOHhtFKt9zT3iaG2M1IQWtw0YRM0YGPw2jGa7G/Q/dHG/6iFgLtuAPikxlmxVm4l6Iz1ym9iLeELMiHbBF58ivOTgazcs7tIB+9VQmgIrGqnF86NFCZtTTDSqZmLTfWRs0mJNef25sNgGpt+txEjvvkSUWDV7q3E3JqV7xQKRBVsk88VJZExls6ezegC/R5de3QuKhvpDqYYeoJSCHPk5fqEJK920LD9L5cSTUXQ1eR6z3ucfT8qJ+A+6gpm4AGaI+FxInrejB8pDe/XEzZNJ6gh+9x92sPM2gtVH71UYitxJfO3s4grT8J8AiGJIS5WvbvuSKGD/bDhuLaKAjlnBLk2lIe4FH6fU7faJz" />
+        </div>
+        <div align="center">
+            <div align="center" class="KhungNgoai" style="margin-bottom:32px;">
+
+
+                <div style="z-index: 3000; margin-bottom:0px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="topheader">
+                        <tbody>
+                            <tr>
+
+                                <td style="width: 160px">
+                                    <div id="theClock" class="DateNow" align="left">
+                                    </div>
+                                </td>
+                                <td valign="top" align="left" width="16px" style="padding: 4px 0px 0px 0px;">
+                                    <img src="/thongkekhcn/Images/pmopenedr.gif" />
+                                </td>
+                                <td valign="top" style="padding: 5px 5px;" width="360px" align="center">
+
+                                    <div class="cssThongBao">
+                                        <marquee class="smooth_m" behavior="scroll" direction="left" onmouseout="this.start()" scrollamount="3" width="100%">
+
+                                        </marquee>
+                                    </div>
+                                </td>
+                                <td style="width: 75px">
+                                    <div style="margin: 0px">
+                                    </div>
+                                </td>
+                                <td valign="top" align="right" width="210px">
+                                    <a href="/thongkekhcn/Index.aspx?Tab=gopy">
+                            <img src="/thongkekhcn/images/contact_vn.png" /></a>
+                                    <a target="_blank" href="/thongkekhcn/Admin/Login.aspx">
+                        <img src="/thongkekhcn/Images/login_r.png" /></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <script language="JavaScript" type="text/javascript">
+                    startclock('vn');
+
+                    function GetLang(obj, s1, s2) {
+                        var lang = 'vn';
+                        if (lang == 'vn') {
+                            return s1;
+                        } else {
+                            return s2;
+                        }
+                    }
+                </script>
+
+                <div id="div_Header" style="z-index: 103;">
+
+                    <style type="text/css">
+                        .masthead {
+                            background-image: url(/thongkekhcn/theme/default/samplepic/bg_thongke_banner2.jpg);
+                            height: 104px;
+                            border-bottom: solid 0px #aaaaaa;
+                            margin: 0 auto;
+                            background-position: center -1px;
+                            background-repeat: no-repeat;
+                        }
+
+                        .note {
+                            padding-left: 142px;
+                            text-align: left;
+                            width: 470px;
+                            position: absolute;
+                            top: 60px;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 8pt;
+                            color: #000000;
+                        }
+
+                        .logo {
+                            padding-left: 2px;
+                            text-align: left;
+                            width: 470px;
+                            position: absolute;
+                            top: 10px;
+
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+
+                        #displaylogin {
+
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 11px;
+                            color: #fff;
+                            display: block;
+                            text-align: right;
+                            padding-top: 10px;
+
+                            margin-right: 15px;
+
+                        }
+
+                        .toggle {
+                            width: 250px;
+                            padding-bottom: 3px;
+                            padding-right: 12px;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 13px;
+                            color: #fff;
+                        }
+                    </style>
+
+                    <div id="header">
+                        <div id="banner" class="masthead">
+                            <div class="logo title">
+
+                            </div>
+
+                            <div id="displaylogin">
+
+                                <span id="ctl00_Banner1_lblLogin" style="color:White;">  <a href='/thongkekhcn/index.aspx'>Đăng nhập</a> </span>
+                            </div>
+                        </div>
+                        <div class="topmenu-m">
+
+                            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <div id="myslidemenu" class="jqueryslidemenu">
+                                            <ul>
+                                                <li style="color:#ffffff;">
+                                                    <a href='/thongkekhcn/default.aspx'>
+        <img src='/thongkekhcn/Images/home.gif' />&nbsp;&nbsp;
+       <span class="TrangChu_text">Trang chủ</span></a></li>
+                                                <span id="ctl00_Banner1_MenuHori1_lblMenuLeft"><li><a href="#">Công bố số liệu thống kê</a><ul><li><a   href=/thongkekhcn/page/csdl/csdl.aspx?case=tkcs>Thống kê KHCN cơ sở</a></li><li><a   href=/thongkekhcn/page/csdl/csdl.aspx?case=tkth>Thống kê KHCN tổng hợp</a></li></ul></li><li><a href="#">Thống kê KHCN</a><ul><li><a   href=/thongkekhcn/Article.aspx?TabID=113>Hệ thống chỉ tiêu thống kê</a></li><li><a   href=/thongkekhcn/Article.aspx?TabID=114>Bảng phân loại và danh mục chuẩn</a></li><li><a   href=/thongkekhcn/Article.aspx?TabID=115>Chế độ báo cáo thống kê</a></li><li><a   href=/thongkekhcn/Article.aspx?TabID=116>Các cuộc điều tra thống kê KH&CN</a></li><li><a   href=/thongkekhcn/Article.aspx?TabID=117>Số liệu thống kê</a></li><li><a   href=/thongkekhcn/Article.aspx?TabID=118>Nghiệp vụ thống kê</a></li><li><a   href=/thongkekhcn/Article.aspx?TabID=123>Biểu mẫu thống kê</a></li></ul></li><li><a href="/thongkekhcn/doc.aspx">Hệ thống văn bản</a></li><li><a href="#">Trợ giúp</a><ul><li><a   href=/thongkekhcn/Article.aspx?TabID=125>Hướng dẫn</a></li><li><a   href=/thongkekhcn/Page/CSDL/csdl.aspx?case=cpw>Đổi mật khẩu</a></li></ul></li></span>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="div_Body" style="z-index: 100; padding:20px 10px 10px 10px;  margin-top: 30px;">
+
+
+                    <style type="text/css">
+                        .CNNV_NoLeftBorder {
+                            border-style: solid;
+                            border-width: 1px 1px 1px 0px;
+                            border-color: #c0c0c0;
+                            font-family: Tahoma, Arial, Times New Roman;
+                            font-size: 11px;
+                            color: #333333;
+                            /* padding: 0px 5px 0px 0px; */
+                            /* text-align: right; */
+                            vertical-align: middle;
+                        }
+
+                        .CNNV_NoRightBorder {
+                            border-style: solid;
+                            border-width: 1px 0px 1px 1px;
+                            border-color: #c0c0c0;
+                            font-family: Tahoma, Arial, Times New Roman;
+                            font-size: 11px;
+                            color: #333333;
+                            padding: 5px;
+                            text-align: left;
+                            vertical-align: middle;
+                            font-weight: bold;
+                        }
+
+                        .CNNV_NoRightBorder a {
+                            color: #333333;
+                            text-decoration: none;
+                        }
+                    </style>
+                    <style type="text/css">
+                        .Initial {
+                            display: block;
+                            padding: 8px 20px 8px 8px;
+                            margin-bottom: 3px;
+                            float: left;
+                            background: url("/thongkekhcn/Images/init_bg2.png") no-repeat right top;
+                            color: #ffffff;
+                            font-weight: bold;
+                        }
+
+                        .Initial:hover {
+                            color: White;
+                            background: url("../Images/HoverButton.png") repeat-x right top;
+                            margin: 0px 0px 0px 0px;
+                            padding: 8px 20px 8px 8px;
+                            color: Black;
+                        }
+
+                        .Clicked {
+                            float: left;
+                            display: block;
+                            background: url("../Images/SelectedButton.png") repeat-x right top;
+                            padding: 8px 20px 8px 8px;
+                            color: Black;
+                            font-weight: bold;
+                            color: White;
+                        }
+
+                        .style1 {
+                            width: 86px;
+                        }
+                    </style>
+                    <div style="height: 5px; width: 100%">
+                    </div>
+                    <div class="liketab">
+                        <div class="itemHeader">
+                            <div class="active">
+                                <span>
+                <img src="/thongkekhcn/Images/kvr.gif" />
+                BÁO CÁO THỐNG KÊ TỔNG HỢP
+            </span>
+                            </div>
+                        </div>
+                        <div class="groupItem">
+                            <table style="width: 100%">
+
+                            </table>
+                            <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                                <tr>
+                                    <td align="left" valign="top">
+                                        <div align="left">
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab1" value="Biểu 01" id="ctl00_ContentPlaceHolder1_ctl00_Tab1" title="Biểu 01/TKTH-KHCN-ĐP: Số tổ chức có hoạt động khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab2" value="Biểu 02" id="ctl00_ContentPlaceHolder1_ctl00_Tab2" title="Biểu 02/TKTH-KHCN-ĐP: Nhân lực hoạt động khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab3" value="Biểu 03" id="ctl00_ContentPlaceHolder1_ctl00_Tab3" title="Biểu 03/TKTH-KHCN-ĐP: Chi cho khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab4" value="Biểu 04" id="ctl00_ContentPlaceHolder1_ctl00_Tab4" title="Biểu 04/TKTH-KHCN-ĐP: Nhiệm vụ khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab5" value="Biểu 05" id="ctl00_ContentPlaceHolder1_ctl00_Tab5" title="Biểu 05/TKTH-KHCN-ĐP: Hợp tác quốc tế trong hoạt động khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab6" value="Biểu 06" id="ctl00_ContentPlaceHolder1_ctl00_Tab6" title="Biểu 06/TKTH-KHCN-ĐP: Giải thưởng khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab7" value="Biểu 07" id="ctl00_ContentPlaceHolder1_ctl00_Tab7" title="Biểu 07/TKTH-KHCN-ĐP: Hoạt động đánh giá, thẩm định, giám định, ứng dụng và phát triển công nghệ tại địa phương" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab8" value="Biểu 08" id="ctl00_ContentPlaceHolder1_ctl00_Tab8" title="Biểu 08/TKTH-KHCN-ĐP: Tiêu chuẩn đo lường chất lượng" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab9" value="Biểu 09" id="ctl00_ContentPlaceHolder1_ctl00_Tab9" title="Biểu 09/TKTH-KHCN-ĐP: Năng lượng nguyên tử, an toàn bức xạ và hạt nhân" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab10" value="Biểu 10" id="ctl00_ContentPlaceHolder1_ctl00_Tab10" title="Biểu 10/TKTH-KHCN-ĐP: Thanh tra khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$Tab11" value="Biểu 11" id="ctl00_ContentPlaceHolder1_ctl00_Tab11" title="Biểu 11/TKTH-KHCN-ĐP: Doanh nghiệp và thị trường khoa học và công nghệ" class="Clicked" style="border-style:None;" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <span id="ctl00_ContentPlaceHolder1_ctl00_lblBangDuLieu">
+<style type="text/css">
+    .style3
+    {
+        width: 215px;
+    }
+    .style4
+    {
+        width: 476px;
+    }
+    </style>
+<script type="text/javascript">
+    function ValidateNmber(obj, evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        /*First decimal allowed*/
+        if (charCode == 46 && isDecimal) {
+            isDecimal = false;
+            return true;
+        }
+        /*Dont allow more*/
+        else if (charCode == 46 && !isDecimal) {
+            return false;
+        }
+        if (charCode > 31 && (charCode < 48 || charCode > 57) || !isSubmit) {
+            return false;
+        }
+        else {
+            isDecimal = true;
+            return true;
+        }
+    }
+    function ValidateNumber(obj, evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        /*First decimal allowed*/
+        if (charCode == 46 && isDecimal) {
+            isDecimal = false;
+            return true;
+        }
+        /*Dont allow more*/
+        else if (charCode == 46 && !isDecimal) {
+            return false;
+        }
+        if (charCode > 31 && (charCode < 48 || charCode > 57) || !isSubmit) {
+            return false;
+        }
+        else {
+            isDecimal = true;
+            return true;
+        }
+    }
+</script>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+        <td style="padding: 0px 0px 10px 10px;" valign="top" align="left">
+            <table style="width: 100%; border-spacing: 0px; border: 0px;">
+                <tr>
+                    <td style="width: 200px">
+                        <b> Biểu 11/TKTH-KHCN-ĐP</b>
+                        <br />
+                        26/2015/TT-BKHCN</td>
+                    <td align="left">
+                       <b>DOANH NGHIỆP VÀ THỊ TRƯỜNG KHOA HỌC VÀ CÔNG NGHỆ</b>
+                        <br />
+                        
+                    </td>
+                    <td align="right" style="width: 200px">
+                        
+                        <select name="ctl00$ContentPlaceHolder1$ctl00$ctl00$drpNam" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$drpNam\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ContentPlaceHolder1_ctl00_ctl00_drpNam">
+    <option selected="selected" value="2017">2017</option>
+    <option value="2016">2016</option>
+    <option value="2015">2015</option>
+    <option value="2014">2014</option>
+
+</select>
+                    </td>
+                </tr>
+            </table>
+            <table>
+            <tr>
+                <td style="vertical-align: top; text-align: left" class="style3">
+                    Ngày gửi báo cáo
+                </td>
+                <td style="vertical-align: top; text-align: left">
+                    <link href='/thongkekhcn/Tools/cal/popcalendar.css' type="text/css" rel="stylesheet" />
+<script language="javascript" src='/thongkekhcn/Tools/cal/popcalendar.js' type="text/javascript"></script>
+<table id="tbl_control" cellSpacing="0" cellPadding="0" border="0" style="border-style:none; border-width:0px;">
+    <tr>
+        <td align="middle" style="border-style:none; border-width:0px; height: 20px;"><input name="ctl00$ContentPlaceHolder1$ctl00$ctl00$DateNgayGuiBC$txt_Date" type="text" value="29/11/2017" id="ctl00_ContentPlaceHolder1_ctl00_ctl00_DateNgayGuiBC_txt_Date" style="width:70px;" />&nbsp;</td>
+        <td style="border-style:none; border-width:0px; height: 20px;"><img id="ctl00_ContentPlaceHolder1_ctl00_ctl00_DateNgayGuiBC_imgCalendar" onclick="javascript:return popUpCalendar(this, &#39;/thongkekhcn/Tools/cal/&#39;, document.getElementById(&#39;ctl00_ContentPlaceHolder1_ctl00_ctl00_DateNgayGuiBC_txt_Date&#39;), &#39;dd/MM/yyyy&#39;)" src="../../Tools/cal/calendar.gif" style="border-width:0px;" /></td>
+    </tr>
+</table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="padding-right: 5px;" class="style3">
+                    <strong>Đơn vị báo cáo</strong>
+                </td>
+                <td style="vertical-align: top; text-align: left">
+                    <select name="ctl00$ContentPlaceHolder1$ctl00$ctl00$drpDonVi" id="ctl00_ContentPlaceHolder1_ctl00_ctl00_drpDonVi" style="width:279px;">
+    <option selected="selected" value="1">Sở KH&amp;CN Quảng Trị</option>
+
+</select>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" style="padding-right: 5px" class="style3">
+                    <strong>Đơn vị nhận báo cáo</strong>
+                </td>
+                <td style="height: 24px; text-align: left">
+                    <select name="ctl00$ContentPlaceHolder1$ctl00$ctl00$drpDonViNhanBaoCao" id="ctl00_ContentPlaceHolder1_ctl00_ctl00_drpDonViNhanBaoCao" style="width:279px;">
+    <option selected="selected" value="1">Cục Th&#244;ng tin KH&amp;CN Quốc gia</option>
+    <option value="2">Sở KH&amp;CN tỉnh,tp.trực thuộc TƯ</option>
+    <option value="3">Bộ/ng&#224;nh chủ quản</option>
+
+</select>
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%; border-spacing: 0px; border: 0px;">
+                <tr>
+                    <td style="width: 200px">
+                        
+                    </td>
+                    <td align="left" class="style4">
+                       
+                    </td>
+                    <td align="right" style="width: 300px">
+                        
+                        <i>Đơn vị tính: Doanh nghiệp/Tổ chức</i>
+                    </td>
+                </tr>
+            </table>
+            
+            <br />
+                <span id="ctl00_ContentPlaceHolder1_ctl00_ctl00_Label1"><table id="ctl00_ContentPlaceHolder1_ctl00_ctl00_tbl2" cellspacing="0" cellpadding="0" border="0" style="background-color:White;width:100%;border-collapse:collapse;">
+    <tr>
+        <td class="Table_Header" rowspan="1" style="width:200px;"></td><td class="Table_Header" rowspan="1" style="width:50px;">Mã số</td><td class="Table_Header" rowspan="1">Số lượng</td>
+    </tr><tr>
+        <td class="KH_ThuTuCot_Mau01" colspan="1">A</td><td class="KH_ThuTuCot_Mau01" colspan="1">B</td><td class="KH_ThuTuCot_Mau01" colspan="1">1</td>
+    </tr><tr>
+        <td class="TableCell" colspan="1"><b>A. TỔNG SỐ DOANH NGHIỆP KHOA HỌC VÀ CÔNG NGHỆ</b></td><td class="TableCell_Center" colspan="1">01</td><td class="TableCell_Center" rowspan="1" style="width:40px;">1</td>
+    </tr><tr>
+        <td class="TableCell" colspan="1"><b>1. Chia theo loại hình kinh tế</b></td><td class="TableCell_Center" colspan="1"></td><td class="TableCell_Center" colspan="1"></td>
+    </tr><tr>
+        <td class="TableCell" colspan="1">1.1. Nhà nước</td><td class="TableCell_Center" colspan="1">02</td><td class="TableCell_Center" rowspan="1" style="width:40px;"></td>
+    </tr><tr>
+        <td class="TableCell" colspan="1">1.2. Ngoài nhà nước</td><td class="TableCell_Center" colspan="1">03</td><td class="TableCell_Center" rowspan="1" style="width:40px;">1</td>
+    </tr><tr>
+        <td class="TableCell" colspan="1">1.3. Có vốn đầu tư nước ngoài</td><td class="TableCell_Center" colspan="1">04</td><td class="TableCell_Center" rowspan="1" style="width:40px;"></td>
+    </tr><tr>
+        <td class="TableCell" colspan="1"><b>2. Chia theo ngành kinh tế</b></td><td class="Table_Header" colspan="1"></td><td class="Table_Header" colspan="1"></td>
+    </tr><tr>
+        <td class="TableCell" colspan="1"><b>3. Chia theo hình thức thành lập</b></td><td class="TableCell_Center" colspan="1"></td><td class="TableCell_Center" colspan="1"></td>
+    </tr><tr>
+        <td class="TableCell" colspan="1">3.1. Thành lập mới</td><td class="TableCell_Center" colspan="1">05</td><td class="TableCell_Center" rowspan="1" style="width:40px;">1</td>
+    </tr><tr>
+        <td class="TableCell" colspan="1">3.2. Chuyển đổi từ các tổ chức KH&CN công lập</td><td class="TableCell_Center" colspan="1">06</td><td class="TableCell_Center" rowspan="1" style="width:40px;"></td>
+    </tr><tr>
+        <td class="TableCell" colspan="1">3.3. Hình thành từ trường đại học</td><td class="TableCell_Center" colspan="1">07</td><td class="TableCell_Center" rowspan="1" style="width:40px;"></td>
+    </tr><tr>
+        <td class="TableCell" colspan="1">3.4. Hình thành từ viện nghiên cứu</td><td class="TableCell_Center" colspan="1">08</td><td class="TableCell_Center" rowspan="1" style="width:40px;"></td>
+    </tr><tr>
+        <td class="TableCell" colspan="1"><b>B. SỐ TỔ CHỨC TRUNG GIAN PHÁT TRIỂN THỊ TRƯỜNG KHOA HỌC VÀ CÔNG NGHỆ</b></td><td class="TableCell_Center" colspan="1">09</td><td class="TableCell_Center" rowspan="1" style="width:40px;">0</td>
+    </tr>
+</table></span>
+                            <br />
+                            <div style="height: 5px;
+                width: 100%">
+                            </div>
+
+                            <div style="height: 25px; text-align:center; width: 100%">
+                                <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$ctl00$btnIn" value="Xuất in" id="ctl00_ContentPlaceHolder1_ctl00_ctl00_btnIn" class="button" />
+                            </div>
+                            </td>
+                            </tr>
+                            </table>
+
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="div_Footer" style="z-index: 102; width: 100%; height: 23px; bottom: 24;">
+
+                    <table width="100%" cellpadding="0" cellspacing="0" align="center">
+                        <tr>
+                            <td width="100%" style="padding-bottom:0px; background: url(/thongkekhcn/Images/static/menutop_2.gif)">
+                                <table width="100%" style="height:24px;" cellspacing="0" cellpadding="0" border="0">
+
+                                    <tr>
+                                        <td style="color:#ffffff; font-weight:normal; font-size:8pt;font-family:Arial;" align="left">
+                                            &nbsp;
+                                        </td>
+                                        <td width="200px" align="right" style="color:#ffffff; font-weight:normal; font-size:8pt; font-family:Arial; padding-right:5px;">
+                                            Độ phân giải tối thiểu : 1024x768
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
