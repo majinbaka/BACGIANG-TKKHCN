@@ -27,6 +27,7 @@ use App\Bieutonghop8;
 use App\Bieutonghop9;
 use App\Bieutonghop10;
 use App\Bieutonghop11;
+use App\YearReport;
 
 class HomeController extends Controller
 {
@@ -114,18 +115,19 @@ class HomeController extends Controller
     }
 
     public function tkcsreport(){
-        $years = User::listYear();
-        $users = User::getAllUserHasReported(User::lastYear())->get();
-        $total = User::getAllUserHasReported(User::lastYear())->count();
-        $cyear = User::lastYear();
+        $years = User::listYearShow();
+        $users = User::getAllUserHasReportedShow(User::lastYearShow())->get();
+        $total = User::getAllUserHasReportedShow(User::lastYearShow())->count();
+        $cyear = User::lastYearShow();
+
         return view('thongkecoso', array('users' => $users,  'years' => $years, 'total' => $total, 'y' => $cyear));
     }
 
     public function search(){
         $params = Input::all();
-        $years = User::listYear();
-        $users = User::getAllUserHasReported($params['year'])->where('donviname', 'like', '%'.$params['s'].'%')->get();
-        $total = User::getAllUserHasReported($params['year'])->where('donviname', 'like', '%'.$params['s'].'%')->count();
+        $years = User::listYearShow();
+        $users = User::getAllUserHasReportedShow($params['year'])->where('donviname', 'like', '%'.$params['s'].'%')->get();
+        $total = User::getAllUserHasReportedShow($params['year'])->where('donviname', 'like', '%'.$params['s'].'%')->count();
         return view('thongkecoso', array('users' => $users,  'years' => $years, 'total' => $total, 'y' => $params['year']));
     }
 
@@ -179,13 +181,99 @@ class HomeController extends Controller
         if (Input::has('4')){$bieu = Bieutonghop4::reBuildBieu($year);$bieuType=4;}
         if (Input::has('5')){$bieu = Bieutonghop5::reBuildBieu($year);$bieuType=5;}
         if (Input::has('6')){$bieu = Bieutonghop6::reBuildBieu($year);$bieuType=6;}
-        if (Input::has('7')){$bieu = Bieutonghop7::where('year', $year)->first();$bieuType=7;}
-        if (Input::has('8')){$bieu = Bieutonghop8::where('year', $year)->first();$bieuType=8;}
-        if (Input::has('9')){$bieu = Bieutonghop9::where('year', $year)->first();$bieuType=9;}
-        if (Input::has('10')){$bieu = Bieutonghop10::where('year', $year)->first();$bieuType=10;}
-        if (Input::has('11')){$bieu = Bieutonghop11::where('year', $year)->first();$bieuType=11;}
-        
-        return view('bieutonghop.'.$bieuType, array('bieu' => $bieu, 'years' => $years));
+        if (Input::has('7')){
+            $show = YearReport::where('year', $year)->where('type', 7)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop7::where('year', $year)->first();$bieuType=7;
+            }else
+                $bieu = false;
+        }
+        if (Input::has('8')){
+            $show = YearReport::where('year', $year)->where('type', 8)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop8::where('year', $year)->first();$bieuType=8;
+            }else
+                $bieu = false;
+        }
+        if (Input::has('9')){
+            $show = YearReport::where('year', $year)->where('type', 9)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop9::where('year', $year)->first();$bieuType=9;
+            }else
+                $bieu = false;
+        }
+        if (Input::has('10')){
+            $show = YearReport::where('year', $year)->where('type', 10)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop10::where('year', $year)->first();$bieuType=10;
+            }else
+                $bieu = false;
+        }
+        if (Input::has('11')){
+            $show = YearReport::where('year', $year)->where('type', 11)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop11::where('year', $year)->first();$bieuType=11;
+        }else
+            $bieu = false;
+        }
+
+        $canshow = YearReport::where('year', $year)->where('type','>', 1)->where('status', 1)->pluck('type')->toArray();
+        if (!$bieu) return "Không được quyền xem biểu ";
+
+        return view('bieutonghop.'.$bieuType, array('bieu' => $bieu, 'years' => $years, 'cans' => $canshow));
+    }
+
+    public function thongketonghopBieu($type)
+    {
+        $params = Input::all();
+        $year = $params['year'];
+        $years = User::listYear();
+        $bieu = Bieutonghop1::reBuildBieu($year);
+        if ($type == 2){$bieu = Bieutonghop2::reBuildBieu($year);}
+        if ($type == 3){$bieu = Bieutonghop3::reBuildBieu($year);}
+        if ($type == 4){$bieu = Bieutonghop4::reBuildBieu($year);}
+        if ($type == 5){$bieu = Bieutonghop5::reBuildBieu($year);}
+        if ($type == 6){$bieu = Bieutonghop6::reBuildBieu($year);}
+        if ($type == 7){
+            $show = YearReport::where('year', $year)->where('type', 7)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop7::where('year', $year)->first();
+            }else
+                $bieu = false;
+        }
+        if ($type == 8){
+            $show = YearReport::where('year', $year)->where('type', 8)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop8::where('year', $year)->first();
+            }else
+                $bieu = false;
+        }
+        if ($type == 9){
+            $show = YearReport::where('year', $year)->where('type', 9)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop9::where('year', $year)->first();
+            }else
+                $bieu = false;
+        }
+        if ($type == 10){
+            $show = YearReport::where('year', $year)->where('type', 10)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop10::where('year', $year)->first();
+            }else
+                $bieu = false;
+        }
+        if ($type == 11){
+            $show = YearReport::where('year', $year)->where('type', 11)->where('status', 1)->first();
+            if($show){
+            $bieu = Bieutonghop11::where('year', $year)->first();
+        }else
+            $bieu = false;
+        }
+
+        $canshow = YearReport::where('year', $year)->where('type','>', 1)->where('status', 1)->pluck('type')->toArray();
+        if (!$bieu) return "Không được quyền xem biểu ";
+
+        return view('bieutonghop.'.$type, array('bieu' => $bieu, 'years' => $years, 'cans' => $canshow));
     }
 
     public function generateBieu1($id)
@@ -317,6 +405,45 @@ class HomeController extends Controller
         if ($type==11)
         {
             $bieu = Bieutonghop11::find($id);
+            $filename='Bieu011_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
+        }
+
+        return response()->download($filename);   
+    }
+
+    public function generateBieuTHY($type, $year){
+        $params = Input::all();
+        $reporter = 'Sở KH&amp;CN Bắc Giang';
+        $receiver = '';
+
+        if ($type==7)
+        {
+            $bieu = Bieutonghop7::where('year', $year)->first();
+            $filename='Bieu07_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
+        }
+        if ($type==8)
+        {
+            $bieu = Bieutonghop8::where('year', $year)->first();
+            $filename='Bieu08_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
+        }
+        if ($type==9)
+        {
+            $bieu = Bieutonghop9::where('year', $year)->first();
+            $filename='Bieu09_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
+        }
+        if ($type==10)
+        {
+            $bieu = Bieutonghop10::where('year', $year)->first();
+            $filename='Bieu010_TKTH_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
+        }
+        if ($type==11)
+        {
+            $bieu = Bieutonghop11::where('year', $year)->first();
             $filename='Bieu011_TKTH_'.date('d_m_Y').'.xls';
             file_put_contents($filename, $bieu->generateBieu($reporter, $receiver));
         }

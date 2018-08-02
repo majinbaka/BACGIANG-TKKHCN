@@ -78,7 +78,7 @@
         <li class="header">MAIN NAVIGATION</li>
         <li>
           <a href="/thanhvien/bieumau/baocao">
-            <i class="fa fa-dashboard"></i> <span>Báo cáo KHCN</span>
+            <i class="fa fa-dashboard"></i> <span>Thực hiện chế độ báo cáo KHCN</span>
           </a>
         </li>
         <li>

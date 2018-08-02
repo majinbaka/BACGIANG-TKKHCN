@@ -71,6 +71,30 @@ class Bieumau2 extends Model
         $b1 = Bieumau1::where('user_id', $this->user_id)->where('reporter_year', $this->reporter_year)->first();
         $file = str_replace('@receiver@', $b1->receiverTmp(), $file);
         $file = str_replace('@reporter_element_name@', $b1->reporter_element_name, $file);
+        $file = str_replace('@year@', $this->reporter_year, $file);
+        $file = str_replace('@f1@', Bieumau2::ftmp($this->total), $file);
+        $file = str_replace('@f2@', Bieumau2::ftmp($this->female_total), $file);
+        $file = str_replace('@f3@', Bieumau2::ftmp($this->nation_vn), $file);
+        $file = str_replace('@f4@', Bieumau2::ftmp($this->nation_kinh), $file);
+        $file = str_replace('@f5@', Bieumau2::ftmp($this->nation_other), $file);
+        $file = str_replace('@f6@', Bieumau2::ftmp($this->nation_foregin), $file);
+        $file = str_replace('@f7@', Bieumau2::ftmp($this->class_khtn), $file);
+        $file = str_replace('@f8@', Bieumau2::ftmp($this->class_khkt), $file);
+        $file = str_replace('@f9@', Bieumau2::ftmp($this->class_khyd), $file);
+        $file = str_replace('@f10@', Bieumau2::ftmp($this->class_khnn), $file);
+        $file = str_replace('@f11@', Bieumau2::ftmp($this->class_khxh), $file);
+        $file = str_replace('@f12@', Bieumau2::ftmp($this->class_khnv), $file);
+        $file = str_replace('@f13@', Bieumau2::ftmp($this->class_other), $file);
+
+        return $file;
+    }
+
+    public function generateBieuX(){
+        $file = file_get_contents('tmp/temp_2/b2print.tmp', true);
+        $b1 = Bieumau1::where('user_id', $this->user_id)->where('reporter_year', $this->reporter_year)->first();
+        $file = str_replace('@receiver@', $b1->receiverTmp(), $file);
+        $file = str_replace('@reporter_element_name@', $b1->reporter_element_name, $file);
+        $file = str_replace('@year@', $this->reporter_year, $file);
         $file = str_replace('@f1@', Bieumau2::ftmp($this->total), $file);
         $file = str_replace('@f2@', Bieumau2::ftmp($this->female_total), $file);
         $file = str_replace('@f3@', Bieumau2::ftmp($this->nation_vn), $file);

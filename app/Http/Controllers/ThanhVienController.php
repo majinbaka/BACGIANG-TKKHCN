@@ -19,6 +19,7 @@ use App\Bieumau6;
 use App\Technology;
 use App\Element;
 use DateTime;
+use App\YearReport;
 
 class ThanhVienController extends Controller
 {
@@ -89,12 +90,62 @@ class ThanhVienController extends Controller
 	        return Redirect::to('admin/thanhvien');
 	    }
 	}
-
+    
     public function edit($id)
     {
     	$user = User::find($id);
 
     	return view('admin.thanhviens.edit', ['thanhvien' => $user]);
+    }
+
+    public function showStatus($year, $id, $check)
+    {
+        $ry = YearReport::where('year', $year)->where('user_id', $id)->where('type', 1)->first();
+
+        if ($ry && $check == "true")
+        {
+            $ry->status = 1;
+            $ry->save();
+        }
+        else if($ry && $check == "false")
+        {
+            $ry->status = 0;
+            $ry->save();
+        }
+        else if (!$ry){
+            $ry = new YearReport;
+            $ry->year= $year;
+            $ry->user_id = $id;
+            $ry->type = 1;
+            $ry->status = $check == "true" ? 1 : 0;
+            $ry->save();
+        }
+
+        return "";
+    }
+
+    public function showBieu($year, $id, $type){
+        $user = User::find($id);
+        if ($type == 1)
+        $bieumau = Bieumau1::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 2)
+        $bieumau = Bieumau2::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 3)
+        $bieumau = Bieumau3::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 4)
+        $bieumau = Bieumau4::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 5)
+        $bieumau = Bieumau5::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 6)
+        $bieumau = Bieumau6::where('user_id', $user->id)->where('reporter_year', $year)->first();
+
+        if ($bieumau){
+           return view('admin.thanhviens.xembieumau'.$type)->with('bieumau', $bieumau);
+        }
+        else
+        {
+            return Redirect::route('thanhviens.show', ['id' => $id])->with('message', 'Không có biểu mẫu');
+        }
     }
 
     public function editBieu($year, $id, $type){

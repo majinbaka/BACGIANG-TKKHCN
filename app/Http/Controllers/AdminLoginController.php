@@ -51,4 +51,13 @@ class AdminLoginController extends Controller
     {
         return 'admin';
     }
+    protected function getFailedLoginMessage()
+    {
+        return 'Sai tên đăng nhập hoặc mật khẩu .Vui lòng nhập lại';
+    }
+
+    protected function getLockoutErrorMessage($seconds)
+    {
+        return 'Bạn đã nhập sai quá nhiều lần. Vui lòng thử lại sau '.$seconds.' giây.';
+    }
 }

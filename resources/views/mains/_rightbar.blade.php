@@ -48,7 +48,7 @@
                     <label for="ctl00_Member_Login1_chkSave">Ghi nhớ?</label>
                 </td>
                 <td align="right" style="padding-right:10px;">
-                    <a id="ctl00_Member_Login1_HyperLink_Reg" href="/reg">Đăng ký</a> &nbsp;&nbsp;&nbsp;
+                    <a id="ctl00_Member_Login1_HyperLink_Reg" href="/dangky">Đăng ký</a> &nbsp;&nbsp;&nbsp;
                     <input type="submit" name="ctl00$Member_Login1$btnLogin" value="Đăng nhập" />
                 </td>
             </tr>

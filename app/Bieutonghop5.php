@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\BieuStatus;
 
 class Bieutonghop5 extends Model
 {
@@ -55,6 +56,7 @@ return "<td rowspan='1' align='center' style='    font-family: Times New Roman; 
         $file = file_get_contents('tmp/tonghop5/temp.tmp', true);
         $file = str_replace('@reporter@', $reporter, $file);
         $file = str_replace('@receiver@', $receiver, $file);
+        $file = str_replace('@year@', $this->year, $file);
         $file = str_replace('@f1@', Bieutonghop5::ftmp($this->field_1), $file);
         $file = str_replace('@f2@', Bieutonghop5::ftmp($this->field_2), $file);
         $file = str_replace('@f3@', Bieutonghop5::ftmp($this->field_3), $file);
@@ -83,7 +85,8 @@ return "<td rowspan='1' align='center' style='    font-family: Times New Roman; 
 
 
     public static function F5Collection($year){
-        $b2 = Bieumau5::where('reporter_year', $year)->where('check', 1)->get();
+        $user_ids = BieuStatus::where('year', $year)->where('status', 2)->pluck('user_id');
+        $b2 = Bieumau5::where('reporter_year', $year)->whereIn('user_id', $user_ids)->get();
         $ids = [];
         foreach ($b2 as $b) {
             if ($b->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b->total != "1=&2="){
@@ -96,7 +99,7 @@ return "<td rowspan='1' align='center' style='    font-family: Times New Roman; 
     public static function F5Sum($year, $value, $column)
     {
         $col = Bieutonghop5::F5Collection($year);
-        $b2 = Bieumau5::whereIn('id', $col)->where('check', 1)->get();
+        $b2 = Bieumau5::whereIn('id', $col)->get();
         $sum = 0;
 
         foreach ($b2 as $b) {

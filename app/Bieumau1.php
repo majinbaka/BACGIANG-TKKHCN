@@ -218,30 +218,30 @@ class Bieumau1 extends Model
             $res .="unchecked />";
         $res .= "<a>Khoa học tự nhiên</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='checkbox'";
         if ($this->labNumber(2))
-            $res .= "checked";
+            $res .= "checked />";
         else
-            $res .="unchecked";
-        $res .="/><a>Khoa học kỹ thuật và công nghệ</a><br/><input type='checkbox'"; 
+            $res .="unchecked />";
+        $res .="<a>Khoa học kỹ thuật và công nghệ</a><br/><input type='checkbox'"; 
         if ($this->labNumber(3))
-            $res .= "checked";
+            $res .= "checked />";
         else
-            $res .="unchecked";
-        $res .="/><a>Khoa học y, dược</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='checkbox'";
+            $res .="unchecked />";
+        $res .="<a>Khoa học y, dược</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='checkbox'";
         if ($this->labNumber(4))
-            $res .= "checked";
+            $res .= "checked />";
         else
-            $res .="unchecked";
-        $res .= "/><a>Khoa học nông nghiệp</a><br/><input type='checkbox'";
+            $res .="unchecked />";
+        $res .= "<a>Khoa học nông nghiệp</a><br/><input type='checkbox'";
         if ($this->labNumber(5))
-            $res .= "checked";
+            $res .= "checked />";
         else
-            $res .="unchecked";
-        $res .="/><a>Khoa học xã hội</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='checkbox'";
+            $res .="unchecked />";
+        $res .="<a>Khoa học xã hội</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='checkbox'";
         if ($this->labNumber(6))
-            $res .= "checked";
+            $res .= "checked />";
         else
-            $res .="unchecked";
-        $res .="/><a>Khoa học nhân văn</a><br/>";
+            $res .="unchecked />";
+        $res .="<a>Khoa học nhân văn</a><br/>";
 
         return $res;
     }
@@ -272,6 +272,43 @@ class Bieumau1 extends Model
     public function generateBieu1()
     {
         $file = file_get_contents('tmp/temp_1/b1.tmp', true);
+        $file = str_replace('@year@', $this->reporter_year, $file);
+        $file = str_replace('@reporter_element_name@', $this->reporter_element_name, $file);
+        $file = str_replace('@receiver@', $this->receiverTmp(), $file);
+        $file = str_replace('@reporter_transfer_name@', $this->reporter_transfer_name, $file);
+        $file = str_replace('@reporter_eng_name@', $this->reporter_eng_name, $file);
+        $file = str_replace('@address@', $this->address, $file);
+        $file = str_replace('@city@', $this->city, $file);
+        $file = str_replace('@phone@', $this->phone, $file);
+        $file = str_replace('@email@', $this->email, $file);
+        $file = str_replace('@fax@', $this->fax, $file);
+        $file = str_replace('@website@', $this->website, $file);
+        $file = str_replace('@establish_code@', $this->establish_code, $file);
+        $file = str_replace('@establish_day@', date('d/m/Y', strtotime($this->establish_day)), $file);
+        $file = str_replace('@establish_lever@', $this->establishLeverTmp(), $file);
+        $file = str_replace('@tax_number@', $this->tax_number, $file);
+        $file = str_replace('@certificate_number@', $this->certificate_number, $file);
+        $file = str_replace('@certificate_date@', date('d/m/Y', strtotime($this->certificate_date)), $file);
+        $file = str_replace('@certificate_grant@', $this->certificate_grant, $file);
+        $file = str_replace('@manager@', $this->manager, $file);
+        $file = str_replace('@manager_city@', $this->manager_city, $file);
+        $file = str_replace('@type_company@', $this->typeCompanyTmp(), $file);
+        $file = str_replace('@type_econom@', $this->typeEconomTmp(), $file);
+        $file = str_replace('@money@', $this->money, $file);
+        $file = str_replace('@lab_range@', $this->lab_range, $file);
+        $file = str_replace('@technologies@', $this->technologiesTmp(), $file);
+        $file = str_replace('@lab_number_sub@', $this->labNumberSubTmp(), $file);
+        $file = str_replace('@lab_number@', $this->labNumberTmp(), $file);
+        $file = str_replace('@lab_description@', $this->lab_description, $file);
+        $file = str_replace('@report_info@', $this->reportInfoTmp(), $file);
+        $file = str_replace('@element@', $this->elementTmp(), $file);
+
+        return $file;
+    }
+
+    public function generateBieuX()
+    {
+        $file = file_get_contents('tmp/temp_1/b1print.tmp', true);
         $file = str_replace('@year@', $this->reporter_year, $file);
         $file = str_replace('@reporter_element_name@', $this->reporter_element_name, $file);
         $file = str_replace('@receiver@', $this->receiverTmp(), $file);

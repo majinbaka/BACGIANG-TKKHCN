@@ -39,7 +39,15 @@ class AuthController extends Controller
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
+    protected function getFailedLoginMessage()
+    {
+        return 'Sai tên đăng nhập hoặc mật khẩu .Vui lòng nhập lại';
+    }
 
+    protected function getLockoutErrorMessage($seconds)
+    {
+        return 'Bạn đã nhập sai quá nhiều lần. Vui lòng thử lại sau '.$seconds.' giây.';
+    }
     /**
      * Get a validator for an incoming registration request.
      *

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\BieuStatus;
 
 class Bieutonghop3 extends Model
 {
@@ -47,6 +48,7 @@ class Bieutonghop3 extends Model
         $file = file_get_contents('tmp/tonghop3/temp.tmp', true);
         $file = str_replace('@reporter@', $reporter, $file);
         $file = str_replace('@receiver@', $receiver, $file);
+        $file = str_replace('@year@', $this->year, $file);
         $file = str_replace('@f1@', Bieutonghop3::ftmp($this->field_1), $file);
         $file = str_replace('@f2@', Bieutonghop3::ftmp($this->field_2), $file);
         $file = str_replace('@f3@', Bieutonghop3::ftmp($this->field_3), $file);
@@ -70,7 +72,8 @@ class Bieutonghop3 extends Model
     }
 
     public static function F3Collection($year){
-        $b2 = Bieumau3::where('reporter_year', $year)->where('check', 1)->get();
+        $user_ids = BieuStatus::where('year', $year)->where('status', 2)->pluck('user_id');
+        $b2 = Bieumau3::where('reporter_year', $year)->whereIn('user_id', $user_ids)->get();
         $ids = [];
         foreach ($b2 as $b) {
             if ($b->total != "1=&2=&3=&4=&5=&6=&7=&8=&9=" && $b->total != "1=&2=&3=&4=&5="){
@@ -83,7 +86,7 @@ class Bieutonghop3 extends Model
     public static function F3Sum($year, $value, $column)
     {
         $col = Bieutonghop3::F3Collection($year);
-        $b2 = Bieumau3::whereIn('id', $col)->where('check', 1)->get();
+        $b2 = Bieumau3::whereIn('id', $col)->get();
         $sum = 0;
 
         foreach ($b2 as $b) {

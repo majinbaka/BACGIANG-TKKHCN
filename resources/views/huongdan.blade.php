@@ -23,7 +23,13 @@
             </div>
             <input name="ctl00$ContentPlaceHolder1$Article1$DataList2$ctl00$HiddenImageName2" type="hidden" id="ctl00_ContentPlaceHolder1_Article1_DataList2_ctl00_HiddenImageName2" />
 @if(isset($info))
-{!! $info->content !!}
+    @if($info->content != "")
+        {!! $info->content !!}
+    @else
+        Đang cập nhật nội dung…
+    @endif
+@else
+    Đang cập nhật nội dung…
 @endif
             <div style="height: 15px;">
             </div>

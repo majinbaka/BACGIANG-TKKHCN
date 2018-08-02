@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="/adminlte/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/adminlte/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -86,7 +87,7 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Thành viên</span>
+            <span>Quản lý tài khoản</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -95,10 +96,12 @@
             <li><a href="/admin/thanhvien"><i class="fa fa-circle-o"></i>Danh sách</a></li>
             <li><a href="/admin/thanhvien/create"><i class="fa fa-circle-o"></i>Tạo mới</a></li>
           </ul>
-        </li><li class="treeview">
+        </li>
+        <li><a href="/admin/tkcs"><i class="fa fa-book"></i> <span>Thống kê cơ sở</span></a></li>
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Thống kê khoa học tổng hợp</span>
+            <span>Thống kê tổng hợp</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -111,7 +114,7 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
-            <span>Thống kê KHCN</span>
+            <span>Nghiệp vụ thống kê</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -239,10 +242,13 @@ echo '
     $('#example2').DataTable({
       'paging'      : true,
       'lengthChange': false,
-      'searching'   : false,
+      'searching'   : true,
       'ordering'    : true,
       'info'        : true,
-      'autoWidth'   : false
+      'autoWidth'   : false,
+      "language": {
+        "search": "Tìm kiếm:"
+      }
     })
   })
 </script>

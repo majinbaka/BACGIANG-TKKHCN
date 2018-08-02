@@ -39,6 +39,7 @@ class Bieutonghop9 extends Model
         $file = file_get_contents('tmp/tonghop9/temp.tmp', true);
         $file = str_replace('@reporter@', $reporter, $file);
         $file = str_replace('@receiver@', $receiver, $file);
+        $file = str_replace('@year@', $this->year, $file);
         $file = str_replace('@f1@', Bieutonghop9::ftmp($this->field_1), $file);
         $file = str_replace('@f2@', Bieutonghop9::ftmp($this->field_2), $file);
         $file = str_replace('@f3@', Bieutonghop9::ftmp($this->field_3), $file);
@@ -53,6 +54,27 @@ class Bieutonghop9 extends Model
 
         return $file;
     }
+
+    public function generateBieuX($reporter, $receiver){
+        $file = file_get_contents('tmp/tonghop9/show9.blade.php', true);
+        $file = str_replace('@reporter@', $reporter, $file);
+        $file = str_replace('@receiver@', $receiver, $file);
+        $file = str_replace('@year@', $this->year, $file);
+        $file = str_replace('@f1@', Bieutonghop9::ftmp($this->field_1), $file);
+        $file = str_replace('@f2@', Bieutonghop9::ftmp($this->field_2), $file);
+        $file = str_replace('@f3@', Bieutonghop9::ftmp($this->field_3), $file);
+        $file = str_replace('@f4@', Bieutonghop9::ftmp($this->field_4), $file);
+        $file = str_replace('@f5@', Bieutonghop9::ftmp($this->field_5), $file);
+        $file = str_replace('@f6@', Bieutonghop9::ftmp($this->field_6), $file);
+        $file = str_replace('@f7@', Bieutonghop9::ftmp($this->field_7), $file);
+        $file = str_replace('@f8@', Bieutonghop9::ftmp($this->field_8), $file);
+        $file = str_replace('@f9@', Bieutonghop9::ftmp($this->field_9), $file);
+        $file = str_replace('@f10@', Bieutonghop9::ftmp($this->field_10), $file);
+        $file = str_replace('@f11@', Bieutonghop9::ftmp($this->field_11), $file);
+
+        return $file;
+    }
+
     public function updateBieu($params){
         $b = $this;
         $b->field_1 = http_build_query($params['field_1']);

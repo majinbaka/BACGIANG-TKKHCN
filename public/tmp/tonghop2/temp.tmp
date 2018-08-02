@@ -58,7 +58,7 @@
 
                     <body lang=EN-US style='tab-interval:.5in'>
                         <div class=Section1>
-                            <center><b class=MsoNormal>NHÂN LỰC HOẠT ĐỘNG KHOA HỌC VÀ CÔNG NGHỆ</b><br/><a class=MsoNormal>(Có đến ngày 31/12 năm  2017)</a>
+                            <center><b class=MsoNormal>NHÂN LỰC HOẠT ĐỘNG KHOA HỌC VÀ CÔNG NGHỆ</b><br/><a class=MsoNormal>(Có đến ngày 31/12 năm @year@)</a>
                                 <p style='color:red'>
                                     <I> </I>
                                 </p>

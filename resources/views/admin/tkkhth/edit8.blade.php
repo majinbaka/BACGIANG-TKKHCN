@@ -67,10 +67,12 @@ $s = parse_str($bieu->field_1, $out);
     <td class="TableCell" colspan="1"><b>1. SỐ QUY CHUẨN KỸ THUẬT ĐỊA PHƯƠNG ĐƯỢC BAN HÀNH</b></td>
     <td class="TableCell_Center" colspan="1">01</td>
     <td class="TableCell_Center" colspan="1"><i>Quy chuẩn</i></td>
+    <td class="TableCell_Center" rowspan="1" style="width:40px;">
       <input value="{{$out[1]}}" class="form-control" type="text" name="field_1[1]">
-    <td class="TableCell_Center" rowspan="1" style="width:40px;"></td>
+    </td>
+    <td class="TableCell_Center" rowspan="1" style="width:50px;">
       <input value="{{$out[2]}}" class="form-control" type="text" name="field_1[2]">
-    <td class="TableCell_Center" rowspan="1" style="width:50px;"></td>
+    </td>
 </tr>
 <tr>
     <td class="TableCell" colspan="1"><b>Chia theo loại quy chuẩn</b></td>
@@ -364,11 +366,11 @@ $s = parse_str($bieu->field_21, $out);
             </div>
           </div>
           <!-- /.box -->
-        </div
+        </div>
 
         <!-- /.col-->
       </div>
-      <!-- ./row --
+      <!-- ./row -->
 
     </section>
     

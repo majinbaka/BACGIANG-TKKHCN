@@ -14,11 +14,28 @@
     <script type="text/javascript" src="/js/highslide-with-html.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/highslide.css" />
     <!--End Hightslide-->
+    <style type="text/css">
+        .isa_info, .isa_success, .isa_warning, .isa_error {
+margin: 30px 0px;
+padding:12px;
+ 
+}
+.isa_error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+
+    </style>
 </head>
 <body>
     <div align="center">
         <div align="center" class="KhungNgoai" style="margin-bottom:32px;">
             @include("layouts._header")
+            @if(Session::has('message'))
+                <div class="isa_error alert">
+                    {{ Session::get('message') }}
+                </div>
+            @endif
             @yield('content')
             @include("layouts._footer")
         </div>

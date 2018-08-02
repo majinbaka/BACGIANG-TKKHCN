@@ -104,7 +104,7 @@ $s = parse_str($bieu->field_5, $out);
     <td class="TableCell_Center" colspan="1">05</td>
     <td class="TableCell_Center" colspan="1"><i>Dự án</i></td>
     <td class="Table_Header" colspan="1">
-      <input value="{{$out[1]}}" class="form-control" type="text" name="field_5[1]">
+      
     </td>
 </tr>
 <tr>
@@ -112,7 +112,7 @@ $s = parse_str($bieu->field_5, $out);
     <td class="TableCell_Center" colspan="1"></td>
     <td class="TableCell_Center" rowspan="1" style="width:50px;"><i>Dự án</i></td>
     <td class="TableCell_Center" rowspan="1" style="width:30px;">
-      <input value="{{$out[2]}}" class="form-control" type="text" name="field_5[2]">
+      <input value="{{$out[1]}}" class="form-control" type="text" name="field_5[1]">
     </td>
 </tr>
 <tr>
@@ -120,7 +120,7 @@ $s = parse_str($bieu->field_5, $out);
     <td class="TableCell_Center" colspan="1"></td>
     <td class="TableCell_Center" rowspan="1" style="width:50px;"><i>Dự án</i></td>
     <td class="TableCell_Center" rowspan="1" style="width:30px;">
-      <input value="{{$out[3]}}" class="form-control" type="text" name="field_5[3]">
+      <input value="{{$out[2]}}" class="form-control" type="text" name="field_5[2]">
     </td>
 </tr>
 <tr>
@@ -128,7 +128,7 @@ $s = parse_str($bieu->field_5, $out);
     <td class="TableCell_Center" colspan="1"></td>
     <td class="TableCell_Center" rowspan="1" style="width:50px;"><i>Dự án</i></td>
     <td class="TableCell_Center" rowspan="1" style="width:30px;">
-      <input value="{{$out[4]}}" class="form-control" type="text" name="field_5[4]">
+      <input value="{{$out[3]}}" class="form-control" type="text" name="field_5[3]">
     </td>
 </tr>
 <tr>
@@ -136,7 +136,7 @@ $s = parse_str($bieu->field_5, $out);
     <td class="TableCell_Center" colspan="1"></td>
     <td class="TableCell_Center" rowspan="1" style="width:50px;"><i>Dự án</i></td>
     <td class="TableCell_Center" rowspan="1" style="width:30px;">
-      <input value="{{$out[5]}}" class="form-control" type="text" name="field_5[5]">
+      <input value="{{$out[4]}}" class="form-control" type="text" name="field_5[4]">
     </td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ $s = parse_str($bieu->field_5, $out);
     <td class="TableCell_Center" colspan="1"></td>
     <td class="TableCell_Center" rowspan="1" style="width:50px;"><i>Dự án</i></td>
     <td class="TableCell_Center" rowspan="1" style="width:30px;">
-      <input value="{{$out[6]}}" class="form-control" type="text" name="field_5[6]">
+      <input value="{{$out[5]}}" class="form-control" type="text" name="field_5[5]">
     </td>
 </tr>
 <tr>

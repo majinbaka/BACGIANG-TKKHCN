@@ -1,4 +1,4 @@
-@extends('thanhvien._layout')
+@extends('thanhvien.prelayout')
 @section('css')
     @parent
 @endsection
@@ -12,7 +12,7 @@
     <li><a data-toggle="tab" href="#menu5">Biểu 5</a></li>
     <li><a data-toggle="tab" href="#menu6">Biểu 6</a></li>
 </ul>
-	<form role="form" method="POST" action="{{ url('/thanhvien/dangky/') }}">
+	<form role="form" method="POST" action="{{ url('/dangky/') }}">
 		{{ csrf_field() }}
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
@@ -20,6 +20,9 @@
       <h1>
         Thông tin đăng ký
       </h1>
+      <h4>
+      Vui lòng điền đầy đủ thông tin vào tất cả các biểu để hoàn tất đăng ký
+      </h4>
     </section>
     <section class="content">
       <div class="row">
@@ -191,7 +194,7 @@
                   <label for="establish_lever">Cấp quyết định thành lập:</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios1" value="1">
+                      <input checked type="radio" name="establish_lever" id="optionsRadios1" value="1">
                       8.1. Quốc hội, Uỷ ban thường vụ Quốc hội  
                     </label>
                   </div>
@@ -291,7 +294,7 @@
                   <label for="type_company">Loại hình của đơn vị/tổ chức :</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios1" value="1">
+                      <input checked type="radio" name="type_company" id="optionsRadios1" value="1">
                       13.1.Cơ quan quản lý nhà nước
                     </label>
                   </div>
@@ -414,7 +417,7 @@
                   <label for="exampleInputEmail1">Loại hình kinh tế :</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_econom" id="optionsRadios1" value="1">
+                      <input checked type="radio" name="type_econom" id="optionsRadios1" value="1">
                       14.1. Nhà nước
                     </label>
                   </div>
@@ -458,7 +461,7 @@
                   <label for="exampleInputEmail1">Lĩnh vực nghiên cứu chính theo chức năng nhiệm vụ :</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="lab_number_sub" id="optionsRadios1" value="1">
+                      <input checked type="radio" name="lab_number_sub" id="optionsRadios1" value="1">
                       1. Khoa học tự nhiên
                     </label>
                   </div>
@@ -542,7 +545,7 @@
                   <label for="report_info">Thông tin về số liệu trong các biểu mẫu báo cáo</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="report_info" id="optionsRadios1" value="1">
+                      <input checked type="radio" name="report_info" id="optionsRadios1" value="1">
                       Bao gồm số liệu của toàn bộ đơn vị/tổ chức, kể cả các đơn vị trực thuộc có tư cách pháp nhân;
                     </label>
                   </div>

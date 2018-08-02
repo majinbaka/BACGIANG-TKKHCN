@@ -29,11 +29,14 @@ Route::get('/generate/donvi/bieu5/{id}', 'HomeController@generateBieu5');
 Route::get('/generate/donvi/bieu6/{id}', 'HomeController@generateBieu6');
 Route::post('/thongkecoso/donvi/{year}/{id}/{type}', 'HomeController@donvireportX');
 Route::post('/thongketonghop/{year}', 'HomeController@thongketonghop');
+Route::post('/bieutonghop{type}/year', 'HomeController@thongketonghopBieu');
 Route::get('/thongketonghop/', 'HomeController@thongketonghop');
 Route::post('/generate/tonghop/bieu/{type}/{id}', 'HomeController@generateBieuTH');
+Route::get('/generate/tonghop/bieu{type}/{year}', 'HomeController@generateBieuTHY');
 Route::post('/search', 'HomeController@search');
 // Route::get('/fx', 'HomeController@fx');
-
+Route::get('/dangky', 'ThanhvienDashboardController@register');
+Route::post('/dangky', 'ThanhvienDashboardController@registerUpdate');
 
 Route::group(['middleware' => 'auth:web'], function () {
     Route::group(['prefix' => 'thanhvien'], function () {
@@ -42,12 +45,14 @@ Route::group(['middleware' => 'auth:web'], function () {
         });
 
         Route::get('/{year}/bieumau/{type}/edit', 'ThanhvienDashboardController@bieumau');
+        Route::get('/{year}/bieumau/{type}/show', 'ThanhvienDashboardController@bieumauShow');
+        Route::get('/{year}/bieumau/{type}/word', 'ThanhvienDashboardController@bieumauWord');
+        Route::get('/{year}/bieumau/send', 'ThanhvienDashboardController@bieumauSend');
+        Route::get('/{year}/bieumau/{type}/print', 'ThanhvienDashboardController@bieumauPrint');
 
         Route::get('/bieumau/baocao', 'ThanhvienDashboardController@createBieu');
         Route::patch('/bieumau/baocao', 'ThanhvienDashboardController@bieumauYear');
         Route::get('/doimatkhau', 'ThanhvienDashboardController@editPassword');
-        Route::get('/dangky', 'ThanhvienDashboardController@register');
-        Route::post('/dangky', 'ThanhvienDashboardController@registerUpdate');
         Route::patch('/password', 'ThanhvienDashboardController@updatePassword');
         Route::patch('/bieumau1/{year}', 'ThanhvienDashboardController@bieumau1Update');
         Route::patch('/bieumau2/{year}', 'ThanhvienDashboardController@bieumau2Update');
@@ -86,6 +91,8 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::patch('/thanhvien/{id}', 'ThanhVienController@update')->name('thanhviens.update');
         Route::delete('/thanhvien/{id}', 'ThanhVienController@destroy')->name('thanhviens.destroy');
         Route::get('/thanhvien/{year}/{id}/bieu/{type}', 'ThanhVienController@editBieu');
+        Route::get('/thanhvien/{year}/{id}/bieu/{type}/show', 'ThanhVienController@showBieu');
+        Route::post('/thanhviencheck/{year}/{id}/bieushow/{check}', 'ThanhVienController@showStatus');
         Route::patch('/thanhvien/{year}/{id}/bieu/1', 'ThanhVienController@bieumau1Update');
         Route::patch('/thanhvien/{year}/{id}/bieu/2', 'ThanhVienController@bieumau2Update');
         Route::patch('/thanhvien/{year}/{id}/bieu/3', 'ThanhVienController@bieumau3Update');
@@ -95,7 +102,14 @@ Route::group(['middleware' => 'auth:admin'], function () {
 
         Route::get('/tkkhth', 'TkkhthController@index')->name('tkkhth.index');
         Route::get('/tkkhth/{year}/bieu/{id}', 'TkkhthController@edit')->name('tkkhth.edit');
+        Route::get('/tkkhth/show/{year}/bieu/{id}', 'TkkhthController@show')->name('tkkhth.show');
         Route::patch('/tkkhth/{year}/bieu/{id}', 'TkkhthController@update')->name('tkkhth.update');
+        Route::get('/generate/tonghopbieu{type}/{year}', 'TkkhthController@printBieu');
+        Route::post('/tkkhth/{year}/{type}/bieushow/{check}', 'TkkhthController@checkBieu');
+        Route::get('/tkcs', 'TkcsController@index')->name('tkcs.index');
+        Route::get('/tkcs/{year}', 'TkcsController@year')->name('tkcs.donvi');
+        Route::get('/tkcs/duyet/{id}/{year}', 'TkcsController@bieumauDuyet')->name('tkcs.duyet');
+        Route::get('/tkcs/donvis', 'TkcsController@donviIndex')->name('tkcs.donviIndex');
 
         Route::get('/thongke/{id}/edit', 'ThongTinController@edit')->name('thongtins.edit');
         Route::patch('/thongke/{id}', 'ThongTinController@update')->name('thongtins.update');

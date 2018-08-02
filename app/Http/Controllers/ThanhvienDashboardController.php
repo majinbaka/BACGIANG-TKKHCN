@@ -20,6 +20,7 @@ use Auth;
 use DateTime;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\BieuStatus;
 
 class ThanhvienDashboardController extends Controller
 {
@@ -45,8 +46,9 @@ class ThanhvienDashboardController extends Controller
     public function createBieu()
     {
         $lists = User::listYear();
-        
-        return view('thanhvien.year', ['lists' => $lists]);
+        $user = Auth::user();
+
+        return view('thanhvien.year', ['lists' => $lists, 'user' => $user]);
     }
 
     public function register(){
@@ -57,10 +59,9 @@ class ThanhvienDashboardController extends Controller
         $params = Input::all();
 
         $rules = array(
-            'username' => 'required',
+            'username' => 'required|unique:users',
             'password' => 'required',
-            'donviname' => 'required',
-            'email' => 'email|unique:users'
+            'email' => 'name:useremail|email|unique:users'
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -73,7 +74,7 @@ class ThanhvienDashboardController extends Controller
             // store
             $user = new User;
             $user->username = Input::get('username');
-            $user->email = Input::get('email');
+            $user->email = Input::get('useremail');
             $user->donviname = $params['reporter_element_name'];
             $user->password = Hash::make(Input::get('password'));
             $user->check = 0;
@@ -91,7 +92,6 @@ class ThanhvienDashboardController extends Controller
         if (!array_key_exists('lab_number', $params)) $params['lab_number'] = null;
 
         $bieumau = new Bieumau1;
-        $bieumau->check = 0;
         $bieumau->user_id = $user->id;
         $bieumau->name = $params['reporter_element_name'];
         $bieumau->publish_day = $publish_day;
@@ -157,7 +157,6 @@ class ThanhvienDashboardController extends Controller
         }
 
         $bieumau = new Bieumau2;
-        $bieumau->check = 0;
         $bieumau->user_id = $user->id;
         $bieumau->publish_day = $publish_day;
         $bieumau->reporter_year = date('Y');
@@ -177,7 +176,6 @@ class ThanhvienDashboardController extends Controller
         $bieumau->save();
 
         $bieumau = new Bieumau3;
-        $bieumau->check = 0;
         $bieumau->user_id = $user->id;
         $bieumau->reporter_year = date('Y');
         $bieumau->publish_day = $publish_day;
@@ -202,7 +200,6 @@ class ThanhvienDashboardController extends Controller
         $bieumau->save();
 
         $bieumau = new Bieumau4;
-        $bieumau->check = 0;
         $bieumau->user_id = $user->id;
         $bieumau->reporter_year = date('Y');
         $bieumau->publish_day = $publish_day;
@@ -247,7 +244,6 @@ class ThanhvienDashboardController extends Controller
         $bieumau->save();
 
         $bieumau = new Bieumau5;
-        $bieumau->check = 0;
         $bieumau->reporter_year = date('Y');
         $bieumau->user_id = $user->id;
         $bieumau->publish_day = $publish_day;
@@ -276,7 +272,6 @@ class ThanhvienDashboardController extends Controller
         $bieumau->save();
     
         $bieumau = new Bieumau6;
-        $bieumau->check = 0;
         $bieumau->user_id = $user->id;
         $bieumau->reporter_year = date('Y');
         $bieumau->publish_day = $publish_day;
@@ -294,6 +289,13 @@ class ThanhvienDashboardController extends Controller
         $bieumau->total_award_female = http_build_query($params['total_award_female']);
         $bieumau->save();
 
+        $bieuS = new BieuStatus;
+        $bieuS->user_id = $user->id;
+        $bieuS->year = date('Y');
+        $bieuS->report_date = \Carbon\Carbon::now()->toDateString();
+        $bieuS->status = -1;
+        $bieuS->save();
+
         Session::flash('message', 'Đã gửi thông tin đăng ký');
 
         return view('thanhvien.dangky');
@@ -310,12 +312,26 @@ class ThanhvienDashboardController extends Controller
 
             return view('thanhvien.index');
         }
+        if ($params['year'] <= $params['oldyear'])
+        {
+            Session::flash('message', 'Năm không hợp lệ !');
+
+            return view('thanhvien.index');
+        }
         if ($params['year'] < 2010 || $params['year'] > 2500)
         {
             Session::flash('message', 'Năm không hợp lệ !');
 
             return view('thanhvien.index');
         }
+        if (array_key_exists('oldyear', $params))
+        {
+            $user->createReportCopy($params['oldyear'],$params['year']);
+
+            Session::flash('message', 'Tạo thành công');
+            return Redirect::to('thanhvien/bieumau/baocao');
+        }
+        else
         $user->createReport($params['year']);
 
         return view('thanhvien.bieumau1')->with('year', $params['year']);
@@ -620,12 +636,9 @@ class ThanhvienDashboardController extends Controller
         $user->check = 1;
         $user->save();
         
-        $bieu = Bieumau1::where('user_id', $id)->first();if($bieu){$bieu->check = 1;$bieu->save();}
-        $bieu = Bieumau2::where('user_id', $id)->first();if($bieu){$bieu->check = 1;$bieu->save();}
-        $bieu = Bieumau3::where('user_id', $id)->first();if($bieu){$bieu->check = 1;$bieu->save();}
-        $bieu = Bieumau4::where('user_id', $id)->first();if($bieu){$bieu->check = 1;$bieu->save();}
-        $bieu = Bieumau5::where('user_id', $id)->first();if($bieu){$bieu->check = 1;$bieu->save();}
-        $bieu = Bieumau6::where('user_id', $id)->first();if($bieu){$bieu->check = 1;$bieu->save();}
+        $bieuS = BieuStatus::where('user_id', $id)->where('status', -1)->first();
+        $bieuS->status = 2;
+        $bieuS->save();
 
         Session::flash('message', 'Phê duyệt thành công');
         return Redirect::to('admin/pheduyet');
@@ -642,8 +655,131 @@ class ThanhvienDashboardController extends Controller
         $bieu = Bieumau5::where('user_id', $id)->first();if($bieu)$bieu->delete();
         $bieu = Bieumau6::where('user_id', $id)->first();if($bieu)$bieu->delete();
 
+        $bieuS = BieuStatus::where('user_id', $id)->where('status', -1)->first();
+        if($bieuS)
+            $bieuS->delete();
+
         Session::flash('message', 'Xóa thành công');
         return Redirect::to('admin/pheduyet');
+    }
+
+    public function bieumauShow($year, $type)
+    {
+        $user = Auth::user();
+        if ($type == 1)
+        $bieumau = Bieumau1::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 2)
+        $bieumau = Bieumau2::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 3)
+        $bieumau = Bieumau3::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 4)
+        $bieumau = Bieumau4::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 5)
+        $bieumau = Bieumau5::where('user_id', $user->id)->where('reporter_year', $year)->first();
+        else if ($type == 6)
+        $bieumau = Bieumau6::where('user_id', $user->id)->where('reporter_year', $year)->first();
+
+        if ($bieumau){
+           return view('thanhvien.xembieumau'.$type)->with('bieumau', $bieumau);
+        }
+        else
+        {
+            Session::flash('message', 'Không có biểu mẫu');
+
+            return view('thanhvien.index');
+        }
+    }
+
+    public function bieumauWord($year, $type)
+    {
+        $user = Auth::user();
+        $filename = '';
+
+        if ($type == 1){
+            $bieu = Bieumau1::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            $filename = 'Bieu01CS_'.$bieu->id.'_'.date('d_m_Y').'.doc';
+            file_put_contents($filename, $bieu->generateBieu1());
+        }
+        else if ($type == 2){
+            $bieu = Bieumau2::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            $filename = 'Bieu02CS_'.$bieu->id.'_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu2());
+        }
+        else if ($type == 3){
+            $bieu = Bieumau3::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            $filename = 'Bieu03CS_'.$bieu->id.'_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu3());
+        }
+        else if ($type == 4){
+            $bieu = Bieumau4::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            $filename = 'Bieu04CS_'.$bieu->id.'_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu4());
+        }
+        else if ($type == 5){
+            $bieu = Bieumau5::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            $filename = 'Bieu05CS_'.$bieu->id.'_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu5());
+        }
+        else if ($type == 6){
+            $bieu = Bieumau6::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            $filename = 'Bieu06CS_'.$bieu->id.'_'.date('d_m_Y').'.xls';
+            file_put_contents($filename, $bieu->generateBieu6());
+        }
+
+        return response()->download($filename);
+    }
+
+    public function bieumauSend($year)
+    {
+        $user = Auth::user();
+        $bieuS = new BieuStatus;
+        $bieuS->user_id = $user->id;
+        $bieuS->year = $year;
+        $bieuS->report_date = \Carbon\Carbon::now()->toDateString();
+        $bieuS->status = 1;
+        $bieuS->save();
+
+        return Redirect::to('thanhvien/bieumau/baocao');
+    }
+
+    public function bieumauPrint($year, $type)
+    {
+        $user = Auth::user();
+        $params = Input::all();
+
+        if ($type == 1){
+            $bieu = Bieumau1::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            if(!$bieu) return Redirect::back();
+            $content = $bieu->generateBieuX();
+        }
+        else if ($type == 2){
+            $bieu = Bieumau2::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            if(!$bieu) return Redirect::back();
+            $content = $bieu->generateBieuX();
+        }
+        else if ($type == 3){
+            $bieu = Bieumau3::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            if(!$bieu) return Redirect::back();
+            $content = $bieu->generateBieuX();
+        }
+        else if ($type == 4){
+            $bieu = Bieumau4::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            if(!$bieu) return Redirect::back();
+            $content = $bieu->generateBieuX();
+        }
+        else if ($type == 5){
+            $bieu = Bieumau5::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            if(!$bieu) return Redirect::back();
+            $content = $bieu->generateBieuX();
+        }
+        else if ($type == 6){
+            $bieu = Bieumau6::where('user_id', $user->id)->where('reporter_year', $year)->first();
+            if(!$bieu) return Redirect::back();
+            $content = $bieu->generateBieuX();
+        }
+        $content .= "<script>window.print()</script>";
+
+        return $content;
     }
 }
 

@@ -46,6 +46,7 @@ class Bieumau6 extends Model
         $b1 = Bieumau1::where('user_id', $this->user_id)->where('reporter_year', $this->reporter_year)->first();
         $file = str_replace('@receiver@', $b1->receiverTmp(), $file);
         $file = str_replace('@reporter_element_name@', $b1->reporter_element_name, $file);
+        $file = str_replace('@year@', $this->reporter_year, $file);
         $file = str_replace('@f1@', Bieumau6::ftmp($this->total), $file);
         $file = str_replace('@f2@', Bieumau6::ftmp($this->total_award_vn), $file);
         $file = str_replace('@f3@', Bieumau6::ftmp($this->total_award_vn1), $file);
@@ -62,7 +63,29 @@ class Bieumau6 extends Model
         return $file;
     }
 
-        public function user()
+    public function generateBieuX(){
+        $file = file_get_contents('tmp/temp_6/b6print.tmp', true);
+        $b1 = Bieumau1::where('user_id', $this->user_id)->where('reporter_year', $this->reporter_year)->first();
+        $file = str_replace('@receiver@', $b1->receiverTmp(), $file);
+        $file = str_replace('@reporter_element_name@', $b1->reporter_element_name, $file);
+        $file = str_replace('@year@', $this->reporter_year, $file);
+        $file = str_replace('@f1@', Bieumau6::ftmp($this->total), $file);
+        $file = str_replace('@f2@', Bieumau6::ftmp($this->total_award_vn), $file);
+        $file = str_replace('@f3@', Bieumau6::ftmp($this->total_award_vn1), $file);
+        $file = str_replace('@f4@', Bieumau6::ftmp($this->total_award_vn2), $file);
+        $file = str_replace('@f5@', Bieumau6::ftmp($this->total_award_vn3), $file);
+        $file = str_replace('@f6@', Bieumau6::ftmp($this->total_award_vn4), $file);
+        $file = str_replace('@f7@', Bieumau6::ftmp($this->total_award_vn5), $file);
+        $file = str_replace('@f8@', Bieumau6::ftmp($this->total_award_other), $file);
+        $file = str_replace('@f9@', Bieumau6::ftmp($this->total_award_team), $file);
+        $file = str_replace('@f10@', Bieumau6::ftmp($this->total_award_fm), $file);
+        $file = str_replace('@f11@', Bieumau6::ftmp($this->total_award_male), $file);
+        $file = str_replace('@f12@', Bieumau6::ftmp($this->total_award_female), $file);
+
+        return $file;
+    }
+
+    public function user()
     {
         return $this->belongsTo('App\User');
     }

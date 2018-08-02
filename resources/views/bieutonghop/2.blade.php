@@ -94,18 +94,28 @@ text-decoration: none;
                 <input type="submit" name="4" value="Biểu 04" id="ctl00_ContentPlaceHolder1_ctl00_Tab4" title="Biểu 04/TKTH-KHCN-ĐP: Nhiệm vụ khoa học và công nghệ" class="Initial" style="border-style:None;" />
                 <input type="submit" name="5" value="Biểu 05" id="ctl00_ContentPlaceHolder1_ctl00_Tab5" title="Biểu 05/TKTH-KHCN-ĐP: Hợp tác quốc tế trong hoạt động khoa học và công nghệ" class="Initial" style="border-style:None;" />
                 <input type="submit" name="6" value="Biểu 06" id="ctl00_ContentPlaceHolder1_ctl00_Tab6" title="Biểu 06/TKTH-KHCN-ĐP: Giải thưởng khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                @if(in_array(7, $cans))
                 <input type="submit" name="7" value="Biểu 07" id="ctl00_ContentPlaceHolder1_ctl00_Tab7" title="Biểu 07/TKTH-KHCN-ĐP: Hoạt động đánh giá, thẩm định, giám định, ứng dụng và phát triển công nghệ tại địa phương" class="Initial" style="border-style:None;" />
+                @endif
+                @if(in_array(8, $cans))
                 <input type="submit" name="8" value="Biểu 08" id="ctl00_ContentPlaceHolder1_ctl00_Tab8" title="Biểu 08/TKTH-KHCN-ĐP: Tiêu chuẩn đo lường chất lượng" class="Initial" style="border-style:None;" />
+                @endif
+                @if(in_array(9, $cans))
                 <input type="submit" name="9" value="Biểu 09" id="ctl00_ContentPlaceHolder1_ctl00_Tab9" title="Biểu 09/TKTH-KHCN-ĐP: Năng lượng nguyên tử, an toàn bức xạ và hạt nhân" class="Initial" style="border-style:None;" />
+                @endif
+                @if(in_array(10, $cans))
                 <input type="submit" name="10" value="Biểu 10" id="ctl00_ContentPlaceHolder1_ctl00_Tab10" title="Biểu 10/TKTH-KHCN-ĐP: Thanh tra khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                @endif
+                @if(in_array(11, $cans))
                 <input type="submit" name="11" value="Biểu 11" id="ctl00_ContentPlaceHolder1_ctl00_Tab11" title="Biểu 11/TKTH-KHCN-ĐP: Doanh nghiệp và thị trường khoa học và công nghệ" class="Initial" style="border-style:None;" />
+                @endif
                 </form>
             </div>
         </td>
     </tr>
 </table>
 <span id="ctl00_ContentPlaceHolder1_ctl00_lblBangDuLieu">
-  <form role="form" method="POST" action="{{ url('/bieutonghop2/'.$bieu->id.'/year') }}">
+  <form role="form" method="POST" action="{{ url('/bieutonghop2/year') }}">
                 {{ csrf_field() }}
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -126,12 +136,12 @@ text-decoration: none;
                     <td align="right" style="width: 200px">
                        <select name="year" onchange="this.form.submit();">
     @foreach($years as $y)
-    <option @if($bieu->reporter_year == $y) selected="selected" @endif value="{{$y}}">{{$y}}</option>
+    <option @if($bieu->year == $y) selected="selected" @endif value="{{$y}}">{{$y}}</option>
     @endforeach
     </select>
                     </td>
                 </tr>
-            </table>
+            </table></form>
             <form role="form" method="POST" action="{{ url('/generate/tonghop/bieu/2/'.$bieu->id) }}">
                 {{ csrf_field() }}
             <table>

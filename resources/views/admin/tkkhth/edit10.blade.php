@@ -237,7 +237,7 @@ $s = parse_str($bieu->field_10, $out);
     <td class="TableCell" colspan="1">3.4. Hòa giải, rút đơn</td>
     <td class="TableCell_Center" colspan="1">10</td>
     <td class="TableCell_Center" colspan="1"><i>Vụ</i></td>
-    <td class="TableCell_Center" rowspan="1" style="width:40px;"><input value="{{$out[1]}}" class="form-control" type="text" name="field_0[1]"></td>
+    <td class="TableCell_Center" rowspan="1" style="width:40px;"><input value="{{$out[1]}}" class="form-control" type="text" name="field_10[1]"></td>
     <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[2]}}" class="form-control" type="text" name="field_10[2]"></td>
     <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[3]}}" class="form-control" type="text" name="field_10[3]"></td>
     <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[4]}}" class="form-control" type="text" name="field_10[4]"></td>
@@ -354,14 +354,14 @@ $s = parse_str($bieu->field_16, $out);
     <td class="TableCell_Center" colspan="1">16</td>
     <td class="TableCell_Center" colspan="1"><i>Trường hợp</i></td>
     <td class="TableCell_Center" rowspan="1" style="width:40px;"><input value="{{$out[1]}}" class="form-control" type="text" name="field_16[1]"></td>
-    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[2]}}" class="form-control" type="text" name="field_16[12]"></td>
-    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[3]}}" class="form-control" type="text" name="field_16[13]"></td>
-    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[4]}}" class="form-control" type="text" name="field_16[14]"></td>
-    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[5]}}" class="form-control" type="text" name="field_16[15]"></td>
-    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[6]}}" class="form-control" type="text" name="field_16[16]"></td>
-    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[7]}}" class="form-control" type="text" name="field_16[17]"></td>
-    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[8]}}" class="form-control" type="text" name="field_16[18]"></td>
-    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[9]}}" class="form-control" type="text" name="field_16[19]"></td>
+    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[2]}}" class="form-control" type="text" name="field_16[2]"></td>
+    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[3]}}" class="form-control" type="text" name="field_16[3]"></td>
+    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[4]}}" class="form-control" type="text" name="field_16[4]"></td>
+    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[5]}}" class="form-control" type="text" name="field_16[5]"></td>
+    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[6]}}" class="form-control" type="text" name="field_16[6]"></td>
+    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[7]}}" class="form-control" type="text" name="field_16[7]"></td>
+    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[8]}}" class="form-control" type="text" name="field_16[8]"></td>
+    <td class="TableCell_Center" rowspan="1" style="width:30px;"><input value="{{$out[9]}}" class="form-control" type="text" name="field_16[9]"></td>
 </tr>
 <tr>
     <td class="TableCell" colspan="1">5.4.1. Chia theo hình thức xử lý</td>

@@ -58,7 +58,7 @@
 
                     <body lang=EN-US style='tab-interval:.5in'>
                         <div class=Section1>
-                            <center><b class=MsoNormal>HỢP TÁC QUỐC TẾ TRONG HOẠT ĐỘNG KHOA HỌC VÀ CÔNG NGHỆ</b><br/><a class=MsoNormal>(Từ ngày 01/01 đến ngày 31/12 năm  2017)</a>
+                            <center><b class=MsoNormal>HỢP TÁC QUỐC TẾ TRONG HOẠT ĐỘNG KHOA HỌC VÀ CÔNG NGHỆ</b><br/><a class=MsoNormal>(Từ ngày 01/01 đến ngày 31/12 năm @year@)</a>
                                 <p style='color:red'>
                                     <I> </I>
                                 </p>

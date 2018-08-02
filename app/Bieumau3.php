@@ -45,6 +45,35 @@ class Bieumau3 extends Model
         $b1 = Bieumau1::where('user_id', $this->user_id)->where('reporter_year', $this->reporter_year)->first();
         $file = str_replace('@receiver@', $b1->receiverTmp(), $file);
         $file = str_replace('@reporter_element_name@', $b1->reporter_element_name, $file);
+        $file = str_replace('@year@', $this->reporter_year, $file);
+        $file = str_replace('@f1@', Bieumau3::ftmp($this->total), $file);
+        $file = str_replace('@f2@', Bieumau3::ftmp($this->pay_improve_khcn), $file);
+        $file = str_replace('@f3@', Bieumau3::ftmp($this->pay_khcn), $file);
+        $file = str_replace('@f4@', Bieumau3::ftmp($this->pay_salary_total), $file);
+        $file = str_replace('@f5@', Bieumau3::ftmp($this->pay_salary), $file);
+        $file = str_replace('@f6@', Bieumau3::ftmp($this->pay_machine), $file);
+        $file = str_replace('@f7@', Bieumau3::ftmp($this->pay_normal), $file);
+        $file = str_replace('@f8@', Bieumau3::ftmp($this->pay_mission), $file);
+        $file = str_replace('@f9@', Bieumau3::ftmp($this->mission_lv1), $file);
+        $file = str_replace('@f10@', Bieumau3::ftmp($this->mission_lv2), $file);
+        $file = str_replace('@f11@', Bieumau3::ftmp($this->mission_lv3), $file);
+        $file = str_replace('@f12@', Bieumau3::ftmp($this->mission_lv4), $file);
+        $file = str_replace('@f13@', Bieumau3::ftmp($this->mission_lv5), $file);
+        $file = str_replace('@f14@', Bieumau3::ftmp($this->pay_lab), $file);
+        $file = str_replace('@f15@', Bieumau3::ftmp($this->pay_maintain), $file);
+        $file = str_replace('@f16@', Bieumau3::ftmp($this->pay_univer), $file);
+        $file = str_replace('@f17@', Bieumau3::ftmp($this->pay_improve_other), $file);
+        $file = str_replace('@f18@', Bieumau3::ftmp($this->pay_other), $file);
+
+        return $file;
+    }
+
+    public function generateBieuX(){
+        $file = file_get_contents('tmp/temp_3/b3print.tmp', true);
+        $b1 = Bieumau1::where('user_id', $this->user_id)->where('reporter_year', $this->reporter_year)->first();
+        $file = str_replace('@receiver@', $b1->receiverTmp(), $file);
+        $file = str_replace('@reporter_element_name@', $b1->reporter_element_name, $file);
+        $file = str_replace('@year@', $this->reporter_year, $file);
         $file = str_replace('@f1@', Bieumau3::ftmp($this->total), $file);
         $file = str_replace('@f2@', Bieumau3::ftmp($this->pay_improve_khcn), $file);
         $file = str_replace('@f3@', Bieumau3::ftmp($this->pay_khcn), $file);

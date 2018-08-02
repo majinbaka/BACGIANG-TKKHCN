@@ -58,7 +58,7 @@
 
                     <body lang=EN-US style='tab-interval:.5in'>
                         <div class=Section1>
-                            <center><b class=MsoNormal>HOẠT ĐỘNG ĐÁNH GIÁ, THẨM ĐỊNH, GIÁM ĐỊNH, ỨNG DỤNG VÀ PHÁT TRIỂN CÔNG NGHỆ TẠI ĐỊA PHƯƠNG</b><br/><a class=MsoNormal>(Có đến ngày 31/12 năm  2017)</a>
+                            <center><b class=MsoNormal>HOẠT ĐỘNG ĐÁNH GIÁ, THẨM ĐỊNH, GIÁM ĐỊNH, ỨNG DỤNG VÀ PHÁT TRIỂN CÔNG NGHỆ TẠI ĐỊA PHƯƠNG</b><br/><a class=MsoNormal>(Có đến ngày 31/12 năm  @year@)</a>
                                 <p style='color:red'>
                                     <I> </I>
                                 </p>
@@ -141,32 +141,33 @@
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>1.2. Chia theo ngành kinh tế</b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>05</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i>Dự án</i></td>
-@f5_1@            </tr>
+                <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><i></i></td>
+            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'> - A. Nông nghiệp, lâm nghiệp và thủy sản</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
                 <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'><i>Dự án</i></td>
-@f5_2@            </tr>
+@f5_1@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'> - B. Khai khoáng</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
                 <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'><i>Dự án</i></td>
-@f5_3@            </tr>
+@f5_2@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'> - C. Công nghiệp chế biến, chế tạo</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
                 <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'><i>Dự án</i></td>
-@f5_4@            </tr>
+@f5_3@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'> - E. Cung cấp nước; hoạt động quản lý và xử lý rác thải, nước thải</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
                 <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'><i>Dự án</i></td>
-@f5_5@            </tr>
+@f5_4@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'> - F. Xây dựng</td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'></td>
                 <td rowspan="1" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='0'><i>Dự án</i></td>
-@f5_6@            </tr>
+@f5_5@            </tr>
             <tr>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: left;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'><b>1.3. Chia theo nước đầu tư</b></td>
                 <td rowspan="0" align="center" style='    font-family: Times New Roman;    font-size: 12pt;    color: #333333;    padding: 5px;    text-align: center;    vertical-align: middle;    border: solid 1px #000000;' colspan='1'>06</td>
