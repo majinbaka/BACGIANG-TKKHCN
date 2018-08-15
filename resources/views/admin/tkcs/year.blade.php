@@ -78,7 +78,8 @@
                     @if($user->bieuStatusCheck($year) != "Đã Phê Duyệt" )
                       <a href="/admin/tkcs/duyet/{{$user->id}}/{{$year}}">Phê duyệt</a>
                     @else
-                      Đã phê duyệt
+                      Đã phê duyệt |
+                      <a href="/admin/tkcs/boduyet/{{$user->id}}/{{$year}}">Bỏ Phê duyệt</a>
                     @endif
                   </td>
                   <td><input type="checkbox" name="show" onclick='handleClick(this, {{$user->id}});' class="checkbox" @if($user->yearShow($year)) checked @endif></td>

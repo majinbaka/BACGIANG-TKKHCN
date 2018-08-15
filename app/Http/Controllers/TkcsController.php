@@ -57,7 +57,6 @@ class TkcsController extends Controller
                 $bieucheck->save();
             }
         }
-        
         return Redirect::to('/admin/tkcs/'.$year);
     }
 }
