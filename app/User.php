@@ -151,7 +151,7 @@ class User extends Authenticatable
             ->first();
         if ($bieucheck){
             if($bieucheck->status == 1)
-                return "Đã gửi ngày ".date('d/m/Y', strtotime($bieucheck->report_date));
+                return "Đã gửi ngày ".date('d/m/Y H:i:s', strtotime($bieucheck->report_date));
             if($bieucheck->status == 2)
                 return "Đã Phê Duyệt";
         }

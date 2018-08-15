@@ -292,7 +292,7 @@ class ThanhvienDashboardController extends Controller
         $bieuS = new BieuStatus;
         $bieuS->user_id = $user->id;
         $bieuS->year = date('Y');
-        $bieuS->report_date = \Carbon\Carbon::now()->toDateString();
+        $bieuS->report_date = \Carbon\Carbon::now()->toDateTimeString();
         $bieuS->status = -1;
         $bieuS->save();
 
@@ -735,7 +735,7 @@ class ThanhvienDashboardController extends Controller
         $bieuS = new BieuStatus;
         $bieuS->user_id = $user->id;
         $bieuS->year = $year;
-        $bieuS->report_date = \Carbon\Carbon::now()->toDateString();
+        $bieuS->report_date = \Carbon\Carbon::now()->toDateTimeString();
         $bieuS->status = 1;
         $bieuS->save();
 

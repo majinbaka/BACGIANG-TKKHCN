@@ -109,6 +109,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/tkcs', 'TkcsController@index')->name('tkcs.index');
         Route::get('/tkcs/{year}', 'TkcsController@year')->name('tkcs.donvi');
         Route::get('/tkcs/duyet/{id}/{year}', 'TkcsController@bieumauDuyet')->name('tkcs.duyet');
+        Route::get('/tkcs/boduyet/{id}/{year}', 'TkcsController@bieumauboDuyet')->name('tkcs.boduyet');
         Route::get('/tkcs/donvis', 'TkcsController@donviIndex')->name('tkcs.donviIndex');
 
         Route::get('/thongke/{id}/edit', 'ThongTinController@edit')->name('thongtins.edit');

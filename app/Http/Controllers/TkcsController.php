@@ -42,9 +42,22 @@ class TkcsController extends Controller
             $bieucheck->user_id = $id;
             $bieucheck->year = $year;
             $bieucheck->status = 2;
-            $bieucheck->report_date = \Carbon\Carbon::now()->toDateString();
+            $bieucheck->report_date = \Carbon\Carbon::now()->toDateTimeString();
             $bieucheck->save();
         }
+        return Redirect::to('/admin/tkcs/'.$year);
+    }
+
+    public function bieumauboDuyet($id,$year)
+    {
+        $bieucheck = BieuStatus::where('user_id', $id)->where('year', $year)->first();
+        if ($bieucheck){
+            if($bieucheck->status == 2){
+                $bieucheck->status = -1;
+                $bieucheck->save();
+            }
+        }
+        
         return Redirect::to('/admin/tkcs/'.$year);
     }
 }

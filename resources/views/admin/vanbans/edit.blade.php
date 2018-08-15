@@ -20,7 +20,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body pad">
-              <form role="form" method="POST" action="{{ url('/admin/vanban/'.$vanban) }}" enctype="multipart/form-data">
+              <form role="form" method="POST" action="{{ url('/admin/vanban/'.$vanban->id) }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PATCH')}}
             <!-- /.box-header -->

@@ -38,29 +38,41 @@
                   <td>{{$user->getPhone($year)}}</td>
                   <td>
                     Biểu 1: 
+                    @if($user->getBieumauYear(1, $year) != false)
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/1/show">Chi tiết</a>;
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/1">Sửa</a>; 
                     <a href="/generate/donvi/bieu1/{{$user->getBieumauYear(1, $year)->id}}">xuất sang word</a><br>
-                    Biểu 2: 
+                    @endif
+                    Biểu 2:
+                    @if($user->getBieumauYear(2, $year) != false)
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/2/show">Chi tiết</a>;
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/2">Sửa</a>; 
                     <a href="/generate/donvi/bieu2/{{$user->getBieumauYear(2, $year)->id}}">xuất sang word</a><br>
+                    @endif
                     Biểu 3: 
+                    @if($user->getBieumauYear(3, $year) != false)
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/3/show">Chi tiết</a>;
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/3">Sửa</a>; 
                     <a href="/generate/donvi/bieu3/{{$user->getBieumauYear(3, $year)->id}}">xuất sang word</a><br>
+                    @endif
                     Biểu 4: 
+                    @if($user->getBieumauYear(4, $year) != false)
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/4/show">Chi tiết</a>;
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/4">Sửa</a>; 
                     <a href="/generate/donvi/bieu4/{{$user->getBieumauYear(4, $year)->id}}">xuất sang word</a><br>
+                    @endif
                     Biểu 5: 
+                    @if($user->getBieumauYear(5, $year) != false)
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/5/show">Chi tiết</a>;
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/5">Sửa</a>; 
                     <a href="/generate/donvi/bieu5/{{$user->getBieumauYear(5, $year)->id}}">xuất sang word</a><br>
+                    @endif
                     Biểu 6: 
+                    @if($user->getBieumauYear(6, $year) != false)
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/6/show">Chi tiết</a>;
                     <a href="/admin/thanhvien/{{$year}}/{{$user->id}}/bieu/6">Sửa</a>; 
                     <a href="/generate/donvi/bieu6/{{$user->getBieumauYear(6, $year)->id}}">xuất sang word</a><br>
+                    @endif
                   </td>
                   <td>
                     @if($user->bieuStatusCheck($year) != "Đã Phê Duyệt" )
