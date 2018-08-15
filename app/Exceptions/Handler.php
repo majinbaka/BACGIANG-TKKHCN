@@ -51,6 +51,30 @@ class Handler extends ExceptionHandler
             return redirect('/');
         }
 
+        if ($this->isHttpException($e)) {
+            switch ($e->getStatusCode()) {
+
+                // not authorized
+                case '403':
+                    return redirect('/');
+                    break;
+
+                // not found
+                case '404':
+                    return redirect('/');
+                    break;
+
+                // internal error
+                case '500':
+                    return redirect('/');
+                    break;
+
+                default:
+                    return $this->renderHttpException($e);
+                    break;
+            }
+        }
+
         return parent::render($request, $e);
     }
 }
