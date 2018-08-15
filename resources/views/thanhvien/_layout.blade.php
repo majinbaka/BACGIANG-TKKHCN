@@ -82,7 +82,7 @@
           </a>
         </li>
         <li>
-          <a href="/thanhvien/dangky">
+          <a href="/dangky">
             <i class="fa fa-dashboard"></i> <span>Đăng ký đơn vị</span>
           </a>
         </li>
