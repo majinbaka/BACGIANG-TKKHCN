@@ -40,7 +40,7 @@
                     <textarea id="editor1" name="content" rows="10" cols="80">{!! $post->content !!}</textarea>
                   </div>
                     <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Lưu</button>
               </div>
               </form>
             </div>

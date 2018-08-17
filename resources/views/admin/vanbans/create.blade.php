@@ -71,7 +71,7 @@
                   {!! $errors->first('url', '<p class="help-block">:message</p>') !!}
                 </div>
                     <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Lưu</button>
               </div>
               </form>
             </div>

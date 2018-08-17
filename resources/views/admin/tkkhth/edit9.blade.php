@@ -253,7 +253,7 @@ $s = parse_str($bieu->field_11, $out);
                     <!-- /.box-body -->
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Lưu</button>
               </div>
               </form>
             </div>

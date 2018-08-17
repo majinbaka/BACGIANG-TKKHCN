@@ -497,7 +497,7 @@
                   <div class='row' id="elementtab"><div class='col-md-4'>Tên đơn vị trực thuộc có tư cách pháp nhân</div><div class='col-md-3'>Họ và tên thủ trưởng</div><div class='col-md-4'>Địa chỉ, Điện thoại, Fax, Email</div><div class="col-md-1"></div></div>
                 </div>
                 <!-- /.box-body -->
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Lưu</button>
               </div>
               </form>
             </div>
