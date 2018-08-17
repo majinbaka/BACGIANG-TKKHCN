@@ -6,7 +6,8 @@
 
     <section class="content-header">
       <h1>
-        Biểu cơ sở: Đơn vị {{Auth::user()->donviname}}
+       Báo cáo thống kê cơ sở về KH&CN<br>
+       Đơn vị: {{Auth::user()->donviname}}
       </h1>
     </section>
     <section class="content">
@@ -61,12 +62,12 @@
                 <thead>
                 <tr>
                   <th>Năm</th>
-                  <th>Cập nhập Biểu 1</th>
-                  <th>Cập nhập Biểu 2</th>
-                  <th>Cập nhập Biểu 3</th>
-                  <th>Cập nhập Biểu 4</th>
-                  <th>Cập nhập Biểu 5</th>
-                  <th>Cập nhập Biểu 6</th>
+                  <th>Biểu 1</th>
+                  <th>Biểu 2</th>
+                  <th>Biểu 3</th>
+                  <th>Biểu 4</th>
+                  <th>Biểu 5</th>
+                  <th>Biểu 6</th>
                   <th>Tình trạng</th>
                   <th></th>
                 </tr>
