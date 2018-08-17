@@ -6,9 +6,6 @@
                     <div id="theClock" class="DateNow" align="left">
                     </div>
                 </td>
-                <td valign="top" align="left" width="16px" style="padding: 4px 0px 0px 0px;">
-                    <img src="/image/pmopenedr.gif" />
-                </td>
                 <td valign="top" style="padding: 5px 5px;" width="360px" align="center">
 
                     <div class="cssThongBao">
@@ -103,10 +100,6 @@
 
             </div>
 
-            <div id="displaylogin">
-
-                <span id="ctl00_Banner1_lblLogin" style="color:White;">  <a href='/login'>Đăng nhập</a> </span>
-            </div>
         </div>
         <div class="topmenu-m">
 
@@ -145,7 +138,6 @@
                                         <a href="#">Trợ giúp</a>
                                         <ul>
                                             <li><a href='/thongkekhcn/8'>Hướng dẫn</a></li>
-                                            <li><a href="/thanhvien/doimatkhau">Đổi mật khẩu</a></li>
                                         </ul>
                                     </li>
                                 </span>
