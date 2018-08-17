@@ -1,8 +1,6 @@
 <?php
 Route::get('/','HomeController@tintucs');
-Route::get('/reg', 'HomeController@transfer');
 Route::get('/gopy', 'HomeController@transfer');
-Route::get('/login', 'HomeController@transfer');
 //Admin login
 Route::get('/admin/login', 'AdminLoginController@showLoginForm')->name('admin.login.show');
 Route::post('/admin/login', 'AdminLoginController@login')->name('admin.login');
@@ -48,6 +46,7 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/{year}/bieumau/{type}/show', 'ThanhvienDashboardController@bieumauShow');
         Route::get('/{year}/bieumau/{type}/word', 'ThanhvienDashboardController@bieumauWord');
         Route::get('/{year}/bieumau/send', 'ThanhvienDashboardController@bieumauSend');
+        Route::get('/{year}/bieumau/delete', 'ThanhvienDashboardController@bieumauDelete');
         Route::get('/{year}/bieumau/{type}/print', 'ThanhvienDashboardController@bieumauPrint');
 
         Route::get('/bieumau/baocao', 'ThanhvienDashboardController@createBieu');

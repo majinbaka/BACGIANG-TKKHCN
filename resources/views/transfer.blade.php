@@ -62,39 +62,15 @@
         background-color: #D0EEFD;
     }
 </style>
-<div style="width:300px; height: 324px; padding:91px 0px 0px 75px; background-image:url('../image/bg_login.png'); background-repeat:no-repeat; background-position:center 0; margin:0px auto;">
-<form role="form" method="POST" action="{{ url('/thanhvien/login') }}">
-    {{ csrf_field() }}    
-    <table cellpadding="0" cellspacing="0" style="width: 260px; ">
-        <tr>
-            <td class="DangNhap_Text">
-                <input name="username" type="text" id="login_home1_txtUser" class="textbox" style="height:20px;width:216px;" />
-                    {!! $errors->first('username', '<p class="help-block">:message</p>') !!}
-            </td>
-        </tr>
-        <tr>
-            <td class="DangNhap_Text" style="padding-top: 34px;">
-                <input name="password" type="password" id="login_home1_txtPass" class="textbox" style="height:20px;width:216px;" />
-                    {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
-            </td>
-        </tr>
-        <tr>
-            <td class="DangNhap_NutDangNhap">
-            </td>
-        </tr>
-        <tr>
-            <td align="left" style="padding-top: 14px;">
-                <input type="image" name="login_home1$btnDangNhap" id="login_home1_btnDangNhap" src="/image/btnLogin.png" style="width:226px;border-width:0px;" />
-            </td>
-        </tr>
-
-        <tr>
-            <td align="left" style="padding-top: 54px;">
-            
-            </td>
-        </tr>
-    </table>
-    </form>
+<div style="width:260px; height: 267px; padding: 20px 25px 20px 25px; background-image:linear-gradient(#aae2fc,#3fb9eb); margin:0px auto;    border: 5px solid #f5efef;">
+<center style="color: #000;">
+<h3 style="font-size: 17pt">THÔNG TIN LIÊN HỆ</h3>
+<p>Mọi chi tiết xin liên hệ<br>
+Trung tâm Thông tin và Thống kê KH&CN<br>
+Địa chỉ: Lô Q10, đường Lý Tự Trọng, phường Xương Giang, TP. Bắc Giang<br>
+Email:ttth_skhcn@bacgiang.gov.vn<br>
+Điện thoại: 02043 828 325<br>
+</p></center>
 </div>
 
         
