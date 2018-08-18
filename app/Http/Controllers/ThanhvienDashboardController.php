@@ -332,7 +332,7 @@ class ThanhvienDashboardController extends Controller
             return Redirect::to('thanhvien/bieumau/baocao');
         }
         else
-        $user->createReport($params['year']);
+        $user->createReportCopy("",$params['year']);
 
         return view('thanhvien.bieumau1')->with('year', $params['year']);
     }

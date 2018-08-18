@@ -72,17 +72,6 @@ class User extends Authenticatable
         return false;
     }
 
-    public function createReport($y)
-    {
-        $b1 = new Bieumau1;$b1->user_id = $this->id;$b1->reporter_year = $y;$b1->save();
-        $b2 = new Bieumau2;$b2->user_id = $this->id;$b2->reporter_year = $y;$b2->save();
-        $b3 = new Bieumau3;$b3->user_id = $this->id;$b3->reporter_year = $y;$b3->save();
-        $b4 = new Bieumau4;$b4->user_id = $this->id;$b4->reporter_year = $y;$b4->save();
-        $b5 = new Bieumau5;$b5->user_id = $this->id;$b5->reporter_year = $y;$b5->save();
-        $b6 = new Bieumau6;$b6->user_id = $this->id;$b6->reporter_year = $y;$b6->save();
-        return ;
-    }
-
     public function createReportCopy($old, $y)
     {
         $b1 = Bieumau1::where('user_id', $this->id)->where('reporter_year', $old)->first();
@@ -95,31 +84,150 @@ class User extends Authenticatable
         if($b2){
         $bc2 = $b2->replicate();$bc2->reporter_year = $y;$bc2->save();
         }else{
-            $b2 = new Bieumau2;$b2->user_id = $this->id;$b2->reporter_year = $y;$b2->save();
+            $b2 = new Bieumau2;
+            $b2->user_id = $this->id;
+            $b2->reporter_year = $y;
+            $b2->total = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->female_total = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->nation_vn = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->nation_kinh = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->nation_other = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->nation_foregin = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->class_khtn = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->class_khkt = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->class_khyd = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->class_khnn = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->class_khxh = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->class_khnv = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->class_other = "1=&2=&3=&4=&5=&6=&7=&8=&9=";
+            $b2->save();
         }
         $b3 = Bieumau3::where('user_id', $this->id)->where('reporter_year', $old)->first();
         if($b3){
         $bc3 = $b3->replicate();$bc3->reporter_year = $y;$bc3->save();
         }else{
-            $b3 = new Bieumau3;$b3->user_id = $this->id;$b3->reporter_year = $y;$b3->save();
+            $b3 = new Bieumau3;
+            $b3->user_id = $this->id;
+            $b3->reporter_year = $y;
+            $b3->total = "1=&2=&3=&4=&5=";
+            $b3->pay_improve_khcn = "1=&2=&3=&4=&5=";
+            $b3->pay_khcn = "1=&2=&3=&4=&5=";
+            $b3->pay_salary_total = "1=&2=&3=&4=&5=";
+            $b3->pay_salary = "1=&2=&3=&4=&5=";
+            $b3->pay_machine = "1=&2=&3=&4=&5=";
+            $b3->pay_normal = "1=&2=&3=&4=&5=";
+            $b3->pay_mission = "1=&2=&3=&4=&5=";
+            $b3->mission_lv1 = "1=&2=&3=&4=&5=";
+            $b3->mission_lv2 = "1=&2=&3=&4=&5=";
+            $b3->mission_lv3 = "1=&2=&3=&4=&5=";
+            $b3->mission_lv4 = "1=&2=&3=&4=&5=";
+            $b3->mission_lv5 = "1=&2=&3=&4=&5=";
+            $b3->pay_lab = "1=&2=&3=&4=&5=";
+            $b3->pay_maintain = "1=&2=&3=&4=&5=";
+            $b3->pay_univer = "1=&2=&3=&4=&5=";
+            $b3->pay_improve_other = "1=&2=&3=&4=&5=";
+            $b3->pay_other = "1=&2=&3=&4=&5=";
+            $b3->save();
         }
         $b4 = Bieumau4::where('user_id', $this->id)->where('reporter_year', $old)->first();
         if($b4){
         $bc4 = $b4->replicate();$bc4->reporter_year = $y;$bc4->save();
         }else{
-            $b4 = new Bieumau4;$b4->user_id = $this->id;$b4->reporter_year = $y;$b4->save();
+            $b4 = new Bieumau4;
+            $b4->user_id = $this->id;
+            $b4->reporter_year = $y;
+            $b4->total = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lv1 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lv2 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lv3 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lv4 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lv5 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lab_1 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lab_2 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lab_3 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lab_4 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lab_5 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_lab_6 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_money_1 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_money_2 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_money_3 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_money_4 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_money_5 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_money_6 = "1=&2=&3=&4=&5=&6=";
+            $b4->subject_money_7 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_job = "1=&2=&3=&4=&5=&6=";
+            $b4->total_job_1 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_job_2 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_job_3 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_job_4 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_job_5 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_lab_1 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_lab_2 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_lab_3 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_lab_4 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_lab_5 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_lab_6 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_money_1 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_money_2 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_money_3 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_money_4 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_money_5 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_money_6 = "1=&2=&3=&4=&5=&6=";
+            $b4->total_money_7 = "1=&2=&3=&4=&5=&6=";
+            $b4->save();
         }
         $b5 = Bieumau5::where('user_id', $this->id)->where('reporter_year', $old)->first();
         if($b5){
         $bc5 = $b5->replicate();$bc5->reporter_year = $y;$bc5->save();
         }else{
-            $b5 = new Bieumau5;$b5->user_id = $this->id;$b5->reporter_year = $y;$b5->save();
+            $b5 = new Bieumau5;
+            $b5->user_id = $this->id;
+            $b5->reporter_year = $y;
+            $b5->total = "1=&2=";
+            $b5->mission_lab_1 = "1=&2=";
+            $b5->mission_lab_2 = "1=&2=";
+            $b5->mission_lab_3 = "1=&2=";
+            $b5->mission_lab_4 = "1=&2=";
+            $b5->mission_lab_5 = "1=&2=";
+            $b5->mission_lab_6 = "1=&2=";
+            $b5->collaborate_1 = "1=&2=";
+            $b5->collaborate_2 = "1=&2=";
+            $b5->collaborate_3 = "1=&2=";
+            $b5->collaborate_4 = "1=&2=";
+            $b5->money_1 = "1=";
+            $b5->money_2 = "1=";
+            $b5->money_3 = "1=";
+            $b5->money_4 = "1=";
+            $b5->money_5 = "1=";
+            $b5->team_out = "1=&2=";
+            $b5->human_out = "1=";
+            $b5->team_in = "1=&2=";
+            $b5->human_in = "1=";
+            $b5->total_h1 = "1=";
+            $b5->total_h2 = "1=";
+            $b5->save();
         }
         $b6 = Bieumau6::where('user_id', $this->id)->where('reporter_year', $old)->first();
         if($b6){
         $bc6 = $b6->replicate();$bc6->reporter_year = $y;$bc6->save();
         }else{
-            $b6 = new Bieumau6;$b6->user_id = $this->id;$b6->reporter_year = $y;$b6->save();
+            $b6 = new Bieumau6;
+            $b6->user_id = $this->id;
+            $b6->reporter_year = $y;
+            $b6->total = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->reporter_year = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_vn = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_vn1 = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_vn2 = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_vn3 = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_vn4 = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_vn5 = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_other = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_team = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_fm = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_male = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->total_award_female = "1=&2=&3=&4=&5=&6=&7=";
+            $b6->save();
         }
         return ;
     }

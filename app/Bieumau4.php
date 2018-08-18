@@ -12,7 +12,7 @@ class Bieumau4 extends Model
       'user_id',
     	'name',
       'publish_day',
-        'check',
+      'check',
       'reporter_year',
       'total',
       'subject_lv1',

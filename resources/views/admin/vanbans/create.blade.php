@@ -72,6 +72,7 @@
                 </div>
                     <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Lưu</button>
+                <a href="/admin/vanban" class="btn btn-danger">Hủy</a>
               </div>
               </form>
             </div>
