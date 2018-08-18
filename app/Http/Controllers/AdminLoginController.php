@@ -7,6 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class AdminLoginController extends Controller
 {
@@ -59,5 +60,16 @@ class AdminLoginController extends Controller
     protected function getLockoutErrorMessage($seconds)
     {
         return 'Bạn đã nhập sai quá nhiều lần. Vui lòng thử lại sau '.$seconds.' giây.';
+    }
+
+    protected function validateLogin(Request $request)
+    {
+        $messages = [
+            'password.required' => 'Chưa nhập mật khẩu!',
+            'username.required' => 'Chưa nhập tên đăng nhập!',
+        ];
+        $this->validate($request, [
+            $this->loginUsername() => 'required', 'password' => 'required',
+        ], $messages);
     }
 }

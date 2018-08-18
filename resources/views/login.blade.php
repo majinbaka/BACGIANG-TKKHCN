@@ -90,10 +90,11 @@
                 </tr>
             </table>
             <div>
-                        <span id="Login1_lblError" style="color:Red;">
-                            @if ($errors->has('email'))
-                                <strong>{{ $errors->first('email') }}</strong>
+                        <span id="Login1_lblError" style="color:#000;">
+                            @if ($errors->has('username'))
+                                <strong>{{ $errors->first('username') }}</strong>
                             @endif
+                            <br>
                             @if ($errors->has('password'))
                                 <strong>{{ $errors->first('password') }}</strong>
                             @endif
