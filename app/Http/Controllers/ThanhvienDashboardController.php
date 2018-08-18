@@ -45,8 +45,8 @@ class ThanhvienDashboardController extends Controller
     }
     public function createBieu()
     {
-        $lists = User::listYear();
         $user = Auth::user();
+        $lists = $user->listYearU();
 
         return view('thanhvien.year', ['lists' => $lists, 'user' => $user]);
     }
@@ -739,6 +739,32 @@ class ThanhvienDashboardController extends Controller
         $bieuS->status = 1;
         $bieuS->save();
 
+        return Redirect::to('thanhvien/bieumau/baocao');
+    }
+
+    public function bieumauDelete($year)
+    {
+        $user = Auth::user();
+        $bieuS = BieuStatus::where('user_id', $user->id)->where('year', $year)->whereIn('status', [1,2])->first();
+        if($bieuS)
+        {
+            Session::flash('message', 'Biểu mẫu đã được gửi không thể xóa');
+            return Redirect::to('thanhvien/bieumau/baocao');
+        }
+        else
+        {
+            $bieuS = BieuStatus::where('user_id', $user->id)->where('year', $year)->first();
+            if($bieuS)
+                $bieuS->delete();
+            $bieu = Bieumau1::where('user_id', $user->id)->where('reporter_year', $year)->first();if($bieu)$bieu->delete();
+            $bieu = Bieumau2::where('user_id', $user->id)->where('reporter_year', $year)->first();if($bieu)$bieu->delete();
+            $bieu = Bieumau3::where('user_id', $user->id)->where('reporter_year', $year)->first();if($bieu)$bieu->delete();
+            $bieu = Bieumau4::where('user_id', $user->id)->where('reporter_year', $year)->first();if($bieu)$bieu->delete();
+            $bieu = Bieumau5::where('user_id', $user->id)->where('reporter_year', $year)->first();if($bieu)$bieu->delete();
+            $bieu = Bieumau6::where('user_id', $user->id)->where('reporter_year', $year)->first();if($bieu)$bieu->delete();
+
+            Session::flash('message', 'Đã xóa năm báo cáo');
+        }
         return Redirect::to('thanhvien/bieumau/baocao');
     }
 

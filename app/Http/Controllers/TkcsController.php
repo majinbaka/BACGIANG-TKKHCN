@@ -51,12 +51,8 @@ class TkcsController extends Controller
     public function bieumauboDuyet($id,$year)
     {
         $bieucheck = BieuStatus::where('user_id', $id)->where('year', $year)->first();
-        if ($bieucheck){
-            if($bieucheck->status == 2){
-                $bieucheck->status = -1;
-                $bieucheck->save();
-            }
-        }
+        $bieucheck->delete();
+
         return Redirect::to('/admin/tkcs/'.$year);
     }
 }

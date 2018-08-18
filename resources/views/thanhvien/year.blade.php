@@ -107,7 +107,9 @@
                     <a href="/thanhvien/{{$l}}/bieumau/6/word">Xuất bản word</a> |
                     <a href="/thanhvien/{{$l}}/bieumau/6/print">In</a></th>
                   <th>{{$user->bieuStatusCheck($l)}}</th>
-                  <th>@if($user->bieuStatusCheck($l) == "Đang cập nhật")<a href="/thanhvien/{{$l}}/bieumau/send">Gửi báo cáo</a>
+                  <th>@if($user->bieuStatusCheck($l) == "Đang cập nhật")
+                    <a href="/thanhvien/{{$l}}/bieumau/send">Gửi báo cáo</a> |
+                    <a href="/thanhvien/{{$l}}/bieumau/delete">Xóa</a>
                   @endif</th>
                 </tr>
                 @endforeach

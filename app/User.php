@@ -172,6 +172,20 @@ class User extends Authenticatable
         return $res;
     }
 
+    public function listYearU(){
+        $years1 = Bieumau1::where('check', 1)->where('user_id', $this->id)->select('reporter_year')->groupby('reporter_year')->get()->toArray();
+        $years = array_unique($years1, SORT_DESC);
+        $res = [];
+
+        foreach($years as $year)
+        {
+            $res[] = $year['reporter_year'];
+        }
+        rsort($res);
+        
+        return $res;
+    }
+
     public static function listYearAdmin(){
         $bieucheck = BieuStatus::where('status', '>=', 0)->select('year')->groupby('year')->get()->toArray();
         $years = array_unique($bieucheck, SORT_DESC);
