@@ -100,7 +100,7 @@
 
     <center>
 
-        <a href="http://elib.dostquangtri.gov.vn/ThongKeKHCN/index.aspx" title="">
+        <a href="#" title="">
             <img src="/image/BCTKKHCNCS_LOGIN.jpg" width="280px">
         </a>
         <div style="padding: 3px;">

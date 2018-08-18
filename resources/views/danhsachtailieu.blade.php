@@ -24,6 +24,29 @@
                                     <img src="/image/kvr.gif" />
                                 Văn bản mới </span>
                     </div>
+                    <ul class="ListLine">
+
+                        <li><a href='/talieu/danhsach/luat'>
+                                    Luật
+                                </a></li>
+
+                        <li><a href='/talieu/danhsach/nghidinh'>
+                                    Nghị định
+                                </a></li>
+
+                        <li><a href='/talieu/danhsach/thongtu'>
+                                    Thông tư
+                                </a></li>
+
+                        <li><a href='/talieu/danhsach/chidinh'>
+                                    Chỉ thị
+                                </a></li>
+
+                        <li><a href='/talieu/danhsach/quyetdinh'>
+                                    Quyết định
+                                </a></li>
+
+                    </ul>
                 </div>
                 <!--  -->
                 <div class="groupItem">

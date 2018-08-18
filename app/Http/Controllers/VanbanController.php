@@ -124,11 +124,11 @@ class VanbanController extends Controller
 
     public function download($id){
         $doc = Document::find($id);
-        if (file_exists( public_path() . 'uploads/'.$doc->url)) {
+        if (file_exists( public_path() . '/uploads/'.$doc->url)) {
             return response()->download('uploads/'.$doc->url);
         } else {
             Session::flash('message', 'Văn bản không tồn tại');
-            return Redirect::to('/');
+            return Redirect::back();
         }     
     }
 }

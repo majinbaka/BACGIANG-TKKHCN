@@ -6,7 +6,7 @@ $link_limit = 7; // maximum number of links (a little bit inaccurate, but will b
 <td style="width:2px;" class="{{ ($paginator->currentPage() == 1) ? ' Tin_PhanTrang_HienTai' : 'Tin_PhanTrang' }}">
 <a href="{{ $paginator->url(1) }}">1</a>
 </td>
-@for ($i = 1; $i <= $paginator->lastPage(); $i++)
+@for ($i = 2; $i <= $paginator->lastPage(); $i++)
 <?php
 $half_total_links = floor($link_limit / 2);
 $from = $paginator->currentPage() - $half_total_links;
@@ -24,7 +24,7 @@ $from -= $half_total_links - ($paginator->lastPage() - $paginator->currentPage()
 </td>
 @endif
 @endfor
-<td style="width:2px;" class="{{ ($paginator->currentPage() == $paginator->lastPage()) ? ' Tin_PhanTrang_HienTai' : 'Tin_PhanTrang' }}">
-<a href="{{ $paginator->url($paginator->lastPage()) }}">Last</a>
+<td style="width:75px;" class="{{ ($paginator->currentPage() == $paginator->lastPage()) ? ' Tin_PhanTrang_HienTai' : 'Tin_PhanTrang' }}">
+<a href="{{ $paginator->url($paginator->lastPage()) }}">Trang cuối</a>
 </td>
 @endif

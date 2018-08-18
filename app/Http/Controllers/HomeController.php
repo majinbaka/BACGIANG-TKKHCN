@@ -218,7 +218,7 @@ class HomeController extends Controller
         }
 
         $canshow = YearReport::where('year', $year)->where('type','>', 1)->where('status', 1)->pluck('type')->toArray();
-        if (!$bieu) return "Không được quyền xem biểu ";
+        if (!$bieu) return Redirect::to('thongketonghop');
 
         return view('bieutonghop.'.$bieuType, array('bieu' => $bieu, 'years' => $years, 'cans' => $canshow));
     }
