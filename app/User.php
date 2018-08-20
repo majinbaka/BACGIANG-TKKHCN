@@ -17,7 +17,7 @@ use App\BieuStatus;
 class User extends Authenticatable
 {
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'donviname', 'check'
+        'name', 'username', 'email', 'password', 'donviname', 'check','address','phone','city'
     ];
 
     protected $hidden = [
@@ -78,7 +78,15 @@ class User extends Authenticatable
         if($b1){
         $bc1 = $b1->replicate();$bc1->reporter_year = $y;$bc1->save();
         }else{
-            $b1 = new Bieumau1;$b1->user_id = $this->id;$b1->reporter_year = $y;$b1->save();
+            $b1 = new Bieumau1;
+            $b1->user_id = $this->id;
+            $b1->reporter_year = $y;
+            $b1->reporter_element_name = $this->donviname;
+            $b1->address = $this->address;
+            $b1->city = $this->city;
+            $b1->phone = $this->phone;
+            $b1->email = $this->email;
+            $b1->save();
         }
         $b2 = Bieumau2::where('user_id', $this->id)->where('reporter_year', $old)->first();
         if($b2){

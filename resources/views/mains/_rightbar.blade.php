@@ -99,18 +99,23 @@
         &nbsp;&nbsp;</div>
 
     <center>
+        @php
+            $banners = \App\Banners::where('status',1)->get();
+        @endphp
+        @foreach($banners as $banner)
+            <a href="{{$banner->target_link}}" title="">
+                <img src="{{asset('banner/'.$banner->url)}}" width="280px">
+            </a>
+            <div style="padding: 3px;">
+            </div>
+        @endforeach
 
-        <a href="#" title="">
-            <img src="/image/BCTKKHCNCS_LOGIN.jpg" width="280px">
-        </a>
-        <div style="padding: 3px;">
-        </div>
 
-        <a href="http://www.vista.gov.vn/UserPages/CosodulieuQuocgia/tabid/180/language/vi-VN/language/vi-VN/Default.aspx" title="">
-            <img src="/image/tracunv.gif" width="280px">
-        </a>
-        <div style="padding: 3px;">
-        </div>
+        {{--<a href="http://www.vista.gov.vn/UserPages/CosodulieuQuocgia/tabid/180/language/vi-VN/language/vi-VN/Default.aspx" title="">--}}
+            {{--<img src="/image/tracunv.gif" width="280px">--}}
+        {{--</a>--}}
+        {{--<div style="padding: 3px;">--}}
+        {{--</div>--}}
 
     </center>
 </td>

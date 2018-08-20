@@ -129,7 +129,16 @@
             <li><a href="/admin/thongke/7/edit"><i class="fa fa-circle-o"></i>Biểu mẫu thống kê</a></li>
           </ul>
         </li>
-
+        <li class="treeview"><a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Loại văn bản</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/category"><i class="fa fa-circle-o"></i>Danh sách</a></li>
+            <li><a href="/admin/category/create"><i class="fa fa-circle-o"></i>Thêm</a></li>
+          </ul></li>
         <li class="treeview"><a href="#">
             <i class="fa fa-files-o"></i>
             <span>Văn bản</span>
@@ -153,6 +162,19 @@
           <ul class="treeview-menu">
             <li><a href="/admin/lienket"><i class="fa fa-circle-o"></i>Danh sách</a></li>
             <li><a href="/admin/lienket/create"><i class="fa fa-circle-o"></i>Tạo mới</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Banners</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/admin/banner"><i class="fa fa-circle-o"></i>Danh sách</a></li>
+            <li><a href="/admin/banner/create"><i class="fa fa-circle-o"></i>Tạo mới</a></li>
           </ul>
         </li>
       </ul>

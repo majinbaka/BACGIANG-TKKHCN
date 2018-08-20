@@ -32,12 +32,10 @@
                 </div>
                 <div class="form-group">
                   <label>Loại văn bản</label>
-                  <select name="category" class="form-control">
-                    <option value="Luật" @if($vanban->category == "Luật") selected @endif>Luật</option>
-                    <option value="Nghị định" @if($vanban->category == "Nghị định") selected @endif>Nghị định</option>
-                    <option value="Thông tư" @if($vanban->category == "Thông tư") selected @endif>Thông tư</option>
-                    <option value="Chỉ định" @if($vanban->category == "Chỉ định") selected @endif>Chỉ định</option>
-                    <option value="Quyết định" @if($vanban->category == "Quyết định") selected @endif>Quyết định</option>
+                  <select name="category_id" class="form-control">
+                      @foreach($category as $item)
+                          <option value="{{$item->id}}" @if($item->id == $vanban->category_id) selected @endif>{{$item->name}}</option>
+                      @endforeach
                   </select>
                   {!! $errors->first('category', '<p class="help-block">:message</p>') !!}
                 </div>
@@ -72,9 +70,10 @@ $date = date_format($date,"d/m/Y");
                 </div>
                 <div class="form-group">
                   <label>Văn bản</label>
-                  <input type="file" name="url" id="exampleInputFile">
+                  <input type="file" name="url[]" id="exampleInputFile" multiple="true">
                   {!! $errors->first('url', '<p class="help-block">:message</p>') !!}
                 </div>
+                    <div class="form-group" id="previewFileName"></div>
                     <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Lưu</button>
               </div>
@@ -88,4 +87,7 @@ $date = date_format($date,"d/m/Y");
       <!-- ./row -->
     </section>
     
+@endsection
+@section('js')
+    <script src="{{asset('js/custom.js')}}"></script>
 @endsection

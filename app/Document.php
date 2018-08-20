@@ -9,7 +9,7 @@ class Document extends Model
 	protected $table = "documents";
     
     protected $fillable = [
-        'code','publisher','url','description','signer','publish_day','category',
+        'code','publisher','url','description','signer','publish_day','category_id',
     ];
 
     public function documentExists()
