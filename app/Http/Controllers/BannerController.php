@@ -25,7 +25,7 @@ class BannerController extends Controller
         $requestData = $request->all();
         $rules = array(
             'url' => 'required|image',
-            'target_link'=>'required',
+            'target_link'=>'required|url',
             'status'=>'required|in:1,2'
         );
 
@@ -62,7 +62,7 @@ class BannerController extends Controller
         $requestData = $request->all();
         $rules = array(
             'url' => 'image',
-            'target_link'=>'required',
+            'target_link'=>'required|url',
             'status'=>'required|in:1,2'
         );
 

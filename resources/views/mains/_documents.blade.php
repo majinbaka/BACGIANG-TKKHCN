@@ -35,7 +35,9 @@
                     </td>
                     <td align="center" style="width:80px;">
                         @if($document->documentExists())
-                        <a href='/uploads/{{$document->id}}' >Tải về </a>
+                            <a href="/thongke/khoahoccongnghe/doc/{{$document->id}}">
+                                Tải về
+                            </a>
                         @else
                         <span style="color: grey">Tải về</span>
                         @endif

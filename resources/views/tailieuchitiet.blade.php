@@ -74,8 +74,13 @@
                             File đính kèm
                         </td>
                         <td style="vertical-align: top; text-align: left">
-                        	<a href='/uploads/{{$document->id}}'>Tải
-                                    về </a>
+                            @php
+                                $files = $document->url;
+                                $files = explode(";",$files);
+                            @endphp
+                            @foreach($files as $file)
+                                <a href='/uploads/{{$file}}' >Tải về {{$file}} </a> <br />
+                            @endforeach
                         </td>
                     </tr>
                 </table>

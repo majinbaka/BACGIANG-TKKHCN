@@ -14,7 +14,7 @@ class Document extends Model
 
     public function documentExists()
 	{
-        if (file_exists( public_path() . '/uploads/'.$this->url)) {
+        if ($this->url !="") {
             return true;
         } else {
             return false;

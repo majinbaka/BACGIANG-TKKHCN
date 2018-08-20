@@ -95,7 +95,7 @@ class VanbanController extends Controller
             'category_id' => 'required',
 //            'url' => 'mimes:doc,pdf,docx,zip,xls,xlsx',
 	    );
-        if ($request->file('url')){
+        if ($request->hasFile('url')){
             $extensions = ['doc','docx','pdf','zip','xls','xlsx'];
             $files = $request->file('url');
             foreach ($files as $file){
@@ -114,7 +114,7 @@ class VanbanController extends Controller
                 ->withInput();
         } else {
             $vanban = Document::find($id);
-            if ($request->file('url')){
+            if ($request->hasFile('url')){
                 $files = $request->file('url');
                 $fileName = [];
                 foreach ($files as $file){
