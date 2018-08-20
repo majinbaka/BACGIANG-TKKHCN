@@ -6,21 +6,11 @@
                 Văn bản mới </span>
         </div>
         <ul class="ListLine">
-            <li><a href='/talieu/danhsach/luat'>
-                Luật
-            </a></li>
-            <li><a href='/talieu/danhsach/nghidinh'>
-                Nghị định
-            </a></li>
-            <li><a href='/talieu/danhsach/thongtu'>
-                Thông tư
-            </a></li>
-            <li><a href='/talieu/danhsach/chidinh'>
-                Chỉ thị
-            </a></li>
-            <li><a href='/talieu/danhsach/quyetdinh'>
-                Quyết định
-            </a></li>
+            @foreach($category as $item)
+                <li><a href='/talieu/danhsach/{{$item->id}}'>
+                        {{$item->name}}
+                    </a></li>
+            @endforeach
         </ul>
     </div>
     <div class="groupItem">
@@ -45,7 +35,9 @@
                     </td>
                     <td align="center" style="width:80px;">
                         @if($document->documentExists())
-                        <a href='/uploads/{{$document->id}}' >Tải về </a>
+                            <a href="/thongke/khoahoccongnghe/doc/{{$document->id}}">
+                                Tải về
+                            </a>
                         @else
                         <span style="color: grey">Tải về</span>
                         @endif

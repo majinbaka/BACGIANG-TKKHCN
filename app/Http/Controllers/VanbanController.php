@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Document;
@@ -15,14 +16,17 @@ class VanbanController extends Controller
 {
     public function index()
     {
-    	$vanbans = Document::all();
+    	$vanbans = Document::select('code','publisher','category.name as name','publish_day','documents.id as id','signer','description','url')
+        ->leftJoin('category','category.id','=','documents.category_id')
+        ->get();
     	
     	return view('admin.vanbans.index', ['vanbans' => $vanbans]);
     }
 
     public function create()
     {
-    	return view('admin.vanbans.create');
+        $category = Category::all();
+    	return view('admin.vanbans.create',compact('category'));
     }
 
     public function store(Request $request)
@@ -31,10 +35,19 @@ class VanbanController extends Controller
             'code' => 'required',
             'publisher' => 'required',
             'publish_day' => 'required',
-            'category' => 'required',
-            'url' => 'required|mimes:doc,pdf,docx,zip,xls,xlsx',
+            'category_id' => 'required',
+//            'url' => 'required|mimes:doc,pdf,docx,zip,xls,xlsx',
         );
-
+	    if($request->hasFile('url')){
+            $extensions = ['doc','docx','pdf','zip','xls','xlsx'];
+            $files = $request->file('url');
+            foreach ($files as $file){
+                $extension = $file->getClientOriginalExtension();
+                if(!in_array($extension,$extensions)){
+                    return Redirect::to('admin/vanban/create')->withErrors(['The file must be a file of type: doc,pdf,docx,zip,xls,xlsx']);
+                }
+            }
+        }
 	    $validator = Validator::make(Input::all(), $rules);
 
 	    if ($validator->fails()) {
@@ -42,22 +55,30 @@ class VanbanController extends Controller
 	            ->withErrors($validator)
 	            ->withInput();
 	    } else {
-	        
-            $image = $request->file('url');
-            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads');
-            $image->move($destinationPath, $input['imagename']);
 
 	        $vanban = new Document;
             $vanban->code = Input::get('code');
             $vanban->publisher = Input::get('publisher');
-            $vanban->url = $input['imagename'];
             $vanban->description = Input::get('description');
             $vanban->signer = Input::get('signer');
+            $vanban->url ="";
             $vanban->publish_day = DateTime::createFromFormat('d/m/Y', Input::get('publish_day'))->format('Y-m-d');
-            $vanban->category = Input::get('category');
+            $vanban->category_id = Input::get('category_id');
             $vanban->save();
+            $id = $vanban->id;
+            if($request->hasFile('url')){
+                $files = $request->file('url');
+                $fileName = [];
+                foreach ($files as $file){
+                    $input['fileName'] = $id.'_'.$file->getClientOriginalName();
+                    $destinationPath = public_path('/uploads');
+                    $file->move($destinationPath, $input['fileName']);
+                    $fileName[] = $input['fileName'];
+                }
+                $vanban->url = implode(";",$fileName);
+            }
 
+            $vanban->save();
 	        // redirect
 	        Session::flash('message', 'Tạo thành công !');
 	        return Redirect::to('admin/vanban');
@@ -67,8 +88,8 @@ class VanbanController extends Controller
     public function edit($id)
     {
     	$vanban = Document::find($id);
-
-    	return view('admin.vanbans.edit', ['vanban' => $vanban]);
+        $category = Category::all();
+    	return view('admin.vanbans.edit', ['vanban' => $vanban,'category'=>$category]);
     }
 
     public function update(Request $request, $id)
@@ -77,10 +98,19 @@ class VanbanController extends Controller
             'code' => 'required',
             'publisher' => 'required',
             'publish_day' => 'required',
-            'category' => 'required',
-            'url' => 'mimes:doc,pdf,docx,zip,xls,xlsx',
+            'category_id' => 'required',
+//            'url' => 'mimes:doc,pdf,docx,zip,xls,xlsx',
 	    );
-
+        if ($request->hasFile('url')){
+            $extensions = ['doc','docx','pdf','zip','xls','xlsx'];
+            $files = $request->file('url');
+            foreach ($files as $file){
+                $extension = $file->getClientOriginalExtension();
+                if(!in_array($extension,$extensions)){
+                    return Redirect::to('admin/vanban/create')->withErrors(['The file must be a file of type: doc,pdf,docx,zip,xls,xlsx']);
+                }
+            }
+        }
         $validator = Validator::make(Input::all(), $rules);
 
         // process the login
@@ -89,20 +119,24 @@ class VanbanController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         } else {
-            $image = $request->file('url');
             $vanban = Document::find($id);
-            if ($request->file('url')){
-                $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/uploads');
-                $image->move($destinationPath, $input['imagename']);    
-                $vanban->url = $input['imagename'];
+            if ($request->hasFile('url')){
+                $files = $request->file('url');
+                $fileName = [];
+                foreach ($files as $file){
+                    $input['fileName'] = $id.'_'.$file->getClientOriginalName();
+                    $destinationPath = public_path('/uploads');
+                    $file->move($destinationPath, $input['fileName']);
+                    $fileName[] = $input['fileName'];
+                }
+                $vanban->url = implode(";",$fileName);
             }
             $vanban->code = Input::get('code');
             $vanban->publisher = Input::get('publisher');
             $vanban->description = Input::get('description');
             $vanban->signer = Input::get('signer');
             $vanban->publish_day = DateTime::createFromFormat('d/m/Y', Input::get('publish_day'))->format('Y-m-d');
-            $vanban->category = Input::get('category');
+            $vanban->category_id = Input::get('category_id');
 
 	        $vanban->save();
 

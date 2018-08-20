@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Banners;
+use App\Category;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Information;
@@ -36,8 +38,8 @@ class HomeController extends Controller
         $info = Post::paginate(3);
         $links = LinkedWebsite::all();
         $documents = Document::paginate(10);
-
-        return view('index', array('info' => $info, 'links' => $links, 'documents' => $documents));
+        $category = Category::all();
+        return view('index', array('info' => $info, 'links' => $links, 'documents' => $documents,'category'=>$category));
     }
 
     public function transfer(){
@@ -57,8 +59,8 @@ class HomeController extends Controller
     {
         $links = LinkedWebsite::all();
         $documents = Document::paginate(10);
-
-        return view('tailieu', array('documents' => $documents,  'links' => $links));
+        $category = Category::all();
+        return view('tailieu', array('documents' => $documents,  'links' => $links,'category'=>$category));
     }
 
     public function tailieuchitiet($id)
@@ -72,38 +74,43 @@ class HomeController extends Controller
     public function tailieudanhsach($cate)
     {
         $links = LinkedWebsite::all();
-        switch ($cate) {
-            case 'luat':
-                $documents = Document::where('category' , "Luật")->paginate(10);
-                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Luật"));
-                break;
-            
-            case 'nghidinh':
-                $documents = Document::where('category' , "Nghị định")->paginate(10);
-                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Nghị định"));
-                break;
-            
-            case 'thongtu':
-                $documents = Document::where('category' , "Thông tư")->paginate(10);
-                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Thông tư"));
-                break;
-            
-            case 'chidinh':
-                $documents = Document::where('category' , "Chỉ định")->paginate(10);
-                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Chỉ định"));
-                break;
-            
-            case 'quyetdinh':
-                $documents = Document::where('category' , "Quyết định")->paginate(10);
-                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Quyết định"));
-                break;
-            
-            default:
-                $documents = Document::paginate(10);
-                break;
-        }
-
-        return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => ""));
+        $category = Category::all();
+//        switch ($cate) {
+//            case 'luat':
+//                $documents = Document::where('category' , "Luật")->paginate(10);
+//                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Luật"));
+//                break;
+//
+//            case 'nghidinh':
+//                $documents = Document::where('category' , "Nghị định")->paginate(10);
+//                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Nghị định"));
+//                break;
+//
+//            case 'thongtu':
+//                $documents = Document::where('category' , "Thông tư")->paginate(10);
+//                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Thông tư"));
+//                break;
+//
+//            case 'chidinh':
+//                $documents = Document::where('category' , "Chỉ định")->paginate(10);
+//                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Chỉ định"));
+//                break;
+//
+//            case 'quyetdinh':
+//                $documents = Document::where('category' , "Quyết định")->paginate(10);
+//                return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => "Quyết định"));
+//                break;
+//
+//            default:
+//                $documents = Document::paginate(10);
+//                break;
+//        }
+//
+//        return view('danhsachtailieu', array('documents' => $documents,  'links' => $links, 'catename' => ""));
+        $documents = Document::where('category_id',$cate)->paginate(10);
+        $cateItem = Category::findOrFail($cate);
+        $catename = $cateItem->name;
+        return view('danhsachtailieu',compact('links','category','documents','catename'));
     }
 
     public function tintuc($id){

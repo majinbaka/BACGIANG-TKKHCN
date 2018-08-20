@@ -37,11 +37,19 @@
                 <tr>
                   <td>{{$link->code}}</td>
                   <td>{{$link->publisher}}</td>
-                  <td>{{$link->category}}</td>
+                  <td>{{$link->name}}</td>
                   <td>{{$link->publish_day}}</td>
                   <td>{{$link->signer}}</td>
                   <td>{{$link->description}}</td>
-                  <td><a href="/uploads/{{$link->id}}">tải về</a></td>
+                  <td>
+                    @php
+                      $files = $link->url;
+                      $files = explode(";",$files);
+                    @endphp
+                    @foreach($files as $file)
+                      <a href="/uploads/{{$file}}">{{$file}}</a> <br />
+                    @endforeach
+                  </td>
                   <td><a href="/admin/vanban/{{$link->id}}/edit">Sửa</a></td>
                   <td>
                     <form role="form" method="POST" action="{{ url('/admin/vanban/'.$link->id) }}">

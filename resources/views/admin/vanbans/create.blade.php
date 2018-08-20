@@ -31,12 +31,10 @@
                 </div>
                 <div class="form-group">
                   <label>Loại văn bản</label>
-                  <select name="category" class="form-control">
-                    <option value="Luật">Luật</option>
-                    <option value="Nghị định">Nghị định</option>
-                    <option value="Thông tư">Thông tư</option>
-                    <option value="Chỉ định">Chỉ định</option>
-                    <option value="Quyết định">Quyết định</option>
+                  <select name="category_id" class="form-control">
+                    @foreach($category as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                    @endforeach
                   </select>
                   {!! $errors->first('category', '<p class="help-block">:message</p>') !!}
                 </div>
@@ -67,9 +65,10 @@
                 </div>
                 <div class="form-group">
                   <label>Văn bản</label>
-                  <input type="file" name="url" id="exampleInputFile">
+                  <input type="file" name="url[]" id="exampleInputFile" multiple="true">
                   {!! $errors->first('url', '<p class="help-block">:message</p>') !!}
                 </div>
+                <div class="form-group" id="previewFileName"></div>
                     <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Lưu</button>
                 <a href="/admin/vanban" class="btn btn-danger">Hủy</a>
@@ -84,4 +83,7 @@
       <!-- ./row -->
     </section>
     
+@endsection
+@section('js')
+    <script src="{{asset('js/custom.js')}}"></script>
 @endsection

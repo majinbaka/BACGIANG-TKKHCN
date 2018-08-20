@@ -127,5 +127,19 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/lienket/{id}/edit', 'LienketController@edit')->name('lienkets.edit');
         Route::patch('/lienket/{id}', 'LienketController@update')->name('lienkets.update');
         Route::delete('/lienket/{id}', 'LienketController@destroy')->name('lienkets.destroy');
+
+        Route::get('/category','CategoryController@index')->name('category.danhsach');
+        Route::get('/category/create', 'CategoryController@create')->name('category.create');
+        Route::post('/category', 'CategoryController@store')->name('category.store');
+        Route::get('/category/{id}/edit', 'CategoryController@edit')->name('category.edit');
+        Route::patch('/category/{id}', 'CategoryController@update')->name('category.update');
+        Route::delete('/category/{id}', 'CategoryController@destroy')->name('category.destroy');
+
+        Route::get('/banner','BannerController@index')->name('banner.danhsach');
+        Route::get('/banner/create', 'BannerController@create')->name('banner.create');
+        Route::post('/banner', 'BannerController@store')->name('banner.store');
+        Route::get('/banner/{id}/edit', 'BannerController@edit')->name('banner.edit');
+        Route::patch('/banner/{id}', 'BannerController@update')->name('banner.update');
+        Route::delete('/banner/{id}', 'BannerController@destroy')->name('banner.destroy');
     });
 });
