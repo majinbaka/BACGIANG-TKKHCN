@@ -38,12 +38,14 @@ class VanbanController extends Controller
             'category_id' => 'required',
 //            'url' => 'required|mimes:doc,pdf,docx,zip,xls,xlsx',
         );
-	    $extensions = ['doc','docx','pdf','zip','xls','xlsx'];
-        $files = $request->file('url');
-        foreach ($files as $file){
-            $extension = $file->getClientOriginalExtension();
-            if(!in_array($extension,$extensions)){
-                return Redirect::to('admin/vanban/create')->withErrors(['The file must be a file of type: doc,pdf,docx,zip,xls,xlsx']);
+	    if($request->hasFile('url')){
+            $extensions = ['doc','docx','pdf','zip','xls','xlsx'];
+            $files = $request->file('url');
+            foreach ($files as $file){
+                $extension = $file->getClientOriginalExtension();
+                if(!in_array($extension,$extensions)){
+                    return Redirect::to('admin/vanban/create')->withErrors(['The file must be a file of type: doc,pdf,docx,zip,xls,xlsx']);
+                }
             }
         }
 	    $validator = Validator::make(Input::all(), $rules);
@@ -59,19 +61,23 @@ class VanbanController extends Controller
             $vanban->publisher = Input::get('publisher');
             $vanban->description = Input::get('description');
             $vanban->signer = Input::get('signer');
+            $vanban->url ="";
             $vanban->publish_day = DateTime::createFromFormat('d/m/Y', Input::get('publish_day'))->format('Y-m-d');
             $vanban->category_id = Input::get('category_id');
             $vanban->save();
             $id = $vanban->id;
-            $files = $request->file('url');
-            $fileName = [];
-            foreach ($files as $file){
-                $input['fileName'] = $id.'_'.$file->getClientOriginalName();
-                $destinationPath = public_path('/uploads');
-                $file->move($destinationPath, $input['fileName']);
-                $fileName[] = $input['fileName'];
+            if($request->hasFile('url')){
+                $files = $request->file('url');
+                $fileName = [];
+                foreach ($files as $file){
+                    $input['fileName'] = $id.'_'.$file->getClientOriginalName();
+                    $destinationPath = public_path('/uploads');
+                    $file->move($destinationPath, $input['fileName']);
+                    $fileName[] = $input['fileName'];
+                }
+                $vanban->url = implode(";",$fileName);
             }
-            $vanban->url = implode(";",$fileName);
+
             $vanban->save();
 	        // redirect
 	        Session::flash('message', 'Tạo thành công !');
