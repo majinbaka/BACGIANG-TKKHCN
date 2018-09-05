@@ -39,8 +39,8 @@ class ThanhVienController extends Controller
 
     public function show($id)
     {
-        $lists = User::listYear();
         $user = User::find($id);
+        $lists = $user->listYearU();
         
         return view('admin.thanhviens.show', ['lists' => $lists, 'user' => $user]);
     }
