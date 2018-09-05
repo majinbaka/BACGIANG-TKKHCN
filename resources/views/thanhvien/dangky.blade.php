@@ -33,63 +33,51 @@
               </h3>
             </div>
             <div class="box-body pad">
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label>Tên đăng nhập</label>
-                      <div class="input-group">
-                        <input name="username" type="text" class="form-control">
-                      </div>
-                    </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                      <input name="username" type="text" class="form-control">
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label>Email</label>
-                      <div class="input-group">
-                        <input name="useremail" type="text" class="form-control">
-                      </div>
-                    </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Email</label>
+                      <input name="useremail" type="text" class="form-control">
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label>Mật khẩu</label>
-                      <div class="input-group">
-                        <input name="password" type="password" class="form-control">
-                      </div>
-                    </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Mật khẩu</label>
+                      <input name="password" type="password" class="form-control">
                   </div>
                 </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label>Nhập lại mật khẩu</label>
+                      <input name="password_confirmation" type="password" class="form-control">
+                  </div>
+                </div>
+              </div>
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-9">
                 <div class="form-group">
                   <label>Tên đơn vị</label>
-                  <div class="input-group">
                     <input name="reporter_element_name" type="text" class="form-control">
-                  </div>
                 </div>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-9">
                 <div class="form-group">
                   <label>Địa chỉ</label>
-                  <div class="input-group">
                     <input name="address" type="text" class="form-control">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label>Tỉnh/TP</label>
-                  <div class="input-group">
-                    <input name="city" type="text" class="form-control">
-                  </div>
                 </div>
               </div>
             </div>
@@ -97,9 +85,7 @@
               <div class="col-md-3">
                 <div class="form-group">
                   <label>Điện thoại</label>
-                  <div class="input-group">
                     <input name="phone" type="text" class="form-control">
-                  </div>
                 </div>
               </div>
             </div>

@@ -22,24 +22,24 @@
                 <thead>
                 <tr>
                   <th>Năm</th>
-                  <th>Cập nhập Biểu 1</th>
-                  <th>Cập nhập Biểu 2</th>
-                  <th>Cập nhập Biểu 3</th>
-                  <th>Cập nhập Biểu 4</th>
-                  <th>Cập nhập Biểu 5</th>
-                  <th>Cập nhập Biểu 6</th>
+                  <th>Biểu 1</th>
+                  <th>Biểu 2</th>
+                  <th>Biểu 3</th>
+                  <th>Biểu 4</th>
+                  <th>Biểu 5</th>
+                  <th>Biểu 6</th>
                 </tr>
                 </thead>
                 <tbody>
                   @foreach($lists as $l)
                 <tr>
                   <th>{{$l}}</th>
-                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/1">Cập nhập</a></th>
-                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/2">Cập nhập</a></th>
-                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/3">Cập nhập</a></th>
-                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/4">Cập nhập</a></th>
-                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/5">Cập nhập</a></th>
-                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/6">Cập nhập</a></th>
+                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/1">Cập nhật</a></th>
+                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/2">Cập nhật</a></th>
+                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/3">Cập nhật</a></th>
+                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/4">Cập nhật</a></th>
+                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/5">Cập nhật</a></th>
+                  <th><a href="/admin/thanhvien/{{$l}}/{{$user->id}}/bieu/6">Cập nhật</a></th>
                 </tr>
                 @endforeach
                 </tbody>

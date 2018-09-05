@@ -21,7 +21,6 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Tên</th>
                   <th>Tên đăng nhập</th>
                   <th>Tên đơn vị</th>
                   <th>Email</th>
@@ -33,7 +32,6 @@
                 <tbody>
                   @foreach($users as $user)
                 <tr>
-                  <td>{{$user->name}}</td>
                   <td>{{$user->username}}</td>
                   <td>{{$user->donviname}}</td>
                   <td>{{$user->email}}</td>
