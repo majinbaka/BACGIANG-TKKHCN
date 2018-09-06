@@ -21,12 +21,36 @@ use App\Element;
 use DateTime;
 use App\YearReport;
 use App\Admin;
+use App\BieuStatus;
 
 class ThanhVienController extends Controller
 {
     public function index()
     {
         $users = User::all();
+        
+        return view('admin.thanhviens.index', ['users' => $users]);
+    }
+
+    public function search()
+    {
+        $input = Input::all();
+        $userIds = BieuStatus::where('status','>=', 1)->pluck('user_id');
+        $bieumau = Bieumau1::whereIn('user_id', $userIds)
+            ->where('manager', 'LIKE', "%".$input['manager']."%")
+            ->where('manager_city', 'LIKE', "%".$input['manager_city']."%");
+
+        if($input['establish_lever'] != 0)
+            $bieumau = $bieumau->where('establish_lever', $input['establish_lever']);
+        if($input['type_company'] != 0)
+            $bieumau = $bieumau->where('type_company', $input['type_company']);
+        if($input['type_econom'] != 0)
+            $bieumau = $bieumau->where('type_econom', $input['type_econom']);
+        if($input['lab_number_sub'] != 0)
+            $bieumau = $bieumau->where('lab_number_sub', $input['lab_number_sub']);
+            $user_ids = $bieumau->pluck('user_id');
+        $users = User::whereIn('id', $user_ids)->get();
+
         
         return view('admin.thanhviens.index', ['users' => $users]);
     }

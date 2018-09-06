@@ -86,6 +86,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/thanhvien/nhom-quyen', 'ThanhVienController@index')->name('thanhviens.nhomquyen');
         Route::get('/thanhvien/create', 'ThanhVienController@create')->name('thanhviens.create');
         Route::post('/thanhvien', 'ThanhVienController@store')->name('thanhviens.store');
+        Route::post('/search', 'ThanhVienController@search')->name('thanhviens.search');
         Route::get('/thanhvien/{id}/edit', 'ThanhVienController@edit')->name('thanhviens.edit');
         Route::get('/thanhvien/{id}/show', 'ThanhVienController@show')->name('thanhviens.show');
         Route::patch('/thanhvien/{id}', 'ThanhVienController@update')->name('thanhviens.update');
