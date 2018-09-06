@@ -32,6 +32,29 @@ class ThanhVienController extends Controller
         return view('admin.thanhviens.index', ['users' => $users]);
     }
 
+    public function nhomquyen()
+    {
+        if (\Auth::guard('admin')->user()->role == 1)
+            {
+        $users = User::all();
+        $lanhdaos = Admin::where('role', 3)->get();
+        $canbos = Admin::where('role', 2)->get();
+        
+        return view('admin.thanhviens.nhomquyen', ['users' => $users,'lanhdaos' => $lanhdaos,'canbos' => $canbos]);
+        }
+        else
+            return Redirect::back();
+    }
+
+    public function destroyAdmin($id)
+    {
+        $user = Admin::find($id);
+        $user->delete();
+        
+        Session::flash('message', 'Xóa thành viên thành công !');
+        return Redirect::to('admin/thanhvien/nhom-quyen');
+    }
+
     public function search()
     {
         $input = Input::all();
@@ -59,7 +82,7 @@ class ThanhVienController extends Controller
             $input['lab_number_sub'] == 0
         )
         $users = User::all();
-    
+
         return view('admin.thanhviens.index', ['users' => $users]);
     }
 

@@ -21,6 +21,7 @@ class TkcsController extends Controller
         $lists = User::listYearAdmin();
         
         return view('admin.tkcs.index', ['lists' => $lists]);
+
     }
 
     public function search($year)

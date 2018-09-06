@@ -25,6 +25,7 @@ use App\BieuStatus;
 class ThanhvienDashboardController extends Controller
 {
     public function editPassword(){
+        
         return view('thanhvien.password');
     }
 

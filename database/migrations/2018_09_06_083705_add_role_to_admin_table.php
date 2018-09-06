@@ -13,7 +13,7 @@ class AddRoleToAdminTable extends Migration
     public function up()
     {
         Schema::table('admins', function($table){
-            $table->string('role')->default(2);
+            $table->string('role')->default(1);
         });
     }
 

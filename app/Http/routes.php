@@ -61,8 +61,6 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::patch('/bieumau6/{year}', 'ThanhvienDashboardController@bieumau6Update');
     });
 });
-
-
 Route::group(['middleware' => 'auth:admin'], function () {
 
     Route::group(['prefix' => 'admin'], function () {
@@ -83,7 +81,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::delete('/tintuc/{id}', 'TinTucController@destroy')->name('tintucs.destroy');
 
         Route::get('/thanhvien', 'ThanhVienController@index')->name('thanhviens.index');
-        Route::get('/thanhvien/nhom-quyen', 'ThanhVienController@index')->name('thanhviens.nhomquyen');
+        Route::get('/thanhvien/nhom-quyen', 'ThanhVienController@nhomquyen')->name('thanhviens.nhomquyen');
         Route::get('/thanhvien/create', 'ThanhVienController@create')->name('thanhviens.create');
         Route::post('/thanhvien', 'ThanhVienController@store')->name('thanhviens.store');
         Route::post('/search', 'ThanhVienController@search')->name('thanhviens.search');
@@ -91,6 +89,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/thanhvien/{id}/show', 'ThanhVienController@show')->name('thanhviens.show');
         Route::patch('/thanhvien/{id}', 'ThanhVienController@update')->name('thanhviens.update');
         Route::delete('/thanhvien/{id}', 'ThanhVienController@destroy')->name('thanhviens.destroy');
+        Route::delete('/thanhvien/xoa/{id}', 'ThanhVienController@destroyAdmin')->name('thanhviens.destroyAdmin');
         Route::get('/thanhvien/{year}/{id}/bieu/{type}', 'ThanhVienController@editBieu');
         Route::get('/thanhvien/{year}/{id}/bieu/{type}/show', 'ThanhVienController@showBieu');
         Route::post('/thanhviencheck/{year}/{id}/bieushow/{check}', 'ThanhVienController@showStatus');

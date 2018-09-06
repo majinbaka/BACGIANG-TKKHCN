@@ -95,7 +95,10 @@
           <ul class="treeview-menu">
             <li><a href="/admin/thanhvien"><i class="fa fa-circle-o"></i>Danh sách</a></li>
             <li><a href="/admin/thanhvien/create"><i class="fa fa-circle-o"></i>Tạo mới</a></li>
+
+            @if(Auth::guard('admin')->user()->role == 1)
             <li><a href="/admin/thanhvien/nhom-quyen"><i class="fa fa-circle-o"></i>Nhóm quyền</a></li>
+            @endif
           </ul>
         </li>
         <li><a href="/admin/tkcs"><i class="fa fa-book"></i> <span>Thống kê cơ sở</span></a></li>
@@ -263,6 +266,28 @@ echo '
   $(function () {
     $('#example1').DataTable()
     $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false,
+      "language": {
+        "search": "Tìm kiếm:"
+      },
+    });
+    $('#example3').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false,
+      "language": {
+        "search": "Tìm kiếm:"
+      },
+    });
+    $('#example4').DataTable({
       'paging'      : true,
       'lengthChange': false,
       'searching'   : true,
