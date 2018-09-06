@@ -272,13 +272,7 @@ echo '
       "language": {
         "search": "Tìm kiếm:"
       },
-    });
-
-    $('#search-form').on('submit', function(e) {
-        oTable.draw();
-        e.preventDefault();
-    });
-  })
+    })
 </script>
 </body>
 </html>
