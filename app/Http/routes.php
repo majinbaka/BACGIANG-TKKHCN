@@ -83,6 +83,7 @@ Route::group(['middleware' => 'auth:admin'], function () {
         Route::delete('/tintuc/{id}', 'TinTucController@destroy')->name('tintucs.destroy');
 
         Route::get('/thanhvien', 'ThanhVienController@index')->name('thanhviens.index');
+        Route::get('/thanhvien/nhom-quyen', 'ThanhVienController@index')->name('thanhviens.nhomquyen');
         Route::get('/thanhvien/create', 'ThanhVienController@create')->name('thanhviens.create');
         Route::post('/thanhvien', 'ThanhVienController@store')->name('thanhviens.store');
         Route::get('/thanhvien/{id}/edit', 'ThanhVienController@edit')->name('thanhviens.edit');

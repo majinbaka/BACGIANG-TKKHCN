@@ -95,6 +95,7 @@
           <ul class="treeview-menu">
             <li><a href="/admin/thanhvien"><i class="fa fa-circle-o"></i>Danh sách</a></li>
             <li><a href="/admin/thanhvien/create"><i class="fa fa-circle-o"></i>Tạo mới</a></li>
+            <li><a href="/admin/thanhvien/nhom-quyen"><i class="fa fa-circle-o"></i>Nhóm quyền</a></li>
           </ul>
         </li>
         <li><a href="/admin/tkcs"><i class="fa fa-book"></i> <span>Thống kê cơ sở</span></a></li>

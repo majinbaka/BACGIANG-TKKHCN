@@ -44,6 +44,14 @@
                   <label>Mật khẩu</label>
                   <input type="password" name="password" class="form-control">
                 </div>
+                <div class="form-group">
+                  <label>Nhóm quyền</label>
+                  <select name="role" class="form-control">
+                    <option value="1">Các đơn vị báo cáo thống kê</option>
+                    <option value="2">Cán bộ làm công tác thống kê</option>
+                    <option value="3">Lãnh đạo</option>
+                  </select>
+                </div>
                     <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Lưu</button>
               </div>

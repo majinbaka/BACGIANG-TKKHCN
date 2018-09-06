@@ -20,6 +20,7 @@ use App\Technology;
 use App\Element;
 use DateTime;
 use App\YearReport;
+use App\Admin;
 
 class ThanhVienController extends Controller
 {
@@ -77,13 +78,25 @@ class ThanhVienController extends Controller
 	            ->withInput(Input::except('password'));
 	    } else {
 	        // store
-	        $user = new User;
-            $user->name = Input::get('name');
-            $user->username = Input::get('username');
-            $user->email = Input::get('email');
-            $user->donviname = Input::get('donviname');
-	        $user->password = Hash::make(Input::get('password'));
-	        $user->save();
+            if ($role == 1){
+                $user = new User;
+                $user->name = Input::get('name');
+                $user->username = Input::get('username');
+                $user->email = Input::get('email');
+                $user->donviname = Input::get('donviname');
+                $user->password = Hash::make(Input::get('password'));
+                $user->role = Input::get('role');
+                $user->save();    
+            }
+            else {
+                $user = new Admin;
+                $user->name = Input::get('name');
+                $user->username = Input::get('username');
+                $user->email = Input::get('email');
+                $user->password = Hash::make(Input::get('password'));
+                $user->role = Input::get('role');
+                $user->save();    
+            }
 
 	        // redirect
 	        Session::flash('message', 'Tạo thành công thành viên !');

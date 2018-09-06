@@ -17,7 +17,7 @@ use App\BieuStatus;
 class User extends Authenticatable
 {
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'donviname', 'check','address','phone','city'
+        'name', 'username', 'email', 'password', 'donviname', 'check','address','phone','city', 'role'
     ];
 
     protected $hidden = [
