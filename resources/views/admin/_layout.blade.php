@@ -272,7 +272,8 @@ echo '
       "language": {
         "search": "Tìm kiếm:"
       },
-    })
+    });
+  })
 </script>
 </body>
 </html>

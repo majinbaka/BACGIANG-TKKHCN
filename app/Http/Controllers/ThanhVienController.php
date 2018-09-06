@@ -51,7 +51,15 @@ class ThanhVienController extends Controller
             $user_ids = $bieumau->pluck('user_id');
         $users = User::whereIn('id', $user_ids)->get();
 
-        
+        if($input['manager'] == "" && 
+            $input['manager_city'] == "" && 
+            $input['establish_lever'] == 0 && 
+            $input['type_company'] == 0 && 
+            $input['type_econom'] == 0 && 
+            $input['lab_number_sub'] == 0
+        )
+        $users = User::all();
+    
         return view('admin.thanhviens.index', ['users' => $users]);
     }
 
