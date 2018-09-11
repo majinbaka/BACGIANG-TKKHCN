@@ -109,7 +109,7 @@
                   <th>{{$user->bieuStatusCheck($l)}}</th>
                   <th>@if($user->bieuStatusCheck($l) == "Đang cập nhật")
                     <a href="/thanhvien/{{$l}}/bieumau/send">Gửi báo cáo</a> |
-                    <a href="/thanhvien/{{$l}}/bieumau/delete">Xóa</a>
+                    <a href="/thanhvien/{{$l}}/bieumau/delete" class="btn-delete">Xóa</a>
                   @endif</th>
                 </tr>
                 @endforeach
@@ -125,4 +125,15 @@
     </section>
 @endsection
 @section('js')
+  <script>
+      $(".btn-delete").on('click',function (e) {
+          e.preventDefault();
+          if(!confirm("Bạn có chắc chắn muốn xóa các báo cáo này không?")){
+              return false;
+          } else {
+              var href = $(this).attr('href');
+              window.location.href = href;
+          }
+      })
+  </script>
 @endsection
