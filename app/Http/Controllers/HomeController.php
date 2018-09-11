@@ -30,6 +30,7 @@ use App\Bieutonghop9;
 use App\Bieutonghop10;
 use App\Bieutonghop11;
 use App\YearReport;
+use Redirect;
 
 class HomeController extends Controller
 {

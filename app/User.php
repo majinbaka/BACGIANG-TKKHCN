@@ -223,7 +223,6 @@ class User extends Authenticatable
             $b6->user_id = $this->id;
             $b6->reporter_year = $y;
             $b6->total = "1=&2=&3=&4=&5=&6=&7=";
-            $b6->reporter_year = "1=&2=&3=&4=&5=&6=&7=";
             $b6->total_award_vn = "1=&2=&3=&4=&5=&6=&7=";
             $b6->total_award_vn1 = "1=&2=&3=&4=&5=&6=&7=";
             $b6->total_award_vn2 = "1=&2=&3=&4=&5=&6=&7=";
