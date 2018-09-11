@@ -272,6 +272,8 @@ class ThanhVienController extends Controller
                 $user->name = Input::get('name');
                 $user->username = Input::get('username');
                 $user->email = Input::get('email');
+                $user->address = Input::has('address') ? Input::get('address') : "";
+                $user->phone = Input::has('phone') ? Input::get('phone') : "";
                 $user->donviname = Input::get('donviname');
                 $user->password = Hash::make(Input::get('password'));
                 $user->save();
@@ -280,6 +282,8 @@ class ThanhVienController extends Controller
                 $user = User::find($id);
                 $user->name = Input::get('name');
                 $user->username = Input::get('username');
+                $user->address = Input::has('address') ? Input::get('address') : "";
+                $user->phone = Input::has('phone') ? Input::get('phone') : "";
                 $user->donviname = Input::get('donviname');
                 $user->email = Input::get('email');
                 $user->save();

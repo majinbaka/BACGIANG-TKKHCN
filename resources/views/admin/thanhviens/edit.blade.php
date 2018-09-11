@@ -38,8 +38,16 @@
                   <input type="text" name="donviname" class="form-control" value="{{$thanhvien->donviname}}">
                 </div>
                 <div class="form-group">
+                  <label>Địa chỉ</label>
+                  <input type="text" name="address" class="form-control" value="{{$thanhvien->address}}">
+                </div>
+                <div class="form-group">
                   <label>Email</label>
                   <input type="email" name="email" class="form-control" value="{{$thanhvien->email}}">
+                </div>
+                <div class="form-group">
+                  <label>Số điện thoại</label>
+                  <input type="text" name="phone" class="form-control" value="{{$thanhvien->phone}}">
                 </div>
                 <div class="form-group">
                   <label>Mật khẩu</label>
