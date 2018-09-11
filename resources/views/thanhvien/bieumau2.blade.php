@@ -278,6 +278,7 @@
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Lưu</button>
+                  <a class="btn btn-default" href="{{url('thanhvien/bieumau/baocao')}}">Quay lại</a>
               </div>
               </form>
             </div>

@@ -330,6 +330,7 @@
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Lưu</button>
+                  <a class="btn btn-default" href="{{url()->previous()}}">Quay lại</a>
               </div>
               </form>
             </div>

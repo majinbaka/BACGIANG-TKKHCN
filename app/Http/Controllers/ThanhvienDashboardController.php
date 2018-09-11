@@ -617,6 +617,32 @@ class ThanhvienDashboardController extends Controller
     {
         $user = Auth::user();
         $params = Input::all();
+        $rules = array(
+            'reporter_element_name' => 'required',
+            'address' => 'required',
+            'establish_lever' => 'required',
+            'type_company' => 'required',
+            'type_econom' => 'required',
+            'lab_number_sub' => 'required',
+            'report_info' => 'required',
+        );
+
+        $messages = [
+            'reporter_element_name.required'    => 'Vui lòng điền tên đơn vị báo cáo',
+            'address.required' => 'Vui lòng điền địa chỉ',
+            'establish_lever.required' => 'Vui lòng chọn cấp quyết định thành lập',
+            'type_company.required' => 'Vui lòng chọn loại hình của đơn vị/tổ chức',
+            'type_econom.required' => 'Vui lòng chọn loại hình kinh tế',
+            'lab_number_sub.required' => 'Vui lòng chọn lĩnh vực nghiên cứu chính theo chức năng nhiệm vụ',
+            'report_info.required' => 'Vui lòng chọn thông tin về các số liệu trong biểu mẫu báo cáo'
+        ];
+
+        $validator = Validator::make($params, $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)
+                ->withInput();;
+        }
         $publish_day = DateTime::createFromFormat('d/m/Y', $params['publish_day']);
         if ($publish_day) $publish_day = $publish_day->format('Y-m-d');
         $establish_day = DateTime::createFromFormat('d/m/Y', $params['establish_day']);

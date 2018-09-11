@@ -3,6 +3,15 @@
     @parent
 @endsection
 @section('content')
+  @if (count($errors) > 0)
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{!! $error !!}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
 
     <section class="content-header">
       <h1>
@@ -66,7 +75,7 @@
                 </div>
                 <div class="form-group">
                   <label for="reporter_element_name">Tên đơn vị báo cáo</label>
-                  <input type="text" value="{{$bieumau->reporter_element_name}}" name="reporter_element_name" class="form-control" id="reporter_element_name">
+                  <input type="text" value="{{$bieumau->reporter_element_name}}" name="reporter_element_name" class="form-control" id="reporter_element_name" required>
                 </div>
                 <div class="form-group">
                   <label for="reporter_transfer_name">Tên giao dịch viết tắt (nếu có):</label>
@@ -78,7 +87,7 @@
                 </div>
                 <div class="form-group">
                   <label for="address">Địa chỉ</label>
-                  <input type="text" value="{{$bieumau->address}}" name="address" class="form-control" id="address">
+                  <input type="text" value="{{$bieumau->address}}" name="address" class="form-control" id="address" required>
                 </div>
                 <div class="form-group">
                   <label for="city">Tỉnh / TP</label>
@@ -133,7 +142,7 @@
                   <label for="establish_lever">Cấp quyết định thành lập:</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios1" value="1"
+                      <input type="radio" required name="establish_lever" id="optionsRadios1" value="1"
                       @if ($bieumau->establish_lever == 1) checked="" @endif
                       >
                       8.1. Quốc hội, Uỷ ban thường vụ Quốc hội  
@@ -141,7 +150,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios2" value="2"
+                      <input type="radio" required name="establish_lever" id="optionsRadios2" value="2"
                       @if ($bieumau->establish_lever == 2) checked="" @endif
                       >
                       8.2. Chính phủ
@@ -149,7 +158,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios3" value="3"
+                      <input type="radio" required name="establish_lever" id="optionsRadios3" value="3"
                       @if ($bieumau->establish_lever == 3) checked="" @endif
                       >
                       8.3. Toà án nhân dân tối cao
@@ -157,7 +166,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios2" value="4"
+                      <input type="radio" required name="establish_lever" id="optionsRadios2" value="4"
                       @if ($bieumau->establish_lever == 4) checked="" @endif
                       >
                       8.4. Viện kiểm sát nhân dân tối cao
@@ -165,7 +174,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios3" value="5"
+                      <input type="radio" required name="establish_lever" id="optionsRadios3" value="5"
                       @if ($bieumau->establish_lever == 5) checked="" @endif
                       >
                       8.5. Thủ tướng Chỉnh phủ
@@ -173,7 +182,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios2" value="6"
+                      <input type="radio" required name="establish_lever" id="optionsRadios2" value="6"
                       @if ($bieumau->establish_lever == 6) checked="" @endif
                       >
                       8.6. Bộ trưởng, Thủ trưởng cơ quan ngang Bộ, cơ quan thuộc Chính phủ
@@ -181,7 +190,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios3" value="7"
+                      <input type="radio" required name="establish_lever" id="optionsRadios3" value="7"
                       @if ($bieumau->establish_lever == 7) checked="" @endif
                       >
                       8.7. Uỷ ban nhân dân tỉnh, thành phố trực thuộc Trung ương
@@ -189,7 +198,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios3" value="8"
+                      <input type="radio" required name="establish_lever" id="optionsRadios3" value="8"
                       @if ($bieumau->establish_lever == 8) checked="" @endif
                       >
                       8.8. Tổ chức chính trị, tổ chức chính trị - xã hội, tổ chức xã hội, tổ chức xã hội - nghề nghiệp
@@ -197,7 +206,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="establish_lever" id="optionsRadios3" value="9"
+                      <input type="radio" required name="establish_lever" id="optionsRadios3" value="9"
                       @if ($bieumau->establish_lever == 9) checked="" @endif
                       >
                       8.9. Doanh nghiệp, tổ chức khác, cá nhân
@@ -251,7 +260,7 @@
                   <label for="type_company">Loại hình của đơn vị/tổ chức :</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios1" value="1"
+                      <input type="radio" name="type_company" required id="optionsRadios1" value="1"
                       @if ($bieumau->type_company == 1) checked="" @endif
                       >
                       13.1.Cơ quan quản lý nhà nước
@@ -259,7 +268,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios2" value="2"
+                      <input type="radio" name="type_company" required id="optionsRadios2" value="2"
                       @if ($bieumau->type_company == 2) checked="" @endif
                       >
                         13.2.Tổ chức nghiên cứu khoa học và phát triển công nghệ
@@ -267,7 +276,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="3"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="3"
                       @if ($bieumau->type_company == 3) checked="" @endif
                       >
                         13.3.Cơ sở giáo dục đại học
@@ -275,7 +284,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios2" value="4"
+                      <input type="radio" name="type_company" required id="optionsRadios2" value="4"
                       @if ($bieumau->type_company == 4) checked="" @endif
                       >
                         -----Đại học
@@ -283,7 +292,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="5"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="5"
                       @if ($bieumau->type_company == 5) checked="" @endif
                       >
                         -----Học viện
@@ -291,7 +300,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios2" value="6"
+                      <input type="radio" name="type_company" required id="optionsRadios2" value="6"
                       @if ($bieumau->type_company == 6) checked="" @endif
                       >
                         -----Cao đẳng
@@ -299,7 +308,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="7"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="7"
                       @if ($bieumau->type_company == 7) checked="" @endif
                       >
                         13.4.Tổ chức dịch vụ KH&CN
@@ -307,7 +316,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="8"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="8"
                       @if ($bieumau->type_company == 8) checked="" @endif
                       >
                         -----DV thông tin, thư viện
@@ -315,7 +324,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="9"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="9"
                       @if ($bieumau->type_company == 9) checked="" @endif
                       >
                         -----DV bảo tàng cho KH&CN
@@ -323,7 +332,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios2" value="10"
+                      <input type="radio" name="type_company" required id="optionsRadios2" value="10"
                       @if ($bieumau->type_company == 10) checked="" @endif
                       >
                         -----DV dịch thuật, biên tập, xuất bản cho KH&CN
@@ -331,7 +340,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="11"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="11"
                       @if ($bieumau->type_company == 11) checked="" @endif
                       >
                         -----DV điều tra cơ bản định kỳ, thường xuyên
@@ -339,7 +348,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios2" value="12"
+                      <input type="radio" name="type_company" required id="optionsRadios2" value="12"
                       @if ($bieumau->type_company == 12) checked="" @endif
                       >
                         -----DV thống kê, điều tra xã hội
@@ -347,7 +356,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="13"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="13"
                       @if ($bieumau->type_company == 13) checked="" @endif
                       >
                         -----DV tiêu chuẩn đo lường chất lượng
@@ -355,7 +364,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios2" value="14"
+                      <input type="radio" name="type_company" required id="optionsRadios2" value="14"
                       @if ($bieumau->type_company == 14) checked="" @endif
                       >
                         -----DV tư vấn về KH&CN
@@ -363,7 +372,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="15"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="15"
                       @if ($bieumau->type_company == 15) checked="" @endif
                       >
                         -----DV sở hữu trí tuệ
@@ -371,7 +380,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="16"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="16"
                       @if ($bieumau->type_company == 16) checked="" @endif
                       >
                         -----DV chuyển giao công nghệ
@@ -379,7 +388,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="17"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="17"
                       @if ($bieumau->type_company == 17) checked="" @endif
                       >
                         -----DV KH&CN khác
@@ -387,7 +396,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="18"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="18"
                       @if ($bieumau->type_company == 18) checked="" @endif
                       >
                         13.5.Đơn vị sự nghiệp khác
@@ -395,7 +404,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="19"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="19"
                       @if ($bieumau->type_company == 19) checked="" @endif
                       >
                         13.6.Doanh nghiệp KH&CN
@@ -403,7 +412,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_company" id="optionsRadios3" value="20"
+                      <input type="radio" name="type_company" required id="optionsRadios3" value="20"
                       @if ($bieumau->type_company == 20) checked="" @endif
                       >
                       13.7.Doanh nghiệp
@@ -414,7 +423,7 @@
                   <label for="exampleInputEmail1">Loại hình kinh tế :</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_econom" id="optionsRadios1" value="1"
+                      <input type="radio" name="type_econom" required id="optionsRadios1" value="1"
                       @if ($bieumau->type_econom == 1) checked="" @endif
                       >
                       14.1. Nhà nước
@@ -422,7 +431,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_econom" id="optionsRadios2" value="2"
+                      <input type="radio" name="type_econom" required id="optionsRadios2" value="2"
                       @if ($bieumau->type_econom == 2) checked="" @endif
                       >
                       14.2. Ngoài nhà nước
@@ -430,7 +439,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="type_econom" id="optionsRadios3" value="3"
+                      <input type="radio" name="type_econom" required id="optionsRadios3" value="3"
                       @if ($bieumau->type_econom == 3) checked="" @endif
                       >
                       14.3. Có vốn đầu tư nước ngoài
@@ -491,7 +500,7 @@
                   <label for="exampleInputEmail1">Lĩnh vực nghiên cứu chính theo chức năng nhiệm vụ :</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="lab_number_sub" id="optionsRadios1" value="1"
+                      <input type="radio" name="lab_number_sub" required id="optionsRadios1" value="1"
                       @if ($bieumau->lab_number_sub == 1) checked="" @endif
                       >
                       1. Khoa học tự nhiên
@@ -499,7 +508,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="lab_number_sub" id="optionsRadios2" value="2"
+                      <input type="radio" name="lab_number_sub" required id="optionsRadios2" value="2"
                       @if ($bieumau->lab_number_sub == 2) checked="" @endif
                       >
                         2. Khoa học kỹ thuật và công nghệ
@@ -507,7 +516,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="lab_number_sub" id="optionsRadios3" value="3"
+                      <input type="radio" name="lab_number_sub" required id="optionsRadios3" value="3"
                       @if ($bieumau->lab_number_sub == 3) checked="" @endif
                       >
                         3. Khoa học y dược
@@ -515,7 +524,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="lab_number_sub" id="optionsRadios3" value="4"
+                      <input type="radio" name="lab_number_sub" required id="optionsRadios3" value="4"
                       @if ($bieumau->lab_number_sub == 4) checked="" @endif
                       >
                           4. Khoa học nông nghiệp
@@ -523,7 +532,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="lab_number_sub" id="optionsRadios3" value="5"
+                      <input type="radio" name="lab_number_sub" required id="optionsRadios3" value="5"
                       @if ($bieumau->lab_number_sub == 5) checked="" @endif
                       >
                         5. Khoa học xã hội
@@ -531,7 +540,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="lab_number_sub" id="optionsRadios3" value="6"
+                      <input type="radio" name="lab_number_sub" required id="optionsRadios3" value="6"
                       @if ($bieumau->lab_number_sub == 6) checked="" @endif
                       >
                         6. Khoa học nhân văn
@@ -599,7 +608,7 @@
                   <label for="report_info">Thông tin về số liệu trong các biểu mẫu báo cáo</label>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="report_info" id="optionsRadios1" value="1"
+                      <input type="radio" name="report_info" required id="optionsRadios1" value="1"
                       @if ($bieumau->report_info == 1) checked="" @endif
                       >
                       Bao gồm số liệu của toàn bộ đơn vị/tổ chức, kể cả các đơn vị trực thuộc có tư cách pháp nhân;
@@ -607,7 +616,7 @@
                   </div>
                   <div class="radio">
                     <label>
-                      <input type="radio" name="report_info" id="optionsRadios2" value="2"
+                      <input type="radio" name="report_info" required id="optionsRadios2" value="2"
                       @if ($bieumau->report_info == 2) checked="" @endif
                       >
                       Chỉ bao gồm số liệu của các đơn vị trực thuộc không có tư cách pháp nhân. Không có bao gồm số liệu của các đơn vị trực thuộc có tư cách pháp nhân, có tài khoản và con dấu riêng (Những đơn vị này có báo cáo riêng)
@@ -640,6 +649,7 @@
                 </div>
                 <!-- /.box-body -->
                 <button type="submit" class="btn btn-primary">Lưu</button>
+                <a class="btn btn-default" href="{{url()->previous()}}">Quay lại</a>
               </div>
               </form>
             </div>
