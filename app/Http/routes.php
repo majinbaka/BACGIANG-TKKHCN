@@ -53,12 +53,12 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::patch('/bieumau/baocao', 'ThanhvienDashboardController@bieumauYear');
         Route::get('/doimatkhau', 'ThanhvienDashboardController@editPassword');
         Route::patch('/password', 'ThanhvienDashboardController@updatePassword');
-        Route::patch('/bieumau1/{year}', 'ThanhvienDashboardController@bieumau1Update');
-        Route::patch('/bieumau2/{year}', 'ThanhvienDashboardController@bieumau2Update');
-        Route::patch('/bieumau3/{year}', 'ThanhvienDashboardController@bieumau3Update');
-        Route::patch('/bieumau4/{year}', 'ThanhvienDashboardController@bieumau4Update');
-        Route::patch('/bieumau5/{year}', 'ThanhvienDashboardController@bieumau5Update');
-        Route::patch('/bieumau6/{year}', 'ThanhvienDashboardController@bieumau6Update');
+        Route::patch('/bieumau1/{year}', 'ThanhvienDashboardController@bieumau1UpdateFX');
+        Route::patch('/bieumau2/{year}', 'ThanhvienDashboardController@bieumau2UpdateFX');
+        Route::patch('/bieumau3/{year}', 'ThanhvienDashboardController@bieumau3UpdateFX');
+        Route::patch('/bieumau4/{year}', 'ThanhvienDashboardController@bieumau4UpdateFX');
+        Route::patch('/bieumau5/{year}', 'ThanhvienDashboardController@bieumau5UpdateFX');
+        Route::patch('/bieumau6/{year}', 'ThanhvienDashboardController@bieumau6UpdateFX');
     });
 });
 Route::group(['middleware' => 'auth:admin'], function () {
