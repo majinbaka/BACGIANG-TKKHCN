@@ -149,7 +149,7 @@ class ThanhVienController extends Controller
                 $user->username = Input::get('username');
                 $user->email = Input::get('email');
                 $user->password = Hash::make(Input::get('password'));
-                $user->role = Input::get('role');
+                $user->role = Input::has('role') ?  Input::get('role') : 1;
                 $user->save();    
             }
 
