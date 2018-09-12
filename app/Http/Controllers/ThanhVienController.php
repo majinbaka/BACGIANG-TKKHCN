@@ -133,7 +133,7 @@ class ThanhVienController extends Controller
 	            ->withInput(Input::except('password'));
 	    } else {
 	        // store
-            if ($role == 1){
+            if (Input::get('role') == 1){
                 $user = new User;
                 $user->name = Input::get('name');
                 $user->username = Input::get('username');
